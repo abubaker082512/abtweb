@@ -578,6 +578,19 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(1.15) rotate(5deg);
 }
 
+.tech-item img {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 1rem;
+    transition: var(--transition-smooth);
+    filter: grayscale(100%) opacity(0.75);
+}
+
+.tech-item:hover img {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.18) rotate(5deg);
+}
+
 .tech-item-name {
     font-size: 0.9rem;
     font-weight: 500;
