@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Featured Case Studies | ABT IT Innovations | Top Software House</title>
+    <meta name="description" content="Explore custom software development case studies by ABT IT Innovations. Review our portfolio of web systems, mobile apps, AI products, and enterprise ERP solutions built for global clients.">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Portfolio Filter Styles */
+        .portfolio-hero {
+            padding-top: 150px;
+            text-align: center;
+        }
+        
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--color-border);
+            padding: 0.6rem 1.5rem;
+            border-radius: 100px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--color-text-secondary);
+            cursor: pointer;
+            transition: var(--transition-quick);
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            border-color: var(--color-brand-green);
+            color: var(--color-brand-green);
+            background: rgba(0, 124, 0, 0.04);
+        }
+        
+        .portfolio-grid-page {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-bottom: 6rem;
+        }
+        
+        @media (max-width: 1024px) {
+            .portfolio-grid-page {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .portfolio-grid-page {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- --- HEADER --- -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-wrap" id="navLogoHome">
+                <img src="Branding/ABT%20IT%20NEW%20LOGO.png" alt="ABT IT Innovations Logo" class="logo-img">
+            </a>
+            
+            <button class="mobile-nav-toggle" aria-label="Toggle Navigation">☰</button>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="contact.html" class="btn btn-glow-outline" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Get Estimate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- --- HERO --- -->
+    <section class="section portfolio-hero animate-fade-in visible">
+        <div class="container">
+            <span class="section-tag">OUR DETAILED PORTFOLIO</span>
+            <h1 class="hero-title" style="font-size: 3.5rem; margin-top: 1rem;">Engineering That Delivers <br><span class="text-gradient">Real Business Value</span></h1>
+            <p class="section-subtitle" style="margin: 1.5rem auto 0; max-width: 750px;">Browse our portfolio of custom systems, cross-platform mobile products, and integrated ERP software built for clients in North America, Europe, the Middle East, and Pakistan.</p>
+        </div>
+    </section>
+
+    <!-- --- PORTFOLIO FILTER & GRID SECTION --- -->
+    <section class="section animate-fade-in visible" style="padding-top: 0;">
+        <div class="container">
+            
+            <!-- Filters -->
+            <div class="filter-tabs">
+                <button class="filter-btn active" onclick="filterPortfolio('all')">All Projects</button>
+                <button class="filter-btn" onclick="filterPortfolio('web')">Web & SaaS</button>
+                <button class="filter-btn" onclick="filterPortfolio('mobile')">Mobile Apps</button>
+                <button class="filter-btn" onclick="filterPortfolio('ai')">AI & Automation</button>
+                <button class="filter-btn" onclick="filterPortfolio('erp')">ERP & Custom Systems</button>
+            </div>
+
+            <!-- Grid -->
+            <div class="portfolio-grid-page" id="portfolioGrid">
+                
+                <!-- Project 1: Web -->
+                <div class="glass-panel portfolio-card" data-category="web">
+                    <div class="portfolio-img-wrap">
+                        <img src="images/web_dev_illustration.png" alt="FinTech SaaS Dashboard Project">
+                        <div class="portfolio-badge-row">
+                            <span class="portfolio-badge">Web Development</span>
+                            <span class="portfolio-badge">SaaS</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-content" style="padding: 2rem;">
+                        <span class="section-tag" style="background: rgba(0, 124, 0, 0.04); border-color: rgba(0,124,0,0.15); margin-bottom: 0.5rem; font-size: 0.75rem;">CLIENT: FINCORP (USA)</span>
+                        <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;">FinTech Multi-Tenant Operations Dashboard</h3>
+                        <p style="color: var(--color-text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">A high-performance operations platform connecting global transaction channels with automated compliance audits and ledger controls.</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                            <span style="font-size: 0.75rem; background: rgba(15,23,42,0.04); padding: 4px 8px; border-radius: 4px; font-weight: 500;">Next.js</span>
+                            <span style="font-size: 0.75rem; background: rgba(15,23,42,0.04); padding: 4px 8px; border-radius: 4px; font-weight: 500;">Node.js</span>
+                            <span style="font-size: 0.75rem; background: rgba(15,23,42,0.04); padding: 4px 8px; border-radius: 4px; font-weight: 500;">PostgreSQL</span>
+                            <span style="font-size: 0.75rem; background: rgba(15,23,42,0.04); padding: 4px 8px; border-radius: 4px; font-weight: 500;">AWS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Mobile -->
+                <div class="glass-panel portfolio-card" data-category="mobile">
+                    <div class="portfolio-img-wrap">
+                        <img src="images/mobile_dev_illustration.png" alt="Telehealth Patient Portal Project">
+                        <div class="portfolio-badge-row">
+                            <span class="portfolio-badge">Mobile App</span>
+                            <span class="portfolio-badge">Healthcare</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-content" style="padding: 2rem;">
+                        <span class="section-tag" style="background: rgba(0, 124, 0, 0.04); border-color: rgba(0,124,0,0.15); margin-bottom: 0.5rem; font-size: 0.75rem;">CLIENT: HEALTHEASE (UAE)</span>
+                        <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;">HealthEase Telehealth Patient App</h3>
+                        <p style="color: var(--color-text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">A cross-platform mobile application providing HIPAA-compliant consultations, scheduling, and offline local data synchronizations.</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                            <span style="font-size: 0.75rem; background: rgba(15,23,42,0.04); padding: 4px 8px; border-radius: 4px; font-weight: 500;">Flutter</span>
+                            <span style="font-size: 0.75rem; background: rgba(15,23,42,0.04); padding: 4px 8px; border-radius: 4px; font-weight: 500;">Firebase</span>
+                            <span style="font-size: 0.75rem; background: rgba(15,23,42,0.04); padding: 4px 8px; border-radius: 4px; font-weight: 500;">WebRTC</span>
+                            <span style="font-size: 0.75rem; background: rgba(15,23,42,0.04); padding: 4px 8px; border-radius: 4px; font-weight: 500;">SQLite</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: AI -->
+                <div class="glass-panel portfolio-card" data-category="ai">
+                    <div class="portfolio-img-wrap">
+                        <img src="images/ai_saas_illustration.png" alt="AI Lesson Planner Project">
+                        <div class="portfolio-badge-row">
+                            <span class="portfolio-badge">AI Integration</span>
+                            <span class="portfolio-badge">EdTech</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-content" style="padding: 2rem;">
+                        <span class="section-tag" style="background: rgba(0, 124, 0, 0.04); border-color: rgba(0,124,0,0.15); margin-bottom: 0.5rem; font-size: 0.75rem;">CLIENT: EDUSMART (UK)</span>
+                        <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;">LLM-Powered Educator Lesson Planner</h3>
+                        <p style="color: var(--color-text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">An intelligent platform using fine-tuned model APIs to help secondary school teachers instantly draft curriculum structures.</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                            <span style="font-size: 0.75rem; background: rgba(15,23,42,0.04); padding: 4px 8px; border-radius: 4px; font-weight: 500;">React</span>
+                            <span style="font-size: 0.75rem; background: rgba(15,23,42,0.04); padding: 4px 8px; border-radius: 4px; font-weight: 500;">Python</span>
+                            <span style="font-size: 0.75rem; background: rgba(15,23,42,0.04); padding: 4px 8px; border-radius: 4px; font-weight: 500;">OpenAI API</span>
+                            <span style="font-size: 0.75rem; background: rgba(15,23,42,0.04); padding: 4px 8px; border-radius: 4px; font-weight: 500;">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: ERP -->
+                <div class="glass-panel portfolio-card" data-category="erp">
+                    <div class="portfolio-img-wrap">
+                        <img src="images/web_dev_illustration.png" alt="Supply Chain ERP Project">
+                        <div class="portfolio-badge-row">
+                            <span class="portfolio-badge">ERP Software</span>
+                            <span class="portfolio-badge">Enterprise</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-content" style="padding: 2rem;">
+                        <span class="section-tag" style="background: rgba(0, 124, 0, 0.04); border-color: rgba(0,124,0,0.15); margin-bottom: 0.5rem; font-size: 0.75rem;">CLIENT: LOGITRACK (PAKISTAN)</span>
+                        <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;">LogiTrack Multi-Location Supply Chain ERP</h3>
+                        <p style="color: var(--color-text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">A heavy-duty corporate system featuring barcode integrations, real-time inventory adjustments, and automated QuickBooks mapping.</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                            <span style="font-size: 0.75rem; background: rgba(15,23,42,0.04); padding: 4px 8px; border-radius: 4px; font-weight: 500;">C# .NET</span>
+                            <span style="font-size: 0.75rem; background: rgba(15,23,42,0.04); padding: 4px 8px; border-radius: 4px; font-weight: 500;">SQL Server</span>
+                            <span style="font-size: 0.75rem; background: rgba(15,23,42,0.04); padding: 4px 8px; border-radius: 4px; font-weight: 500;">Electron</span>
+                            <span style="font-size: 0.75rem; background: rgba(15,23,42,0.04); padding: 4px 8px; border-radius: 4px; font-weight: 500;">Azure</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: E-commerce -->
+                <div class="glass-panel portfolio-card" data-category="web">
+                    <div class="portfolio-img-wrap">
+                        <img src="images/marketing_illustration.png" alt="Amazon SP-API Connector Project">
+                        <div class="portfolio-badge-row">
+                            <span class="portfolio-badge">E-commerce</span>
+                            <span class="portfolio-badge">Amazon FBA</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-content" style="padding: 2rem;">
+                        <span class="section-tag" style="background: rgba(0, 124, 0, 0.04); border-color: rgba(0,124,0,0.15); margin-bottom: 0.5rem; font-size: 0.75rem;">CLIENT: AUTOGROW (GERMANY)</span>
+                        <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;">Amazon Selling Partner SP-API Dashboard</h3>
+                        <p style="color: var(--color-text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Automated e-commerce sync system displaying inventory health, PPC advertising metrics, and supplier shipment stages across locations.</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                            <span style="font-size: 0.75rem; background: rgba(15,23,42,0.04); padding: 4px 8px; border-radius: 4px; font-weight: 500;">Next.js</span>
+                            <span style="font-size: 0.75rem; background: rgba(15,23,42,0.04); padding: 4px 8px; border-radius: 4px; font-weight: 500;">Python</span>
+                            <span style="font-size: 0.75rem; background: rgba(15,23,42,0.04); padding: 4px 8px; border-radius: 4px; font-weight: 500;">Amazon SP-API</span>
+                            <span style="font-size: 0.75rem; background: rgba(15,23,42,0.04); padding: 4px 8px; border-radius: 4px; font-weight: 500;">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: NGO -->
+                <div class="glass-panel portfolio-card" data-category="erp">
+                    <div class="portfolio-img-wrap">
+                        <img src="images/office_background.png" alt="NGO Volunteer Management Project">
+                        <div class="portfolio-badge-row">
+                            <span class="portfolio-badge">ERP Software</span>
+                            <span class="portfolio-badge">Nonprofit</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-content" style="padding: 2rem;">
+                        <span class="section-tag" style="background: rgba(0, 124, 0, 0.04); border-color: rgba(0,124,0,0.15); margin-bottom: 0.5rem; font-size: 0.75rem;">CLIENT: HOPE FOUNDATION (USA)</span>
+                        <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;">Hope NGO Volunteer Management System</h3>
+                        <p style="color: var(--color-text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">A secure administrative portal designed to coordinate field volunteer logs, manage donor allocations, and generate activity reports.</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                            <span style="font-size: 0.75rem; background: rgba(15,23,42,0.04); padding: 4px 8px; border-radius: 4px; font-weight: 500;">Laravel</span>
+                            <span style="font-size: 0.75rem; background: rgba(15,23,42,0.04); padding: 4px 8px; border-radius: 4px; font-weight: 500;">Vue.js</span>
+                            <span style="font-size: 0.75rem; background: rgba(15,23,42,0.04); padding: 4px 8px; border-radius: 4px; font-weight: 500;">MySQL</span>
+                            <span style="font-size: 0.75rem; background: rgba(15,23,42,0.04); padding: 4px 8px; border-radius: 4px; font-weight: 500;">REST APIs</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- --- FOOTER --- -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-logo-desc">
+                <a href="index.html" class="logo-wrap" id="footerLogoHome">
+                    <img src="Branding/ABT%20IT%20NEW%20LOGO.png" alt="ABT IT Innovations Logo" class="logo-img">
+                </a>
+                <p>ABT IT Innovations is a premium software house providing custom software development, mobile solutions, AI automation, and SEO strategies for global clients.</p>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/abtitinnovations" class="social-icon-btn" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/abt-it-innovations" class="social-icon-btn" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="footer-title">Services</h3>
+                <ul class="footer-links">
+                    <li><a href="services.html#web-dev">Web Development</a></li>
+                    <li><a href="services.html#mobile-dev">Mobile App Development</a></li>
+                    <li><a href="services.html#ai-saas">AI & SaaS Products</a></li>
+                    <li><a href="services.html#marketing">Digital Marketing & SEO</a></li>
+                    <li><a href="services.html#uiux-design">UI/UX & Graphic Design</a></li>
+                    <li><a href="services.html#devops">DevOps & Cloud Computing</a></li>
+                    <li><a href="services.html#bi-crm">BI & CRM Systems</a></li>
+                    <li><a href="services.html#erp-software">Enterprise ERP Solutions</a></li>
+                    <li><a href="services.html#it-outsourcing">IT Resource Augmentation</a></li>
+                    <li><a href="services.html#amazon-fba">Amazon FBA & E-commerce</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="footer-title">Company</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="about.html#advantages">The Pakistan Hub</a></li>
+                    <li><a href="index.html#processSection">Our Process</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="footer-title">Contact Info</h3>
+                <div class="footer-contact-info">
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+                        <span>
+                            <strong>Pakistan:</strong> Islamabad, PK<br>
+                            <strong>United Kingdom:</strong> 206 High St, Cowdenbeath, UK<br>
+                            <strong>United States:</strong> Miami, Florida, US
+                        </span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <span>info@abtit.online</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.15 15.15 0 0 0 6.47 6.47l2.2-2.2c.27-.27.67-.36 1.02-.26 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        <span>+92-333-5954599</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom">
+            <span>&copy; 2026 ABT IT Innovations. All Rights Reserved.</span>
+            <span>Registered with PSEB & FBR Pakistan</span>
+        </div>
+    </footer>
+
+    <!-- --- FILTER SCRIPTS --- -->
+    <script>
+        function filterPortfolio(category) {
+            // Update active tab styling
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter cards
+            const cards = document.querySelectorAll('#portfolioGrid .portfolio-card');
+            cards.forEach(card => {
+                const cardCat = card.getAttribute('data-category');
+                if (category === 'all' || cardCat === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+        
+        // Mobile Navigation Toggle
+        const menuToggle = document.querySelector('.mobile-nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                menuToggle.innerText = navLinks.classList.contains('active') ? '✕' : '☰';
+            });
+        }
+    </script>
+</body>
+</html>

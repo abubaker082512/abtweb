@@ -91,6 +91,7 @@
                 <ul class="nav-links">
                     <li><a href="index.html" class="nav-link active">Home</a></li>
                     <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
                     <li><a href="about.html" class="nav-link">About Us</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                     <li><a href="contact.html" class="btn btn-glow-outline" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Get Estimate</a></li>
@@ -113,36 +114,67 @@
             </div>
             
             <div class="hero-visual animate-fade-in visible">
-                <div class="tech-globe-container">
-                    <div class="pulse-circle"></div>
-                    <div class="pulse-circle"></div>
-                    <div class="pulse-circle"></div>
-                    
-                    <!-- Core Bubble with Logo -->
-                    <div class="core-logo-bubble">
-                        <img src="Branding/ABT%20IT%20NEW%20LOGO%20Sq%20WB.png" alt="ABT IT Logo Core">
+                <div class="hero-visual-wrapper">
+                    <!-- Glassmorphic Dashboard Panel (IDE / Web Interface) -->
+                    <div class="mockup-window ide-panel">
+                        <div class="window-header">
+                            <span class="window-dot dot-close"></span>
+                            <span class="window-dot dot-minimize"></span>
+                            <span class="window-dot dot-expand"></span>
+                            <span class="window-title">abt-saas-engine.js</span>
+                        </div>
+                        <div class="window-body">
+                            <pre><code><span class="code-keyword">const</span> softwareHouse = <span class="code-keyword">new</span> <span class="code-class">ABTInnovations</span>();
+softwareHouse.setFramework(<span class="code-string">"Next.js/React"</span>);
+softwareHouse.integrateAI(<span class="code-string">"GPT-4o & Agents"</span>);
+softwareHouse.scaleGlobalMarkets();
+
+<span class="code-comment">// Active Vercel build status...</span>
+softwareHouse.deployStatus() <span class="code-comment">// Deployed successfully!</span></code></pre>
+                        </div>
                     </div>
-                    
-                    <!-- Floating objects drawn with SVGs -->
-                    <div class="floating-object float-1" title="Web Development">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/>
-                        </svg>
+
+                    <!-- Overlapping Mobile App Frame -->
+                    <div class="mockup-window mobile-panel">
+                        <div class="mobile-screen">
+                            <div class="mobile-header">
+                                <span class="mobile-time">12:45</span>
+                                <span class="mobile-battery">⚡</span>
+                            </div>
+                            <div class="mobile-content">
+                                <div class="mobile-avatar-wrap">
+                                    <div class="mobile-avatar"></div>
+                                    <div>
+                                        <div class="mobile-name">Sarah Connor</div>
+                                        <div class="mobile-status">Project Sprint Active</div>
+                                    </div>
+                                </div>
+                                <div class="mobile-chart">
+                                    <div class="chart-bar" style="height: 40%"></div>
+                                    <div class="chart-bar" style="height: 65%"></div>
+                                    <div class="chart-bar" style="height: 50%"></div>
+                                    <div class="chart-bar" style="height: 85%"></div>
+                                </div>
+                                <div class="mobile-label">Active Sprint +320%</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="floating-object float-2" title="AI & SaaS">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15.5h-2v-2h2v2zm0-4.5h-2V7h2v6z"/>
-                        </svg>
+
+                    <!-- Floating Metric Cards -->
+                    <div class="floating-metric-card stat-bubble-1">
+                        <div class="pulse-dot"></div>
+                        <div>
+                            <h4>QA Automation</h4>
+                            <p>100% Tests Passing</p>
+                        </div>
                     </div>
-                    <div class="floating-object float-3" title="Mobile Apps">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/>
-                        </svg>
-                    </div>
-                    <div class="floating-object float-4" title="Digital Marketing">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M20 12c0-1.1.9-2 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v4c1.1 0 2 .9 2 2s-.9 2-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-4c-1.1 0-2-.9-2-2zM9 18H7v-2h2v2zm0-4H7v-2h2v2zm0-4H7V8h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V8h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V8h2v2z"/>
-                        </svg>
+
+                    <div class="floating-metric-card stat-bubble-2">
+                        <div class="pulse-dot green"></div>
+                        <div>
+                            <h4>Clutch Developer</h4>
+                            <p>5.0 Rating Verified</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -743,6 +775,7 @@
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="about.html#advantages">The Pakistan Hub</a></li>
                     <li><a href="index.html#processSection">Our Process</a></li>
+                    <li><a href="careers.html">Careers</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | Join Our Team | ABT IT Innovations</title>
+    <meta name="description" content="Build your career with ABT IT Innovations. Check out our open positions for software developers, QA engineers, and SEO specialists in Islamabad, Pakistan.">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .careers-hero {
+            padding-top: 150px;
+            text-align: center;
+        }
+        
+        .perks-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .perk-card {
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .perk-card svg {
+            width: 40px;
+            height: 40px;
+            fill: var(--color-brand-green);
+            margin-bottom: 1rem;
+        }
+        
+        .jobs-section {
+            background: #f8fafc;
+            padding: 5rem 0;
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .jobs-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .job-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.8rem 2rem;
+        }
+        
+        .job-details h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .job-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+        }
+        
+        .job-meta span {
+            background: rgba(0, 124, 0, 0.04);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        .apply-container {
+            max-width: 650px;
+            margin: 4rem auto 0;
+            padding: 3rem;
+        }
+        
+        .apply-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .form-group-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        @media (max-width: 1024px) {
+            .perks-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .perks-grid {
+                grid-template-columns: 1fr;
+            }
+            .job-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+            }
+            .form-group-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- --- HEADER --- -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-wrap" id="navLogoHome">
+                <img src="Branding/ABT%20IT%20NEW%20LOGO.png" alt="ABT IT Innovations Logo" class="logo-img">
+            </a>
+            
+            <button class="mobile-nav-toggle" aria-label="Toggle Navigation">☰</button>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="contact.html" class="btn btn-glow-outline" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Get Estimate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- --- HERO --- -->
+    <section class="section careers-hero animate-fade-in visible">
+        <div class="container">
+            <span class="section-tag">WE ARE HIRING</span>
+            <h1 class="hero-title" style="font-size: 3.5rem; margin-top: 1rem;">Build the Future of <br>Technology <span class="text-gradient">With Us</span></h1>
+            <p class="section-subtitle" style="margin: 1.5rem auto 0; max-width: 750px;">Join ABT IT Innovations. Work in a fast-paced environment with elite software engineers and digital growth experts serving global clients.</p>
+        </div>
+    </section>
+
+    <!-- --- PERKS --- -->
+    <section class="section animate-fade-in visible" style="padding-top: 0;">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-tag">OUR BENEFITS</span>
+                <h2 class="section-title">Why You'll Love Working Here</h2>
+            </div>
+            
+            <div class="perks-grid">
+                <!-- Perk 1 -->
+                <div class="glass-panel perk-card">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+                    <h3>Elite Tech Stacks</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">Develop on cutting-edge stacks like Next.js, Flutter, and fine-tuned AI LLM agent frameworks.</p>
+                </div>
+                <!-- Perk 2 -->
+                <div class="glass-panel perk-card">
+                    <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                    <h3>Flexible Hybrid Setup</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">Work in our modern Islamabad capital office or enjoy remote timezone-coordinated shifts.</p>
+                </div>
+                <!-- Perk 3 -->
+                <div class="glass-panel perk-card">
+                    <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    <h3>Health & Growth</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">Competitive salary packages, health allowances, technical training budgets, and team trips.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- OPEN POSITIONS --- -->
+    <section class="section jobs-section animate-fade-in visible" id="positions">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-tag">JOB LISTINGS</span>
+                <h2 class="section-title">Current Opportunities</h2>
+                <p class="section-subtitle">We are searching for talented developers, designers, and marketers in Pakistan to join our growth.</p>
+            </div>
+            
+            <div class="jobs-grid">
+                <!-- Job 1 -->
+                <div class="glass-panel job-row">
+                    <div class="job-details">
+                        <h3>Senior MERN Stack Engineer</h3>
+                        <div class="job-meta">
+                            <span>Islamabad Hub</span>
+                            <span>Full-Time</span>
+                            <span>Hybrid</span>
+                        </div>
+                    </div>
+                    <a href="#apply" class="btn btn-primary" onclick="selectJob('Senior MERN Stack Engineer')">Apply Now</a>
+                </div>
+                
+                <!-- Job 2 -->
+                <div class="glass-panel job-row">
+                    <div class="job-details">
+                        <h3>React Native Mobile App Developer</h3>
+                        <div class="job-meta">
+                            <span>Islamabad / Remote</span>
+                            <span>Full-Time</span>
+                            <span>Flexible Remote</span>
+                        </div>
+                    </div>
+                    <a href="#apply" class="btn btn-primary" onclick="selectJob('React Native Mobile Developer')">Apply Now</a>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="glass-panel job-row">
+                    <div class="job-details">
+                        <h3>AI Integration & Python Specialist</h3>
+                        <div class="job-meta">
+                            <span>Islamabad Hub</span>
+                            <span>Full-Time</span>
+                            <span>Hybrid</span>
+                        </div>
+                    </div>
+                    <a href="#apply" class="btn btn-primary" onclick="selectJob('AI Integration & Python Specialist')">Apply Now</a>
+                </div>
+
+                <!-- Job 4 -->
+                <div class="glass-panel job-row">
+                    <div class="job-details">
+                        <h3>Senior SEO & Growth Strategist</h3>
+                        <div class="job-meta">
+                            <span>Islamabad / Remote</span>
+                            <span>Full-Time</span>
+                            <span>Hybrid</span>
+                        </div>
+                    </div>
+                    <a href="#apply" class="btn btn-primary" onclick="selectJob('Senior SEO & Growth Strategist')">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- APPLICATION FORM --- -->
+    <section class="section animate-fade-in visible" id="apply">
+        <div class="container">
+            <div class="glass-panel apply-container">
+                <h2 style="font-size: 2.2rem; text-align: center; margin-bottom: 0.5rem;">Join the Sprint</h2>
+                <p style="color: var(--color-text-secondary); text-align: center; font-size: 0.95rem;">Submit your details below, and our HR recruitment team will review your application.</p>
+                
+                <form class="apply-form" action="#" onsubmit="submitApplication(event)">
+                    <div class="form-group-row">
+                        <div style="display:flex; flex-direction:column; gap:8px;">
+                            <label for="applyName" style="font-size:0.9rem; font-weight:600; color:#334155;">Full Name *</label>
+                            <input type="text" id="applyName" required style="padding: 0.8rem; border-radius: 8px; border: 1px solid var(--color-border); font-family: var(--font-body);">
+                        </div>
+                        <div style="display:flex; flex-direction:column; gap:8px;">
+                            <label for="applyEmail" style="font-size:0.9rem; font-weight:600; color:#334155;">Email Address *</label>
+                            <input type="email" id="applyEmail" required style="padding: 0.8rem; border-radius: 8px; border: 1px solid var(--color-border); font-family: var(--font-body);">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group-row">
+                        <div style="display:flex; flex-direction:column; gap:8px;">
+                            <label for="applyPosition" style="font-size:0.9rem; font-weight:600; color:#334155;">Select Position *</label>
+                            <select id="applyPosition" required style="padding: 0.8rem; border-radius: 8px; border: 1px solid var(--color-border); font-family: var(--font-body); background:#fff;">
+                                <option value="">-- Select --</option>
+                                <option value="Senior MERN Stack Engineer">Senior MERN Stack Engineer</option>
+                                <option value="React Native Mobile Developer">React Native Mobile Developer</option>
+                                <option value="AI Integration & Python Specialist">AI Integration & Python Specialist</option>
+                                <option value="Senior SEO & Growth Strategist">Senior SEO & Growth Strategist</option>
+                                <option value="Other">Other Positions</option>
+                            </select>
+                        </div>
+                        <div style="display:flex; flex-direction:column; gap:8px;">
+                            <label for="applyResume" style="font-size:0.9rem; font-weight:600; color:#334155;">CV / Portfolio URL *</label>
+                            <input type="url" id="applyResume" placeholder="Link to Drive, Dropbox, or GitHub" required style="padding: 0.8rem; border-radius: 8px; border: 1px solid var(--color-border); font-family: var(--font-body);">
+                        </div>
+                    </div>
+                    
+                    <div style="display:flex; flex-direction:column; gap:8px;">
+                        <label for="applyCover" style="font-size:0.9rem; font-weight:600; color:#334155;">Cover Note / Key Capabilities</label>
+                        <textarea id="applyCover" rows="4" placeholder="Summarize your years of experience and core libraries/tools..." style="padding: 0.8rem; border-radius: 8px; border: 1px solid var(--color-border); font-family: var(--font-body); resize:vertical;"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="margin-top: 1rem; width:100%; padding: 1rem;">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- FOOTER --- -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-logo-desc">
+                <a href="index.html" class="logo-wrap" id="footerLogoHome">
+                    <img src="Branding/ABT%20IT%20NEW%20LOGO.png" alt="ABT IT Innovations Logo" class="logo-img">
+                </a>
+                <p>ABT IT Innovations is a premium software house providing custom software development, mobile solutions, AI automation, and SEO strategies for global clients.</p>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/abtitinnovations" class="social-icon-btn" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/abt-it-innovations" class="social-icon-btn" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="footer-title">Services</h3>
+                <ul class="footer-links">
+                    <li><a href="services.html#web-dev">Web Development</a></li>
+                    <li><a href="services.html#mobile-dev">Mobile App Development</a></li>
+                    <li><a href="services.html#ai-saas">AI & SaaS Products</a></li>
+                    <li><a href="services.html#marketing">Digital Marketing & SEO</a></li>
+                    <li><a href="services.html#uiux-design">UI/UX & Graphic Design</a></li>
+                    <li><a href="services.html#devops">DevOps & Cloud Computing</a></li>
+                    <li><a href="services.html#bi-crm">BI & CRM Systems</a></li>
+                    <li><a href="services.html#erp-software">Enterprise ERP Solutions</a></li>
+                    <li><a href="services.html#it-outsourcing">IT Resource Augmentation</a></li>
+                    <li><a href="services.html#amazon-fba">Amazon FBA & E-commerce</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="footer-title">Company</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="about.html#advantages">The Pakistan Hub</a></li>
+                    <li><a href="index.html#processSection">Our Process</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="footer-title">Contact Info</h3>
+                <div class="footer-contact-info">
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+                        <span>
+                            <strong>Pakistan:</strong> Islamabad, PK<br>
+                            <strong>United Kingdom:</strong> 206 High St, Cowdenbeath, UK<br>
+                            <strong>United States:</strong> Miami, Florida, US
+                        </span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <span>info@abtit.online</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.15 15.15 0 0 0 6.47 6.47l2.2-2.2c.27-.27.67-.36 1.02-.26 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        <span>+92-333-5954599</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom">
+            <span>&copy; 2026 ABT IT Innovations. All Rights Reserved.</span>
+            <span>Registered with PSEB & FBR Pakistan</span>
+        </div>
+    </footer>
+
+    <!-- --- JOB SELECT & APPLY SCRIPTS --- -->
+    <script>
+        function selectJob(jobName) {
+            const select = document.getElementById('applyPosition');
+            if (select) {
+                select.value = jobName;
+            }
+        }
+        
+        function submitApplication(event) {
+            event.preventDefault();
+            alert("Thank you! Your application for " + document.getElementById('applyPosition').value + " has been successfully submitted to ABT IT Innovations. Our HR team will reach out to you shortly.");
+            event.target.reset();
+        }
+        
+        // Mobile Navigation Toggle
+        const menuToggle = document.querySelector('.mobile-nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                menuToggle.innerText = navLinks.classList.contains('active') ? '✕' : '☰';
+            });
+        }
+    </script>
+</body>
+</html>
