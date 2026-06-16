@@ -381,6 +381,24 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Simulate API request timeout
             setTimeout(() => {
+                // Save lead details to LocalStorage database
+                try {
+                    const database = JSON.parse(localStorage.getItem('abt_leads_database')) || [];
+                    const newLead = {
+                        id: 'lead_' + Date.now() + Math.random().toString(36).substr(2, 4),
+                        timestamp: new Date().toISOString(),
+                        source: 'Project Planner',
+                        name: name,
+                        email: email,
+                        service: selectedServices.join(', ') || 'Custom Solution',
+                        budget: selectedBudget || 'Custom Range'
+                    };
+                    database.push(newLead);
+                    localStorage.setItem('abt_leads_database', JSON.stringify(database));
+                } catch (e) {
+                    console.error('Failed to write planner lead to localStorage database:', e);
+                }
+
                 // Clear form card contents and show success box
                 plannerForm.style.display = 'none';
                 successBox.style.display = 'block';
@@ -725,6 +743,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function startBotConversation() {
             appendBotMessage("Hello! 👋 Welcome to ABT IT Innovations.");
+            enableInput("Ask a question or start proposal...");
             setTimeout(() => {
                 appendBotMessage("Would you like a custom proposal and estimate for your software project? It takes less than 60 seconds!");
                 setTimeout(() => {
@@ -742,6 +761,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function askServiceType() {
+            enableInput("Type service or ask a question...");
             appendBotMessage("Great! What type of software system are we building?");
             setTimeout(() => {
                 const services = ["Custom Web App", "Mobile App (iOS/Android)", "AI & SaaS Systems", "Shopify / E-commerce", "Enterprise ERP / CRM"];
@@ -755,6 +775,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function askBudget() {
+            enableInput("Type budget or ask a question...");
             appendBotMessage("Perfect. What is your estimated budget scope for this project?");
             setTimeout(() => {
                 const budgetsList = ["Under $5,000 USD", "$5,000 - $10,000", "$10,000 - $25,000", "Enterprise ($25,000+)"];
@@ -814,7 +835,128 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     appendBotMessage("Oops! That email address doesn't look valid. Please enter a valid email address (e.g. name@company.com):");
                 }
+            } else {
+                // Free-text query or start intent when not in capturing name/email states
+                appendUserMessage(val);
+                chatInput.value = '';
+                processNLPQuery(val);
             }
+        }
+
+        function processNLPQuery(query) {
+            const q = query.toLowerCase();
+
+            // 1. Check if they want to start the lead capture flow
+            if (chatState === 0 && (q.includes('yes') || q.includes('start') || q.includes('proposal') || q.includes('estimate') || q.includes('begin'))) {
+                chatState = 1;
+                // Remove any option buttons on screen
+                const existingOptions = chatBody.querySelectorAll('.chatbot-options-container');
+                existingOptions.forEach(el => el.remove());
+                setTimeout(askServiceType, 400);
+                return;
+            }
+
+            // 2. Check if they are answering service selection in State 1
+            if (chatState === 1) {
+                const services = ["custom web app", "mobile app (ios/android)", "ai & saas systems", "shopify / e-commerce", "enterprise erp / crm"];
+                const matchedService = services.find(s => q.includes(s) || s.includes(q));
+                if (matchedService) {
+                    const titleMap = {
+                        "custom web app": "Custom Web App",
+                        "mobile app (ios/android)": "Mobile App (iOS/Android)",
+                        "ai & saas systems": "AI & SaaS Systems",
+                        "shopify / e-commerce": "Shopify / E-commerce",
+                        "enterprise erp / crm": "Enterprise ERP / CRM"
+                    };
+                    userAnswers.service = titleMap[matchedService];
+                    chatState = 2;
+                    const existingOptions = chatBody.querySelectorAll('.chatbot-options-container');
+                    existingOptions.forEach(el => el.remove());
+                    appendBotMessage(`Selected service: ${userAnswers.service}`);
+                    setTimeout(askBudget, 500);
+                    return;
+                }
+            }
+
+            // 3. Check if they are answering budget in State 2
+            if (chatState === 2) {
+                const budgetsList = ["under $5,000 usd", "$5,000 - $10,000", "$10,000 - $25,000", "enterprise ($25,000+)"];
+                const matchedBudget = budgetsList.find(b => q.includes(b.replace(/[$,+]/g, '').toLowerCase()) || q.includes('under 5') || q.includes('5000') || q.includes('10000') || q.includes('25000') || q.includes('enterprise'));
+                if (matchedBudget) {
+                    userAnswers.budget = matchedBudget === "under $5,000 usd" ? "Under $5,000 USD" :
+                                         matchedBudget === "$5,000 - $10,000" ? "$5,000 - $10,000" :
+                                         matchedBudget === "$10,000 - $25,000" ? "$10,000 - $25,000" : "Enterprise ($25,000+)";
+                    chatState = 3;
+                    const existingOptions = chatBody.querySelectorAll('.chatbot-options-container');
+                    existingOptions.forEach(el => el.remove());
+                    appendBotMessage(`Selected budget: ${userAnswers.budget}`);
+                    setTimeout(askName, 500);
+                    return;
+                }
+            }
+
+            // 4. Keyword matches for corporate knowledge base
+            
+            // Offices
+            if (q.includes('office') || q.includes('location') || q.includes('where are') || q.includes('islamabad') || q.includes('london') || q.includes('miami') || q.includes('pakistan') || q.includes('florida') || q.includes('uk') || q.includes('address') || q.includes('country') || q.includes('countries') || q.includes('cities')) {
+                setTimeout(() => {
+                    appendBotMessage("ABT IT Innovations operates globally to coordinate with our clients:\n\n🏢 Main Engineering HQ: Islamabad, Pakistan\n🏢 Client Office (UK): London, UK\n🏢 Client Office (US): Miami, Florida\n\nOur engineering is centralized in Islamabad to leverage top-tier technical talent while maintaining local business touchpoints in the UK and US.");
+                }, 400);
+                return;
+            }
+
+            // Services / Technologies
+            if (q.includes('service') || q.includes('what do you') || q.includes('web') || q.includes('mobile') || q.includes('app') || q.includes('ios') || q.includes('android') || q.includes('ai') || q.includes('saas') || q.includes('seo') || q.includes('marketing') || q.includes('devops') || q.includes('erp') || q.includes('crm') || q.includes('shopify') || q.includes('woocommerce') || q.includes('api') || q.includes('e-commerce') || q.includes('ecommerce') || q.includes('tech') || q.includes('stack') || q.includes('react') || q.includes('node') || q.includes('python') || q.includes('flutter') || q.includes('php') || q.includes('aws')) {
+                setTimeout(() => {
+                    appendBotMessage("We provide complete software engineering and digital marketing services, including:\n\n💻 Custom Web App Development (React, Node.js, Python, PHP)\n📱 Mobile Apps (iOS & Android via Flutter/native)\n🤖 AI & SaaS Systems integration\n🔌 API & Third-party integrations\n🛒 E-commerce Stores (Shopify & WooCommerce experts)\n📈 Advanced SEO & Digital Marketing to rank your business");
+                }, 400);
+                return;
+            }
+
+            // Projects / Portfolio / Clients
+            if (q.includes('project') || q.includes('client') || q.includes('portfolio') || q.includes('work') || q.includes('akhuwat') || q.includes('ozo') || q.includes('trips') || q.includes('bssole') || q.includes('royal') || q.includes('umrah') || q.includes('habib') || q.includes('hujjaj')) {
+                setTimeout(() => {
+                    appendBotMessage("We have built products for reputable clients worldwide, including:\n\n🤝 Akhuwat: Microfinance application and portal system.\n🥾 BSSole: Premium custom e-commerce footwear store.\n✈️ Ozo Trips: Dynamic travel and tourism booking web app.\n🕋 Royal Umrah: Online packages reservation portal.\n🕌 Habibulhujjaj: End-to-end Hajj service coordination system.");
+                }, 400);
+                return;
+            }
+
+            // Methodology
+            if (q.includes('method') || q.includes('process') || q.includes('how do you work') || q.includes('agile') || q.includes('scrum') || q.includes('sprint') || q.includes('qa') || q.includes('testing') || q.includes('deliver') || q.includes('quality')) {
+                setTimeout(() => {
+                    appendBotMessage("We utilize an Agile scrum development methodology:\n\n1️⃣ Requirement Analysis & scoping.\n2️⃣ Sprint planning & prototype wireframing.\n3️⃣ Iterative development with continuous updates.\n4️⃣ Multi-device QA testing.\n5️⃣ Deployment and 24/7 post-launch support.");
+                }, 400);
+                return;
+            }
+
+            // Pricing / Cost
+            if (q.includes('price') || q.includes('cost') || q.includes('budget') || q.includes('rate') || q.includes('pricing') || q.includes('calculator') || q.includes('how much') || q.includes('fee')) {
+                setTimeout(() => {
+                    appendBotMessage("Our software projects start from a minimum budget of $5,000 USD (e.g. for custom web or mobile modules) and scale up to enterprise-level software. You can get an instant estimate using our interactive Cost Calculator on the Services page, or choose 'Yes, let's start!' in this chat to request a custom proposal.");
+                }, 400);
+                return;
+            }
+
+            // Contact / Email
+            if (q.includes('contact') || q.includes('email') || q.includes('phone') || q.includes('reach') || q.includes('call') || q.includes('address') || q.includes('write to') || q.includes('mail')) {
+                setTimeout(() => {
+                    appendBotMessage("You can contact us in multiple ways:\n\n📧 Email: info@abtit.co or contact@abtit.co\n📝 Contact Form: Fill out the planner on our Contact page\n💬 Lead Assistant: Type 'Yes, let's start!' in this chat to leave your details.");
+                }, 400);
+                return;
+            }
+
+            // About the company
+            if (q.includes('about') || q.includes('who are you') || q.includes('company') || q.includes('abt') || q.includes('agency') || q.includes('firm') || q.includes('history')) {
+                setTimeout(() => {
+                    appendBotMessage("ABT IT Innovations is a premium global software development and digital transformation agency. We design, build, and scale custom software, mobile apps, AI systems, and e-commerce platforms for startups and enterprise clients, backed by a world-class team based in Islamabad, London, and Miami.");
+                }, 400);
+                return;
+            }
+
+            // 5. Fallback - Polite Company-Only Boundary Message
+            setTimeout(() => {
+                appendBotMessage("I am the ABT IT Innovations assistant and can only answer questions related to our company, services, projects, offices, and technologies. How can I help you with your software development needs today?");
+            }, 400);
         }
 
         function validateEmail(email) {
@@ -825,10 +967,32 @@ document.addEventListener('DOMContentLoaded', () => {
         function completeLeadCapture() {
             appendBotMessage(`Thank you, ${userAnswers.name}! 🎉`);
             setTimeout(() => {
+                // Save lead details to LocalStorage database
+                try {
+                    const database = JSON.parse(localStorage.getItem('abt_leads_database')) || [];
+                    const newLead = {
+                        id: 'lead_' + Date.now() + Math.random().toString(36).substr(2, 4),
+                        timestamp: new Date().toISOString(),
+                        source: 'Chatbot',
+                        name: userAnswers.name,
+                        email: userAnswers.email,
+                        service: userAnswers.service || 'Custom Solution',
+                        budget: userAnswers.budget || 'Custom Range'
+                    };
+                    database.push(newLead);
+                    localStorage.setItem('abt_leads_database', JSON.stringify(database));
+                } catch (e) {
+                    console.error('Failed to write chatbot lead to localStorage database:', e);
+                }
+
                 appendBotMessage(`I've registered your interest for a ${userAnswers.service} within the budget of ${userAnswers.budget}.`);
                 setTimeout(() => {
                     appendBotMessage(`Our tech coordinator based in Islamabad is compiling your proposal and will contact you at ${userAnswers.email} within 24 hours.`);
                     
+                    setTimeout(() => {
+                        enableInput("Ask anything about our company...");
+                    }, 800);
+
                     // Log to console (simulating server log receipt)
                     console.log('--- CONVERSATIONAL LEAD CATCHER SUBMISSION ---');
                     console.log(`Name: ${userAnswers.name}`);

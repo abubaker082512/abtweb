@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABT IT Innovations - Leads Admin Dashboard</title>
+    <link rel="icon" type="image/png" href="Branding/ABT%20IT%20NEW%20LOGO.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="margin: 0; background: #f8fafc;">
+
+    <!-- --- SECURE LOGIN GATE --- -->
+    <div class="admin-login-wrapper" id="loginGate">
+        <div class="admin-login-card">
+            <img src="Branding/ABT%20IT%20NEW%20LOGO.png" alt="ABT IT Innovations Logo" class="admin-login-logo">
+            <h2 class="admin-login-title">Admin Console Access</h2>
+            <p class="admin-login-subtitle">Enter your authorization credentials to view captured leads database.</p>
+            
+            <form id="adminLoginForm">
+                <input type="password" id="adminPassword" class="admin-login-input" placeholder="••••••••" required autocomplete="current-password">
+                <button type="submit" class="admin-login-btn">Authenticate Console</button>
+            </form>
+            
+            <div class="admin-login-error" id="loginError">Invalid credentials. Access Denied.</div>
+        </div>
+    </div>
+
+    <!-- --- ADMIN DASHBOARD PANEL --- -->
+    <div class="admin-dashboard-layout" id="dashboardContainer" style="display: none;">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-logo-wrap">
+                <img src="Branding/ABT%20IT%20NEW%20LOGO.png" alt="ABT IT Logo" class="sidebar-logo">
+            </div>
+            <ul class="sidebar-menu">
+                <li class="sidebar-menu-item active">
+                    <a href="#">
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                        <span>Leads Inbox</span>
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="index.html">
+                        <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                        <span>View Live Site</span>
+                    </a>
+                </li>
+            </ul>
+            <button class="sidebar-logout-btn" id="logoutBtn">Exit Session</button>
+        </aside>
+
+        <!-- Main Body -->
+        <main class="admin-main">
+            <header class="admin-header">
+                <div class="admin-header-title">
+                    <h1>Leads Inbox Management</h1>
+                    <p>Track, filter, and inspect incoming requests from forms and the chat assistant in real-time.</p>
+                </div>
+                <div class="admin-action-bar">
+                    <button class="admin-btn-action primary" id="exportCsvBtn">
+                        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                        Export Leads (.CSV)
+                    </button>
+                </div>
+            </header>
+
+            <!-- Metrics Grid Dashboard Cards -->
+            <section class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-info">
+                        <h3>Total Leads</h3>
+                        <div class="metric-val" id="statTotal">0</div>
+                    </div>
+                    <div class="metric-icon-wrap">
+                        <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3v2h14v-2c0-1.83-4.67-3-7-3zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V18h6v-2c0-1.83-4.67-3-7-3z"/></svg>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-info">
+                        <h3>Chatbot Leads</h3>
+                        <div class="metric-val" id="statChat">0</div>
+                    </div>
+                    <div class="metric-icon-wrap" style="color: var(--color-brand-green); background: rgba(0, 124, 0, 0.05);">
+                        <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-info">
+                        <h3>Planner Leads</h3>
+                        <div class="metric-val" id="statPlanner">0</div>
+                    </div>
+                    <div class="metric-icon-wrap" style="color: #3b82f6; background: rgba(59, 130, 246, 0.05);">
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Table Card -->
+            <section class="leads-table-card">
+                <div class="table-filter-bar">
+                    <!-- Search Input -->
+                    <div class="search-input-wrap">
+                        <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                        <input type="text" id="searchInput" placeholder="Search by name, email, or service...">
+                    </div>
+
+                    <!-- Filter Dropdown -->
+                    <div class="filter-dropdown-wrap">
+                        <select id="filterSource">
+                            <option value="all">All Channels</option>
+                            <option value="Chatbot">Chatbot Channel</option>
+                            <option value="Project Planner">Planner Channel</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="leads-table" id="leadsTable">
+                        <thead>
+                            <tr>
+                                <th>Date / Time</th>
+                                <th>Source</th>
+                                <th>Client Name</th>
+                                <th>Email</th>
+                                <th>System Type / Scope</th>
+                                <th>Budget Estimate</th>
+                                <th style="text-align: center;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leadsTableBody">
+                            <!-- Injected dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Empty State -->
+                <div class="no-leads-state" id="emptyState" style="display: none;">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                    <h3>No Leads Available</h3>
+                    <p>Incoming queries and estimator submissions will appear here once submitted by site users.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- --- SCRIPT LOGIC --- -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginGate = document.getElementById('loginGate');
+            const dashboardContainer = document.getElementById('dashboardContainer');
+            const loginForm = document.getElementById('adminLoginForm');
+            const passwordInput = document.getElementById('adminPassword');
+            const loginError = document.getElementById('loginError');
+            const logoutBtn = document.getElementById('logoutBtn');
+            const leadsTableBody = document.getElementById('leadsTableBody');
+            const emptyState = document.getElementById('emptyState');
+            
+            const searchInput = document.getElementById('searchInput');
+            const filterSource = document.getElementById('filterSource');
+            const exportCsvBtn = document.getElementById('exportCsvBtn');
+
+            // KPI stats badges
+            const statTotal = document.getElementById('statTotal');
+            const statChat = document.getElementById('statChat');
+            const statPlanner = document.getElementById('statPlanner');
+
+            // Authentication Handler
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const pwd = passwordInput.value.trim();
+                
+                if (pwd === 'admin' || pwd === 'abtit2026') {
+                    sessionStorage.setItem('abtAdminAuthenticated', 'true');
+                    loginGate.style.display = 'none';
+                    dashboardContainer.style.display = 'grid';
+                    renderDashboard();
+                } else {
+                    loginError.style.display = 'block';
+                    passwordInput.value = '';
+                    passwordInput.focus();
+                }
+            });
+
+            // Logout Handler
+            logoutBtn.addEventListener('click', () => {
+                sessionStorage.removeItem('abtAdminAuthenticated');
+                loginGate.style.display = 'flex';
+                dashboardContainer.style.display = 'none';
+                passwordInput.value = '';
+            });
+
+            // Check existing auth state
+            if (sessionStorage.getItem('abtAdminAuthenticated') === 'true') {
+                loginGate.style.display = 'none';
+                dashboardContainer.style.display = 'grid';
+                renderDashboard();
+            }
+
+            // Render Dashboard Data
+            function renderDashboard() {
+                // Fetch from LocalStorage
+                const database = JSON.parse(localStorage.getItem('abt_leads_database')) || [];
+                
+                // Clear table
+                leadsTableBody.innerHTML = '';
+
+                if (database.length === 0) {
+                    emptyState.style.display = 'block';
+                    leadsTable.style.display = 'none';
+                    updateKPIs(0, 0, 0);
+                    return;
+                }
+
+                emptyState.style.display = 'none';
+                leadsTable.style.display = 'table';
+
+                let chatCount = 0;
+                let plannerCount = 0;
+
+                // Sort by timestamp desc (newest first)
+                database.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+
+                database.forEach(lead => {
+                    if (lead.source === 'Chatbot') chatCount++;
+                    if (lead.source === 'Project Planner') plannerCount++;
+
+                    const tr = document.createElement('tr');
+                    tr.setAttribute('data-id', lead.id);
+                    tr.setAttribute('data-source', lead.source);
+                    
+                    const dateFormatted = new Date(lead.timestamp).toLocaleString();
+                    const sourceBadgeClass = lead.source === 'Chatbot' ? 'chatbot' : 'planner';
+
+                    tr.innerHTML = `
+                        <td style="font-weight: 600; color: var(--color-text-secondary);">${dateFormatted}</td>
+                        <td><span class="badge-source ${sourceBadgeClass}">${lead.source}</span></td>
+                        <td style="font-weight: 700; color: var(--color-brand-charcoal);">${escapeHTML(lead.name)}</td>
+                        <td><a href="mailto:${lead.email}" style="color: var(--color-brand-green); text-decoration: underline;">${escapeHTML(lead.email)}</a></td>
+                        <td style="font-weight: 500;">${escapeHTML(lead.service)}</td>
+                        <td><span class="badge-budget">${escapeHTML(lead.budget)}</span></td>
+                        <td style="text-align: center;">
+                            <button class="lead-delete-btn" title="Delete lead" data-id="${lead.id}">
+                                <svg viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+                            </button>
+                        </td>
+                    `;
+                    leadsTableBody.appendChild(tr);
+                });
+
+                updateKPIs(database.length, chatCount, plannerCount);
+                bindDeleteButtons();
+            }
+
+            function updateKPIs(total, chat, planner) {
+                statTotal.innerText = total;
+                statChat.innerText = chat;
+                statPlanner.innerText = planner;
+            }
+
+            function bindDeleteButtons() {
+                const buttons = document.querySelectorAll('.lead-delete-btn');
+                buttons.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const leadId = btn.getAttribute('data-id');
+                        if (confirm("Are you sure you want to permanently delete this lead record?")) {
+                            deleteLead(leadId);
+                        }
+                    });
+                });
+            }
+
+            function deleteLead(id) {
+                let database = JSON.parse(localStorage.getItem('abt_leads_database')) || [];
+                database = database.filter(lead => lead.id !== id);
+                localStorage.setItem('abt_leads_database', JSON.stringify(database));
+                renderDashboard();
+                runSearchFilter();
+            }
+
+            // Real-time table searching and filtering
+            function runSearchFilter() {
+                const query = searchInput.value.toLowerCase();
+                const sourceFilter = filterSource.value;
+                const rows = leadsTableBody.querySelectorAll('tr');
+
+                rows.forEach(row => {
+                    const text = row.innerText.toLowerCase();
+                    const source = row.getAttribute('data-source');
+                    
+                    const matchesSearch = text.includes(query);
+                    const matchesFilter = (sourceFilter === 'all' || source === sourceFilter);
+
+                    if (matchesSearch && matchesFilter) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            }
+
+            searchInput.addEventListener('keyup', runSearchFilter);
+            filterSource.addEventListener('change', runSearchFilter);
+
+            // Export Leads to CSV
+            exportCsvBtn.addEventListener('click', () => {
+                const database = JSON.parse(localStorage.getItem('abt_leads_database')) || [];
+                if (database.length === 0) {
+                    alert("There are no lead records to export.");
+                    return;
+                }
+
+                // CSV headers
+                let csvContent = "data:text/csv;charset=utf-8,";
+                csvContent += "ID,Date/Time,Source Channel,Client Name,Email Address,Requested System,Estimated Budget\n";
+
+                database.forEach(lead => {
+                    const row = [
+                        lead.id,
+                        new Date(lead.timestamp).toISOString(),
+                        lead.source,
+                        `"${lead.name.replace(/"/g, '""')}"`,
+                        lead.email,
+                        `"${lead.service.replace(/"/g, '""')}"`,
+                        `"${lead.budget.replace(/"/g, '""')}"`
+                    ];
+                    csvContent += row.join(",") + "\n";
+                });
+
+                // Trigger file download
+                const encodedUri = encodeURI(csvContent);
+                const link = document.createElement("a");
+                link.setAttribute("href", encodedUri);
+                link.setAttribute("download", `ABT_IT_Innovations_Leads_${new Date().toISOString().slice(0,10)}.csv`);
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
+
+            // HTML sanitizer
+            function escapeHTML(str) {
+                return str.replace(/[&<>'"]/g, 
+                    tag => ({
+                        '&': '&amp;',
+                        '<': '&lt;',
+                        '>': '&gt;',
+                        "'": '&#39;',
+                        '"': '&quot;'
+                    }[tag] || tag)
+                );
+            }
+        });
+    </script>
+</body>
+</html>
