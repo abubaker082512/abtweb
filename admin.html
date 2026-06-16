@@ -127,6 +127,7 @@
                                 <th>Phone / WhatsApp</th>
                                 <th>System Type / Scope</th>
                                 <th>Budget Estimate</th>
+                                <th>Status</th>
                                 <th style="text-align: center;">Actions</th>
                             </tr>
                         </thead>
@@ -236,6 +237,8 @@
 
                     const waLink = lead.phone ? `https://wa.me/${lead.phone.replace(/[^0-9]/g, '')}` : '#';
                     const waText = lead.phone || 'N/A';
+                    const statusVal = lead.status || 'new';
+                    const statusClass = 'status-' + statusVal;
                     
                     tr.innerHTML = `
                         <td style="font-weight: 600; color: var(--color-text-secondary);">${dateFormatted}</td>
@@ -250,6 +253,13 @@
                         </td>
                         <td style="font-weight: 500;">${escapeHTML(lead.service)}</td>
                         <td><span class="badge-budget">${escapeHTML(lead.budget)}</span></td>
+                        <td>
+                            <select class="status-select ${statusClass}" data-id="${lead.id}">
+                                <option value="new" ${statusVal === 'new' ? 'selected' : ''}>New</option>
+                                <option value="contacted" ${statusVal === 'contacted' ? 'selected' : ''}>Contacted</option>
+                                <option value="archived" ${statusVal === 'archived' ? 'selected' : ''}>Archived</option>
+                            </select>
+                        </td>
                         <td style="text-align: center;">
                             <button class="lead-delete-btn" title="Delete lead" data-id="${lead.id}">
                                 <svg viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
@@ -261,6 +271,7 @@
 
                 updateKPIs(database.length, chatCount, plannerCount);
                 bindDeleteButtons();
+                bindStatusSelects();
             }
 
             function updateKPIs(total, chat, planner) {
@@ -281,6 +292,25 @@
                 });
             }
 
+            function bindStatusSelects() {
+                const selects = document.querySelectorAll('.status-select');
+                selects.forEach(select => {
+                    select.addEventListener('change', (e) => {
+                        const leadId = select.getAttribute('data-id');
+                        const newStatus = select.value;
+                        
+                        let database = JSON.parse(localStorage.getItem('abt_leads_database')) || [];
+                        database = database.map(lead => {
+                            if (lead.id === leadId) {
+                                lead.status = newStatus;
+                            }
+                            return lead;
+                        });
+                        localStorage.setItem('abt_leads_database', JSON.stringify(database));
+                        
+                        select.className = 'status-select status-' + newStatus;
+                    });
+                });
             function deleteLead(id) {
                 let database = JSON.parse(localStorage.getItem('abt_leads_database')) || [];
                 database = database.filter(lead => lead.id !== id);
@@ -323,7 +353,7 @@
 
                 // CSV headers
                 let csvContent = "data:text/csv;charset=utf-8,";
-                csvContent += "ID,Date/Time,Source Channel,Client Name,Email Address,Phone Number,Requested System,Estimated Budget\n";
+                csvContent += "ID,Date/Time,Source Channel,Client Name,Email Address,Phone Number,Requested System,Estimated Budget,Lead Status\n";
 
                 database.forEach(lead => {
                     const row = [
@@ -334,7 +364,8 @@
                         lead.email,
                         `"${(lead.phone || 'N/A').replace(/"/g, '""')}"`,
                         `"${lead.service.replace(/"/g, '""')}"`,
-                        `"${lead.budget.replace(/"/g, '""')}"`
+                        `"${lead.budget.replace(/"/g, '""')}"`,
+                        `"${(lead.status || 'new').replace(/"/g, '""')}"`
                     ];
                     csvContent += row.join(",") + "\n";
                 });

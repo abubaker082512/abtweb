@@ -4539,4 +4539,101 @@ body.dark-theme .admin-header-title p {
     color: var(--color-text-secondary) !important;
 }
 
+/* --- INFINITE CLIENT LOGO TICKER --- */
+.logo-ticker-wrap {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding: 1.5rem 0;
+    display: flex;
+    align-items: center;
+}
+.logo-ticker-wrap::before,
+.logo-ticker-wrap::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 120px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+.logo-ticker-wrap::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-bg-light), transparent);
+}
+.logo-ticker-wrap::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-bg-light), transparent);
+}
+body.dark-theme .logo-ticker-wrap::before {
+    background: linear-gradient(to right, var(--color-bg-dark), transparent);
+}
+body.dark-theme .logo-ticker-wrap::after {
+    background: linear-gradient(to left, var(--color-bg-dark), transparent);
+}
+.logo-ticker-track {
+    display: flex;
+    width: max-content;
+    gap: 3.5rem;
+    animation: scroll-ticker 30s linear infinite;
+}
+.logo-ticker-track:hover {
+    animation-play-state: paused;
+}
+.logo-ticker-track .brand-item {
+    flex-shrink: 0;
+}
+@keyframes scroll-ticker {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
 
+/* --- CRM STATUS SELECTS --- */
+.status-select {
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+    border: 1.5px solid transparent;
+}
+.status-select.status-new {
+    background-color: rgba(0, 102, 204, 0.1) !important;
+    color: #0066cc !important;
+    border-color: rgba(0, 102, 204, 0.2) !important;
+}
+.status-select.status-contacted {
+    background-color: rgba(0, 124, 0, 0.1) !important;
+    color: var(--color-brand-green) !important;
+    border-color: rgba(0, 124, 0, 0.2) !important;
+}
+.status-select.status-archived {
+    background-color: rgba(108, 117, 125, 0.1) !important;
+    color: #6c757d !important;
+    border-color: rgba(108, 117, 125, 0.2) !important;
+}
+body.dark-theme .status-select {
+    background-color: var(--color-card-dark);
+}
+body.dark-theme .status-select.status-new {
+    background-color: rgba(0, 102, 204, 0.25) !important;
+    color: #4da6ff !important;
+    border-color: rgba(0, 102, 204, 0.4) !important;
+}
+body.dark-theme .status-select.status-contacted {
+    background-color: rgba(0, 124, 0, 0.25) !important;
+    color: #4dff4d !important;
+    border-color: rgba(0, 124, 0, 0.4) !important;
+}
+body.dark-theme .status-select.status-archived {
+    background-color: rgba(108, 117, 125, 0.25) !important;
+    color: #adb5bd !important;
+    border-color: rgba(108, 117, 125, 0.4) !important;
+}

@@ -550,7 +550,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         email: email,
                         phone: phone,
                         service: selectedServices.join(', ') || 'Custom Solution',
-                        budget: selectedBudget || 'Custom Range'
+                        budget: selectedBudget || 'Custom Range',
+                        status: 'new'
                     };
                     database.push(newLead);
                     localStorage.setItem('abt_leads_database', JSON.stringify(database));
@@ -903,21 +904,77 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function startBotConversation() {
             appendBotMessage("Hello! 👋 Welcome to ABT IT Innovations.");
-            enableInput("Ask a question or start proposal...");
+            enableInput("Ask a question or select an option...");
             setTimeout(() => {
-                appendBotMessage("Would you like a custom proposal and estimate for your software project? It takes less than 60 seconds!");
+                appendBotMessage("How can we assist you with your digital goals today?");
                 setTimeout(() => {
-                    appendOptions(["Yes, let's start!", "No, thank you."], (choice) => {
-                        appendUserMessage(choice);
-                        if (choice === "Yes, let's start!") {
-                            chatState = 1;
-                            setTimeout(askServiceType, 500);
-                        } else {
-                            appendBotMessage("No problem! Let me know if you need anything. Feel free to explore our services.");
-                        }
-                    });
+                    const initialOptions = [
+                        "💰 Request Cost Proposal",
+                        "🏢 About Our Services",
+                        "📍 Office Locations",
+                        "📞 Request Callback"
+                    ];
+                    appendOptions(initialOptions, handleInitialChoice);
                 }, 600);
             }, 600);
+        }
+
+        function handleInitialChoice(choice) {
+            appendUserMessage(choice);
+            const existingOptions = chatBody.querySelectorAll('.chatbot-options-container');
+            existingOptions.forEach(el => el.remove());
+
+            if (choice === "💰 Request Cost Proposal") {
+                chatState = 1;
+                setTimeout(askServiceType, 500);
+            } else if (choice === "🏢 About Our Services") {
+                setTimeout(() => {
+                    appendBotMessage("We provide complete software engineering and digital marketing services, including:\n\n💻 Custom Web App Development (React, Node.js, Python, PHP)\n📱 Mobile Apps (iOS & Android via Flutter/native)\n🤖 AI & SaaS Systems integration\n🔌 API & Third-party integrations\n🛒 E-commerce Stores (Shopify & WooCommerce experts)\n📈 Advanced SEO & Digital Marketing to rank your business");
+                    setTimeout(() => {
+                        appendBotMessage("Would you like to start a proposal to get a custom cost estimate for any of these?");
+                        setTimeout(() => {
+                            appendOptions(["Yes, start proposal", "No, just exploring"], (subChoice) => {
+                                appendUserMessage(subChoice);
+                                const subOpts = chatBody.querySelectorAll('.chatbot-options-container');
+                                subOpts.forEach(el => el.remove());
+                                if (subChoice === "Yes, start proposal") {
+                                    chatState = 1;
+                                    setTimeout(askServiceType, 500);
+                                } else {
+                                    appendBotMessage("No problem! Feel free to ask me any questions about our work or stack.");
+                                }
+                            });
+                        }, 500);
+                    }, 1000);
+                }, 500);
+            } else if (choice === "📍 Office Locations") {
+                setTimeout(() => {
+                    appendBotMessage("ABT IT Innovations operates globally to coordinate with our clients:\n\n🏢 Main Engineering HQ: Islamabad, Pakistan\n🏢 Client Office (UK): London, UK\n🏢 Client Office (US): Miami, Florida\n\nOur engineering is centralized in Islamabad to leverage top-tier technical talent while maintaining local business touchpoints in the UK and US.");
+                    setTimeout(() => {
+                        appendBotMessage("Would you like us to call you back to discuss a project?");
+                        setTimeout(() => {
+                            appendOptions(["Request a Callback", "No, thanks"], (subChoice) => {
+                                appendUserMessage(subChoice);
+                                const subOpts = chatBody.querySelectorAll('.chatbot-options-container');
+                                subOpts.forEach(el => el.remove());
+                                if (subChoice === "Request a Callback") {
+                                    userAnswers.service = "Callback Request";
+                                    userAnswers.budget = "N/A";
+                                    chatState = 3;
+                                    setTimeout(askName, 500);
+                                } else {
+                                    appendBotMessage("Understood! Feel free to ask any other questions.");
+                                }
+                            });
+                        }, 500);
+                    }, 1000);
+                }, 500);
+            } else if (choice === "📞 Request Callback") {
+                userAnswers.service = "Callback Request";
+                userAnswers.budget = "N/A";
+                chatState = 3;
+                setTimeout(askName, 500);
+            }
         }
 
         function askServiceType() {
@@ -1153,7 +1210,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         email: userAnswers.email,
                         phone: userAnswers.phone || 'N/A',
                         service: userAnswers.service || 'Custom Solution',
-                        budget: userAnswers.budget || 'Custom Range'
+                        budget: userAnswers.budget || 'Custom Range',
+                        status: 'new'
                     };
                     database.push(newLead);
                     localStorage.setItem('abt_leads_database', JSON.stringify(database));
@@ -1194,7 +1252,7 @@ document.addEventListener('DOMContentLoaded', () => {
     (function initWhatsAppFloat() {
         const waBtn = document.createElement('a');
         waBtn.className = 'whatsapp-float-btn';
-        waBtn.href = 'https://wa.me/923335954599';
+        waBtn.href = 'https://wa.me/923335954599?text=Hi%20ABT%20IT%20Innovations!%20I%20am%20visiting%20your%20website%20and%20would%20like%20to%20discuss%20a%20project%20with%20you.';
         waBtn.target = '_blank';
         waBtn.setAttribute('aria-label', 'Chat on WhatsApp');
         waBtn.innerHTML = `
