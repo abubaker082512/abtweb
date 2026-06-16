@@ -1894,6 +1894,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* --- KEYFRAME ANIMATIONS --- */
+@keyframes rotateOrbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
 @keyframes float {
     0% { transform: translateY(0px) rotate(0deg); }
     50% { transform: translateY(-15px) rotate(2deg); }
@@ -2879,4 +2883,195 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     color: var(--color-text-primary);
 }
+
+/* --- CLIENT BRAND BAR SHOWCASE --- */
+.client-brand-bar {
+    background: var(--color-bg-light);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: 2.2rem 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+}
+.brand-bar-title {
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    letter-spacing: 0.15em;
+    margin-bottom: 1.5rem;
+}
+.brand-bar-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+.brand-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    position: relative;
+}
+.brand-logo-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--color-text-secondary);
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.brand-logo-text svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+.brand-domain {
+    font-size: 0.65rem;
+    color: var(--color-text-muted);
+    margin-top: 4px;
+    font-weight: 500;
+    transition: var(--transition-smooth);
+}
+.brand-item:hover .brand-logo-text {
+    color: var(--color-brand-green);
+    transform: translateY(-2px);
+}
+.brand-item:hover .brand-domain {
+    color: var(--color-text-primary);
+}
+
+/* --- HERO FLOATING CLIENT CARDS (INTERACTIVE BACKGROUND) --- */
+.hero-floating-client-card {
+    position: absolute;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 124, 0, 0.15);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 2;
+    pointer-events: auto;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    text-decoration: none;
+}
+.hero-floating-client-card:hover {
+    transform: translateY(-5px) scale(1.05) !important;
+    border-color: var(--color-brand-green);
+    box-shadow: 0 12px 40px rgba(0, 124, 0, 0.15);
+    background: rgba(255, 255, 255, 0.95);
+}
+.floating-card-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+.floating-card-info {
+    display: flex;
+    flex-direction: column;
+}
+.floating-card-name {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+.floating-card-desc {
+    font-size: 0.6rem;
+    color: var(--color-text-secondary);
+}
+.floating-card-tag {
+    font-size: 0.55rem;
+    padding: 2px 6px;
+    background: rgba(0, 124, 0, 0.08);
+    border: 1px solid rgba(0, 124, 0, 0.12);
+    border-radius: 4px;
+    color: var(--color-brand-green);
+    font-weight: 700;
+    margin-top: 2px;
+    align-self: flex-start;
+}
+
+/* Animations for floating cards in different sectors of the hero background */
+@keyframes floatSector1 {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(1.5deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+@keyframes floatSector2 {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(15px) rotate(-1deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+@keyframes floatSector3 {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(-1.5deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+@keyframes floatSector4 {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(12px) rotate(1.2deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.card-float-sector-1 {
+    top: 15%;
+    left: 45%;
+    animation: floatSector1 6s infinite ease-in-out;
+}
+.card-float-sector-2 {
+    bottom: 22%;
+    left: 3%;
+    animation: floatSector2 7s infinite ease-in-out 1s;
+}
+.card-float-sector-3 {
+    top: 55%;
+    right: 42%;
+    animation: floatSector3 8s infinite ease-in-out 2s;
+}
+.card-float-sector-4 {
+    bottom: 8%;
+    right: 45%;
+    animation: floatSector4 6.5s infinite ease-in-out 0.5s;
+}
+
+/* --- ADDITIONAL GLOWS AND MORPHING EFFECTS --- */
+.hero-bg-glow-3 {
+    top: 35%;
+    left: 35%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.07) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+    position: absolute;
+    filter: blur(100px);
+}
+
+@media (max-width: 768px) {
+    .hero-floating-client-card {
+        display: none !important;
+    }
+    .brand-bar-grid {
+        gap: 2rem;
+    }
+}
+
 
