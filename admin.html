@@ -311,6 +311,8 @@
                         select.className = 'status-select status-' + newStatus;
                     });
                 });
+            }
+
             function deleteLead(id) {
                 let database = JSON.parse(localStorage.getItem('abt_leads_database')) || [];
                 database = database.filter(lead => lead.id !== id);
