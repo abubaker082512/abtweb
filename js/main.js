@@ -16,7 +16,18 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.add('dark-theme');
     }
 
-    // --- 0. THEME SWITCHER INJECTION ---
+    // --- 0. THEME SWITCHER INJECTION & LOGO SWAP ---
+    const logoImgs = document.querySelectorAll('.logo-img, .admin-login-logo, .sidebar-logo');
+    function updateLogo(isDark) {
+        logoImgs.forEach(img => {
+            if (isDark) {
+                img.src = 'Branding/ABT%20IT%20NEW%20LOGO%20White.png';
+            } else {
+                img.src = 'Branding/ABT%20IT%20NEW%20LOGO.png';
+            }
+        });
+    }
+
     const mobileToggle = document.querySelector('.mobile-nav-toggle');
     const themeBtn = document.createElement('button');
     themeBtn.className = 'theme-toggle-btn';
@@ -47,11 +58,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
+    // Initial logo check
+    updateLogo(document.body.classList.contains('dark-theme'));
+    
     themeBtn.addEventListener('click', () => {
         document.body.classList.toggle('dark-theme');
         document.documentElement.classList.toggle('dark-theme');
         const isDark = document.body.classList.contains('dark-theme');
         localStorage.setItem('abt_theme', isDark ? 'dark' : 'light');
+        updateLogo(isDark);
     });
 
     // --- 0a. SCROLL PROGRESS BAR ---

@@ -33,6 +33,11 @@
     --color-grid-line: rgba(15, 23, 42, 0.012);
     --color-gradient-start: #0f172a;
     
+    /* Stats & Calculator Dynamic Colors */
+    --color-stats-bg-mid: rgba(248, 250, 252, 0.95);
+    --color-calc-section-bg: radial-gradient(120% 120% at 50% 0%, rgba(255,255,255,1) 0%, rgba(243,244,246,0.6) 100%);
+    --color-calc-card-bg: rgba(255, 255, 255, 0.75);
+    
     /* Transitions & Shadows */
     --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     --transition-quick: all 0.2s ease;
@@ -56,6 +61,10 @@ html.dark-theme, body.dark-theme {
     --color-header-bg-scrolled: rgba(9, 13, 22, 0.95);
     --color-grid-line: rgba(255, 255, 255, 0.02);
     --color-gradient-start: #f8fafc;
+    
+    --color-stats-bg-mid: rgba(9, 13, 22, 0.95);
+    --color-calc-section-bg: radial-gradient(120% 120% at 50% 0%, #0c1220 0%, #090d16 100%);
+    --color-calc-card-bg: rgba(17, 24, 39, 0.7);
     
     --shadow-neon: 0 8px 30px rgba(0, 179, 0, 0.15);
     --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
@@ -1144,7 +1153,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* --- STATS SECTION --- */
 .stats-section {
-    background: linear-gradient(180deg, rgba(0, 124, 0, 0.015) 0%, rgba(248, 250, 252, 0.95) 50%, rgba(0, 124, 0, 0.015) 100%);
+    background: linear-gradient(180deg, rgba(0, 124, 0, 0.015) 0%, var(--color-stats-bg-mid) 50%, rgba(0, 124, 0, 0.015) 100%);
     border-top: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
 }
@@ -3074,7 +3083,7 @@ h1, h2, h3, h4, h5, h6 {
 /* --- INTERACTIVE COST CALCULATOR SECTION --- */
 .cost-calculator-section {
     padding: 6rem 0;
-    background: radial-gradient(120% 120% at 50% 0%, rgba(255,255,255,1) 0%, rgba(243,244,246,0.6) 100%);
+    background: var(--color-calc-section-bg);
     border-top: 1px solid var(--color-border);
     position: relative;
     overflow: hidden;
@@ -3089,10 +3098,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 .calc-card {
     padding: 3rem;
-    background: rgba(255, 255, 255, 0.75);
+    background: var(--color-calc-card-bg);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(0, 124, 0, 0.15);
+    border: 1px solid var(--color-border);
     border-radius: 24px;
     box-shadow: 0 15px 45px rgba(0, 0, 0, 0.03);
 }
@@ -3170,7 +3179,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     gap: 12px;
     padding: 1.1rem 1.25rem;
-    background: #ffffff;
+    background: var(--color-bg-card);
     border: 1px solid var(--color-border);
     border-radius: 14px;
     cursor: pointer;
@@ -3179,11 +3188,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 .checkbox-card:hover {
     border-color: var(--color-brand-green);
-    background: rgba(0, 124, 0, 0.01);
+    background: rgba(0, 124, 0, 0.02);
 }
 .checkbox-card.checked {
     border-color: var(--color-brand-green);
-    background: rgba(0, 124, 0, 0.04);
+    background: rgba(0, 124, 0, 0.08);
     box-shadow: 0 8px 20px rgba(0, 124, 0, 0.05);
 }
 .checkbox-card input[type="checkbox"] {
@@ -3198,7 +3207,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #fff;
+    background: var(--color-bg-card);
     transition: var(--transition-smooth);
 }
 .checkbox-card input[type="checkbox"]:checked {
@@ -4438,6 +4447,43 @@ body.dark-theme select {
 body.dark-theme#loginGate,
 body.dark-theme .admin-login-wrapper {
     background: var(--color-bg-dark) !important;
+}
+
+/* Chatbot Widget dark theme overrides */
+body.dark-theme .chatbot-window {
+    background: var(--color-bg-card) !important;
+}
+body.dark-theme .chatbot-body {
+    background: rgba(0, 0, 0, 0.2) !important;
+}
+body.dark-theme .chatbot-msg.bot {
+    background: var(--color-bg-card) !important;
+    border-color: var(--color-border) !important;
+}
+body.dark-theme .chatbot-opt-btn {
+    background: rgba(17, 24, 39, 0.8) !important;
+    color: var(--color-neon-green) !important;
+    border-color: var(--color-brand-green) !important;
+}
+body.dark-theme .chatbot-opt-btn:hover {
+    background: var(--color-brand-green) !important;
+    color: #ffffff !important;
+}
+body.dark-theme .chatbot-input-area {
+    background: var(--color-bg-card) !important;
+    border-top-color: var(--color-border) !important;
+}
+body.dark-theme .chatbot-input {
+    background: rgba(9, 13, 22, 0.5) !important;
+    border-color: var(--color-border) !important;
+    color: var(--color-text-primary) !important;
+}
+body.dark-theme .chatbot-badge::after {
+    background: var(--color-bg-card) !important;
+}
+body.dark-theme .chatbot-badge {
+    background: var(--color-bg-card) !important;
+    color: var(--color-text-primary) !important;
 }
 
 
