@@ -598,4 +598,254 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
+
+    // --- 11. CONVERSATIONAL LEAD CATCHER CHATBOT WIDGET ---
+    (function initChatbot() {
+        // Create elements
+        const chatContainer = document.createElement('div');
+        chatContainer.className = 'chatbot-container';
+        chatContainer.innerHTML = `
+            <div class="chatbot-badge" id="chatBadge">👋 Need a project estimate?</div>
+            <button class="chatbot-trigger" id="chatTrigger" aria-label="Open chat assistant">
+                <div class="chatbot-pulse-ring"></div>
+                <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+            </button>
+            <div class="chatbot-window" id="chatWindow">
+                <div class="chatbot-header">
+                    <div class="chatbot-avatar"></div>
+                    <div class="chatbot-header-info">
+                        <div class="chatbot-header-name">ABT IT Coordinator</div>
+                        <div class="chatbot-header-status">Online • Instant Estimate</div>
+                    </div>
+                    <button class="chatbot-close-btn" id="chatCloseBtn">&times;</button>
+                </div>
+                <div class="chatbot-body" id="chatBody"></div>
+                <div class="chatbot-input-area">
+                    <input type="text" class="chatbot-input" id="chatInput" placeholder="Type name / email here..." disabled>
+                    <button class="chatbot-send-btn" id="chatSendBtn" disabled>
+                        <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(chatContainer);
+
+        const badge = document.getElementById('chatBadge');
+        const trigger = document.getElementById('chatTrigger');
+        const windowEl = document.getElementById('chatWindow');
+        const closeBtn = document.getElementById('chatCloseBtn');
+        const chatBody = document.getElementById('chatBody');
+        const chatInput = document.getElementById('chatInput');
+        const sendBtn = document.getElementById('chatSendBtn');
+
+        let chatState = 0; // 0: Greeting/Start, 1: Service Type selection, 2: Budget selection, 3: Name request, 4: Email request, 5: Completed
+        let userAnswers = {
+            service: '',
+            budget: '',
+            name: '',
+            email: ''
+        };
+
+        // Open/Close toggle
+        trigger.addEventListener('click', () => {
+            const isActive = windowEl.classList.contains('active');
+            if (isActive) {
+                closeChat();
+            } else {
+                openChat();
+            }
+        });
+
+        closeBtn.addEventListener('click', closeChat);
+
+        function openChat() {
+            windowEl.classList.add('active');
+            trigger.classList.add('active');
+            badge.classList.remove('visible');
+            sessionStorage.setItem('chatBotOpened', 'true');
+            if (chatBody.children.length === 0) {
+                startBotConversation();
+            }
+        }
+
+        function closeChat() {
+            windowEl.classList.remove('active');
+            trigger.classList.remove('active');
+            sessionStorage.setItem('chatBotDismissed', 'true');
+        }
+
+        // Auto-catcher behaviors
+        setTimeout(() => {
+            // Show badge notification after 3 seconds if never opened
+            if (!sessionStorage.getItem('chatBotOpened')) {
+                badge.classList.add('visible');
+            }
+        }, 3000);
+
+        setTimeout(() => {
+            // Automatically open chat widget after 7 seconds if never opened and not dismissed
+            if (!sessionStorage.getItem('chatBotOpened') && !sessionStorage.getItem('chatBotDismissed')) {
+                openChat();
+            }
+        }, 7000);
+
+        // Chat logic
+        function appendBotMessage(text) {
+            const msg = document.createElement('div');
+            msg.className = 'chatbot-msg bot';
+            msg.innerText = text;
+            chatBody.appendChild(msg);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function appendUserMessage(text) {
+            const msg = document.createElement('div');
+            msg.className = 'chatbot-msg user';
+            msg.innerText = text;
+            chatBody.appendChild(msg);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function appendOptions(options, callback) {
+            const container = document.createElement('div');
+            container.className = 'chatbot-options-container';
+            options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'chatbot-opt-btn';
+                btn.innerText = opt;
+                btn.addEventListener('click', () => {
+                    container.remove();
+                    callback(opt);
+                });
+                container.appendChild(btn);
+            });
+            chatBody.appendChild(container);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function startBotConversation() {
+            appendBotMessage("Hello! 👋 Welcome to ABT IT Innovations.");
+            setTimeout(() => {
+                appendBotMessage("Would you like a custom proposal and estimate for your software project? It takes less than 60 seconds!");
+                setTimeout(() => {
+                    appendOptions(["Yes, let's start!", "No, thank you."], (choice) => {
+                        appendUserMessage(choice);
+                        if (choice === "Yes, let's start!") {
+                            chatState = 1;
+                            setTimeout(askServiceType, 500);
+                        } else {
+                            appendBotMessage("No problem! Let me know if you need anything. Feel free to explore our services.");
+                        }
+                    });
+                }, 600);
+            }, 600);
+        }
+
+        function askServiceType() {
+            appendBotMessage("Great! What type of software system are we building?");
+            setTimeout(() => {
+                const services = ["Custom Web App", "Mobile App (iOS/Android)", "AI & SaaS Systems", "Shopify / E-commerce", "Enterprise ERP / CRM"];
+                appendOptions(services, (choice) => {
+                    appendUserMessage(choice);
+                    userAnswers.service = choice;
+                    chatState = 2;
+                    setTimeout(askBudget, 500);
+                });
+            }, 500);
+        }
+
+        function askBudget() {
+            appendBotMessage("Perfect. What is your estimated budget scope for this project?");
+            setTimeout(() => {
+                const budgetsList = ["Under $5,000 USD", "$5,000 - $10,000", "$10,000 - $25,000", "Enterprise ($25,000+)"];
+                appendOptions(budgetsList, (choice) => {
+                    appendUserMessage(choice);
+                    userAnswers.budget = choice;
+                    chatState = 3;
+                    setTimeout(askName, 500);
+                });
+            }, 500);
+        }
+
+        // Enable/Disable keyboard inputs
+        function enableInput(placeholder) {
+            chatInput.disabled = false;
+            sendBtn.disabled = false;
+            chatInput.placeholder = placeholder;
+            chatInput.focus();
+        }
+
+        function disableInput() {
+            chatInput.value = '';
+            chatInput.disabled = true;
+            sendBtn.disabled = true;
+            chatInput.placeholder = 'Type name / email here...';
+        }
+
+        function askName() {
+            appendBotMessage("Understood! What is your full name?");
+            setTimeout(() => {
+                enableInput("Enter your name...");
+            }, 400);
+        }
+
+        function handleUserInput() {
+            const val = chatInput.value.trim();
+            if (!val) return;
+
+            if (chatState === 3) {
+                appendUserMessage(val);
+                userAnswers.name = val;
+                disableInput();
+                chatState = 4;
+                setTimeout(() => {
+                    appendBotMessage(`Nice to meet you, ${val}! And what is your business email address?`);
+                    setTimeout(() => {
+                        enableInput("Enter your email address...");
+                    }, 400);
+                }, 600);
+            } else if (chatState === 4) {
+                if (validateEmail(val)) {
+                    appendUserMessage(val);
+                    userAnswers.email = val;
+                    disableInput();
+                    chatState = 5;
+                    setTimeout(completeLeadCapture, 600);
+                } else {
+                    appendBotMessage("Oops! That email address doesn't look valid. Please enter a valid email address (e.g. name@company.com):");
+                }
+            }
+        }
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        function completeLeadCapture() {
+            appendBotMessage(`Thank you, ${userAnswers.name}! 🎉`);
+            setTimeout(() => {
+                appendBotMessage(`I've registered your interest for a ${userAnswers.service} within the budget of ${userAnswers.budget}.`);
+                setTimeout(() => {
+                    appendBotMessage(`Our tech coordinator based in Islamabad is compiling your proposal and will contact you at ${userAnswers.email} within 24 hours.`);
+                    
+                    // Log to console (simulating server log receipt)
+                    console.log('--- CONVERSATIONAL LEAD CATCHER SUBMISSION ---');
+                    console.log(`Name: ${userAnswers.name}`);
+                    console.log(`Email: ${userAnswers.email}`);
+                    console.log(`System Type: ${userAnswers.service}`);
+                    console.log(`Budget Range: ${userAnswers.budget}`);
+                    console.log('----------------------------------------------');
+                }, 800);
+            }, 600);
+        }
+
+        // Keyboard enter and click event bindings
+        sendBtn.addEventListener('click', handleUserInput);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                handleUserInput();
+            }
+        });
+    })();
 });
