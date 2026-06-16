@@ -138,25 +138,30 @@
                 </div>
                 
                 <div class="pillar-visual-wrapper">
-                    <div class="mockup-window ide-panel" style="width: 230px; height: 180px; position: absolute; left: 20px; top: 30px; z-index: 5;">
-                        <div class="window-header">
+                    <!-- Expanded IDE code editor window -->
+                    <div class="mockup-window ide-panel" style="width: 100%; max-width: 335px; height: 260px; z-index: 5; background: #0f172a; border-radius: 14px; border: 1px solid rgba(255,255,255,0.06); box-shadow: var(--shadow-glass); display: flex; flex-direction: column; overflow: hidden; animation: float 6s infinite ease-in-out;">
+                        <div class="window-header" style="padding: 0.8rem; background: var(--color-bg-dark); display: flex; align-items: center; gap: 6px;">
                             <span class="window-dot dot-close"></span>
                             <span class="window-dot dot-minimize"></span>
                             <span class="window-dot dot-expand"></span>
-                            <span class="window-title">api-router.ts</span>
+                            <span class="window-title" style="color: rgba(255,255,255,0.8); font-size: 0.7rem; font-family: monospace;">api-router.ts</span>
                         </div>
-                        <div class="window-body">
-                            <pre><code><span class="code-keyword">import</span> { NextRequest } <span class="code-keyword">from</span> <span class="code-string">"next"</span>;
-<span class="code-keyword">export async function</span> GET() {
-  <span class="code-keyword">return</span> Response.json({ status: <span class="code-string">"Live"</span> });
+                        <div class="window-body" style="padding: 1.2rem; flex-grow: 1; font-family: monospace; font-size: 0.75rem; color: #38bdf8; background: #0f172a; text-align: left;">
+                            <pre><code><span class="code-keyword" style="color: #f43f5e;">import</span> { NextRequest } <span style="color: #f43f5e;">from</span> <span style="color: #10b981;">"next"</span>;
+<span class="code-keyword" style="color: #f43f5e;">import</span> { db } <span style="color: #f43f5e;">from</span> <span style="color: #10b981;">"@lib/database"</span>;
+
+<span class="code-keyword" style="color: #f43f5e;">export async function</span> POST(req) {
+  <span class="code-keyword" style="color: #f43f5e;">const</span> data = <span class="code-keyword" style="color: #f43f5e;">await</span> req.json();
+  <span class="code-keyword" style="color: #f43f5e;">const</span> res = <span class="code-keyword" style="color: #f43f5e;">await</span> db.sync(data);
+  <span class="code-keyword" style="color: #f43f5e;">return</span> Response.json({ ok: <span class="code-keyword" style="color: #f43f5e;">true</span> });
 }</code></pre>
                         </div>
                     </div>
-                    <div class="floating-metric-card" style="position: absolute; right: 20px; bottom: 40px; z-index: 10;">
+                    <div class="floating-metric-card" style="position: absolute; right: 20px; bottom: 30px; z-index: 10;">
                         <div class="pulse-dot green"></div>
                         <div>
                             <h4>Deploy Successful</h4>
-                            <p>Vercel Status: Active</p>
+                            <p>Status: Active (0ms lag)</p>
                         </div>
                     </div>
                 </div>
@@ -200,27 +205,28 @@
                 </div>
                 
                 <div class="pillar-visual-wrapper">
-                    <div class="mockup-window mobile-panel" style="position: absolute; width: 190px; height: 260px; z-index: 5;">
-                        <div class="mobile-screen">
-                            <div class="mobile-header">
+                    <!-- Tall Smartphone Mockup centered and balanced -->
+                    <div class="mockup-window mobile-panel" style="width: 100%; max-width: 220px; height: 350px; z-index: 5; border: 3px solid var(--color-brand-charcoal); border-radius: 36px; padding: 6px; background: #000; box-shadow: 0 15px 35px rgba(0,0,0,0.12); display: flex; flex-direction: column; overflow: hidden; animation: float 6.5s infinite ease-in-out;">
+                        <div class="mobile-screen" style="border-radius: 30px; overflow: hidden; background: #fff; height: 100%; display: flex; flex-direction: column;">
+                            <div class="mobile-header" style="background: #f8fafc; padding: 6px 12px; display: flex; justify-content: space-between; font-size: 0.65rem; font-weight: 700; border-bottom: 1px solid var(--color-border);">
                                 <span class="mobile-time">09:41</span>
                                 <span class="mobile-battery">🔋 100%</span>
                             </div>
-                            <div class="mobile-content">
-                                <div class="mobile-avatar-wrap">
-                                    <div class="mobile-avatar" style="background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);"></div>
+                            <div class="mobile-content" style="padding: 12px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                                <div class="mobile-avatar-wrap" style="display: flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--color-border); padding-bottom: 8px;">
+                                    <div class="mobile-avatar" style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--color-brand-green) 0%, var(--color-neon-green) 100%);"></div>
                                     <div>
-                                        <div class="mobile-name">Royal Umrah App</div>
-                                        <div class="mobile-status">React Native Dev</div>
+                                        <div class="mobile-name" style="font-weight: 800; font-size: 0.75rem;">Ozo Trips App</div>
+                                        <div class="mobile-status" style="font-size: 0.6rem; color: var(--color-text-muted);">React Native Active</div>
                                     </div>
                                 </div>
-                                <div class="mobile-chart">
-                                    <div class="chart-bar" style="height: 50%"></div>
-                                    <div class="chart-bar" style="height: 85%"></div>
-                                    <div class="chart-bar" style="height: 70%"></div>
-                                    <div class="chart-bar" style="height: 95%"></div>
+                                <div class="mobile-chart" style="display: flex; gap: 6px; align-items: flex-end; justify-content: center; height: 65px; margin: 12px 0;">
+                                    <div class="chart-bar" style="height: 50%; width: 14px; background: var(--color-brand-green); border-radius: 3px;"></div>
+                                    <div class="chart-bar" style="height: 85%; width: 14px; background: var(--color-neon-green); border-radius: 3px;"></div>
+                                    <div class="chart-bar" style="height: 70%; width: 14px; background: var(--color-brand-charcoal); border-radius: 3px;"></div>
+                                    <div class="chart-bar" style="height: 95%; width: 14px; background: #3b82f6; border-radius: 3px;"></div>
                                 </div>
-                                <div class="mobile-label" style="background: rgba(168, 85, 247, 0.1); border-color: rgba(168, 85, 247, 0.3); color: #a855f7;">Build Complete</div>
+                                <div class="mobile-label" style="background: rgba(168, 85, 247, 0.08); border: 1px solid rgba(168, 85, 247, 0.2); color: #a855f7; font-size: 0.65rem; font-weight: 700; text-align: center; padding: 4px; border-radius: 6px;">Build Production OK</div>
                             </div>
                         </div>
                     </div>
@@ -231,49 +237,49 @@
             <div class="pillar-card animate-fade-in" id="ai-saas">
                 <div class="pillar-content">
                     <span class="section-tag" style="background: rgba(0,124,0,0.08);">INTELLIGENCE</span>
-                    <h3>AI & SaaS Product Development</h3>
-                    <p>We build future-facing intelligent SaaS products utilizing Large Language Models (LLMs), natural language processing, predictive data metrics, and automated decision-making. We manage integration from secure API endpoints down to payment engines and subscription databases.</p>
+                    <h3>AI Systems & SaaS Products</h3>
+                    <p>We build scalable artificial intelligence architectures and SaaS platforms. By integrating large language models (LLMs) with custom backend databases and agent flows, we automate customer support pipelines, construct detailed analytics reports, and streamline business processes.</p>
                     
                     <ul class="deliverables-checklist">
                         <li class="deliverable-item">
                             <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            <span>OpenAI, Anthropic & Llama Tuning</span>
+                            <span>OpenAI API & LLM Integrations</span>
                         </li>
                         <li class="deliverable-item">
                             <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            <span>LangChain & Vector Database Pipelines</span>
+                            <span>Custom Chatbots & Assistive Agents</span>
                         </li>
                         <li class="deliverable-item">
                             <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            <span>Stripe Global Subscription Engines</span>
+                            <span>Vector Databases (Pinecone / pgvector)</span>
                         </li>
                         <li class="deliverable-item">
                             <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            <span>Multi-tenant SaaS Database Partitioning</span>
+                            <span>Automated Workflows & RAG Pipelines</span>
                         </li>
                         <li class="deliverable-item">
                             <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            <span>Interactive Operations Dashboards</span>
+                            <span>Stripe Subscription Management</span>
                         </li>
                         <li class="deliverable-item">
                             <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            <span>Data Protection & Privacy Safeguards</span>
+                            <span>Multi-tenant SaaS Billing Dashboard</span>
                         </li>
                     </ul>
                     
-                    <a href="contact.html" class="btn btn-glow-outline">Plan Your AI Product</a>
+                    <a href="contact.html" class="btn btn-glow-outline">Develop Custom AI/SaaS</a>
                 </div>
                 
                 <div class="pillar-visual-wrapper">
-                    <div class="chat-interface">
-                        <div class="chat-header">
-                            <div class="active-dot"></div>
-                            <span>AI Assistant Agent</span>
+                    <div class="chat-interface" style="width: 100%; max-width: 350px; height: 300px; display: flex; flex-direction: column;">
+                        <div class="chat-header" style="background: var(--color-brand-charcoal); padding: 0.8rem 1.2rem; display: flex; align-items: center; gap: 8px;">
+                            <div class="active-dot" style="width: 8px; height: 8px; background: var(--color-neon-green); border-radius: 50%; box-shadow: 0 0 8px var(--color-neon-green);"></div>
+                            <span style="font-size: 0.75rem; font-weight: 700; color: #ffffff;">AI Assistant Agent</span>
                         </div>
-                        <div class="chat-body">
-                            <div class="chat-msg bot">Hi, how can I automate your SaaS pipelines today?</div>
-                            <div class="chat-msg user">Write a script to sync databases.</div>
-                            <div class="chat-msg bot">Initializing LangChain and Vector DB pipeline... Done.</div>
+                        <div class="chat-body" style="padding: 1rem; flex-grow: 1; display: flex; flex-direction: column; gap: 10px; font-size: 0.7rem; background: #ffffff;">
+                            <div class="chat-msg bot" style="align-self: flex-start; background: rgba(0, 124, 0, 0.05); border: 1px solid rgba(0, 124, 0, 0.12); color: var(--color-text-primary); padding: 6px 10px; border-radius: 8px; max-width: 85%;">Hi! How can I automate your workflows today?</div>
+                            <div class="chat-msg user" style="align-self: flex-end; background: var(--color-brand-green); color: #ffffff; padding: 6px 10px; border-radius: 8px; max-width: 85%;">Sync my WooCommerce sales data to custom CRM.</div>
+                            <div class="chat-msg bot" style="align-self: flex-start; background: rgba(0, 124, 0, 0.05); border: 1px solid rgba(0, 124, 0, 0.12); color: var(--color-text-primary); padding: 6px 10px; border-radius: 8px; max-width: 85%;">LangChain RAG Node starting... Connected to Shopify/Woo API. Syncing 58 records.</div>
                         </div>
                     </div>
                 </div>
@@ -317,17 +323,49 @@
                 </div>
                 
                 <div class="pillar-visual-wrapper">
-                    <div class="crm-funnel" style="width: 230px;">
-                        <div class="crm-funnel-title">Organic Traffic Metrics</div>
-                        <svg style="height: 80px; width: 100%; overflow: visible;" viewBox="0 0 100 50">
-                            <path d="M0,45 Q20,10 40,30 T80,10 T100,5" fill="none" stroke="var(--color-neon-green)" stroke-width="3"/>
-                            <circle cx="100" cy="5" r="4" fill="var(--color-neon-green)"/>
-                        </svg>
-                        <div style="font-size: 0.75rem; display: flex; justify-content: space-between; font-weight: 700; margin-top: 10px;">
-                            <span>SEO Score: 99%</span>
-                            <span style="color: var(--color-neon-green);">+310% Growth</span>
+                    <div class="mockup-app-window seo-panel" style="width: 100%; max-width: 350px; height: 300px; z-index: 5; background: #ffffff; border-radius: 14px; border: 1px solid var(--color-border); box-shadow: var(--shadow-glass); display: flex; flex-direction: column; overflow: hidden; animation: float 6s infinite ease-in-out;">
+                        <div class="window-header" style="padding: 0.8rem; background: var(--color-brand-charcoal); display: flex; align-items: center; gap: 6px;">
+                            <span class="window-dot dot-close" style="width: 8px; height: 8px; border-radius: 50%; background: #ff5f56; display: inline-block;"></span>
+                            <span class="window-dot dot-minimize" style="width: 8px; height: 8px; border-radius: 50%; background: #ffbd2e; display: inline-block;"></span>
+                            <span class="window-dot dot-expand" style="width: 8px; height: 8px; border-radius: 50%; background: #27c93f; display: inline-block;"></span>
+                            <span class="window-title" style="color: rgba(255,255,255,0.8); font-size: 0.7rem; font-family: monospace;">seo-dashboard.html</span>
                         </div>
-                        <div style="font-size: 0.65rem; background: rgba(0, 124, 0, 0.08); padding: 6px; margin-top: 5px; border-radius: 6px; text-align: center; font-weight: 700; color: var(--color-brand-green);">Ranked #1 for "Umrah Packages UK"</div>
+                        <div class="window-body" style="padding: 1.2rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff; text-align: left;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-size: 0.8rem; font-weight: 800; color: var(--color-text-primary);">Google Search Rankings</span>
+                                <span style="font-size: 0.65rem; background: rgba(0, 124, 0, 0.08); padding: 2px 8px; border-radius: 100px; color: var(--color-brand-green); font-weight: 700;">Active Audit</span>
+                            </div>
+                            <div style="display: flex; gap: 12px; align-items: center; margin: 8px 0;">
+                                <div style="flex-grow: 1;">
+                                    <div style="font-size: 0.6rem; color: var(--color-text-muted);">Avg. Click-Through Rate</div>
+                                    <div style="font-size: 1.25rem; font-weight: 900; color: var(--color-text-primary);">18.4% <span style="font-size: 0.75rem; color: var(--color-brand-green); font-weight: 700;">↑ 4.2%</span></div>
+                                </div>
+                                <div style="width: 90px; height: 40px;">
+                                    <svg style="height: 100%; width: 100%; overflow: visible;" viewBox="0 0 100 40">
+                                        <path d="M0,38 Q25,10 50,30 T100,5" fill="none" stroke="var(--color-brand-green)" stroke-width="2.5"/>
+                                        <circle cx="100" cy="5" r="3" fill="var(--color-brand-green)"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div style="font-size: 0.7rem; border-top: 1px solid var(--color-border); padding-top: 8px;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                    <span style="color: var(--color-text-secondary);">1. "Umrah Packages UK"</span>
+                                    <span style="font-weight: 700; color: var(--color-brand-green);">Rank #1</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span style="color: var(--color-text-secondary);">2. "Bespoke Leather Shoes"</span>
+                                    <span style="font-weight: 700; color: var(--color-brand-green);">Rank #2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Floating Backlink Badge -->
+                    <div class="floating-metric-card" style="position: absolute; right: 20px; bottom: 25px; z-index: 10; padding: 10px 14px; background: rgba(255,255,255,0.9); border: 1px solid var(--color-border); border-radius: 12px; display: flex; align-items: center; gap: 8px; box-shadow: 0 8px 20px rgba(0,0,0,0.06);">
+                        <div class="pulse-dot green" style="width: 8px; height: 8px; background: #10b981; border-radius: 50%;"></div>
+                        <div style="text-align: left;">
+                            <h4 style="margin: 0; font-size: 0.75rem; font-weight: 800;">High-DA Backlinks</h4>
+                            <p style="margin: 0; font-size: 0.65rem; color: var(--color-text-muted);">DA 70+ Domain Authority</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -366,20 +404,50 @@
                 </div>
                 
                 <div class="pillar-visual-wrapper">
-                    <div class="canvas-designer">
+                    <div class="canvas-designer" style="max-width: 360px; height: 310px;">
                         <div class="canvas-sidebar">
                             <div class="canvas-tool active"><svg viewBox="0 0 24 24"><path d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 0 2.11-.81 2.62-1.3 .44-.43 1.02-.7 1.66-.7h.05c1.66 0 2.99-1.34 2.99-3s-1.33-3-2.99-3zm12-9c-.75 0-1.42.3-1.92.8l-12 12c-.5.5-.8 1.17-.8 1.92 0 1.66 1.34 3 3 3 .75 0 1.42-.3 1.92-.8l12-12c.5-.5.8-1.17.8-1.92 0-1.66-1.34-3-3-3z"/></svg></div>
                             <div class="canvas-tool"><svg viewBox="0 0 24 24"><path d="M3 3v18h18V3H3zm16 16H5V5h14v14z"/></svg></div>
                             <div class="canvas-tool"><svg viewBox="0 0 24 24"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg></div>
+                            <div class="canvas-tool" style="margin-top: auto;"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
                         </div>
-                        <div class="canvas-workspace">
-                            <div class="canvas-element">
-                                <div style="position: absolute; top: -20px; left: 0; font-size: 0.6rem; background: var(--color-brand-green); color: #fff; padding: 2px 6px; border-radius: 4px; font-weight: 600;">Hero Button</div>
+                        <div class="canvas-workspace" style="margin-right: 70px;">
+                            <div class="canvas-element" style="width: 160px; height: 160px;">
+                                <div style="position: absolute; top: -20px; left: 0; font-size: 0.6rem; background: var(--color-brand-green); color: #fff; padding: 2px 6px; border-radius: 4px; font-weight: 700;">Hero Button</div>
                                 <div class="canvas-handle"></div>
+                                <div style="position: absolute; bottom: 12px; left: 12px; right: 12px; font-size: 0.65rem; font-weight: 500; color: var(--color-text-secondary); text-align: left;">
+                                    <div style="width: 100%; height: 6px; background: var(--color-border); border-radius: 2px; margin-bottom: 6px;"></div>
+                                    <div style="width: 60%; height: 6px; background: var(--color-border); border-radius: 2px;"></div>
+                                </div>
                             </div>
-                            <div class="canvas-cursor">
+                            <!-- Cursor 1 (Blue UX Designer) -->
+                            <div class="canvas-cursor" style="top: 35%; left: 45%;">
                                 <svg viewBox="0 0 24 24"><path d="M7 2l12 11.2-5.8.8 4 7.2-2.4 1.4-4-7.2-3.8 3.8z"/></svg>
-                                <span class="canvas-cursor-label">UX Designer</span>
+                                <span class="canvas-cursor-label" style="background: #3b82f6;">UX Designer</span>
+                            </div>
+                            <!-- Cursor 2 (Green Client) -->
+                            <div class="canvas-cursor" style="top: 70%; left: 75%;">
+                                <svg viewBox="0 0 24 24" style="fill: var(--color-brand-green);"><path d="M7 2l12 11.2-5.8.8 4 7.2-2.4 1.4-4-7.2-3.8 3.8z"/></svg>
+                                <span class="canvas-cursor-label" style="background: var(--color-brand-green);">Client: Approved</span>
+                            </div>
+                        </div>
+                        <!-- Properties Sidebar (Inspector) -->
+                        <div style="position: absolute; top: 0; right: 0; width: 70px; height: 100%; background: #ffffff; border-left: 1px solid var(--color-border); padding: 0.6rem; display: flex; flex-direction: column; gap: 10px; font-size: 0.55rem; color: var(--color-text-secondary); text-align: left;">
+                            <div style="font-weight: 800; border-bottom: 1px solid var(--color-border); padding-bottom: 4px; font-size: 0.6rem;">Inspector</div>
+                            <div>
+                                <span style="display: block; color: var(--color-text-muted); font-size: 0.5rem;">ALIGN</span>
+                                <div style="display: flex; gap: 4px; margin-top: 4px;">
+                                    <div style="width: 12px; height: 12px; background: #f1f5f9; border: 1px solid var(--color-border); border-radius: 2px;"></div>
+                                    <div style="width: 12px; height: 12px; background: #f1f5f9; border: 1px solid var(--color-border); border-radius: 2px;"></div>
+                                    <div style="width: 12px; height: 12px; background: #f1f5f9; border: 1px solid var(--color-border); border-radius: 2px;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <span style="display: block; color: var(--color-text-muted); font-size: 0.5rem;">FILL</span>
+                                <div style="display: flex; align-items: center; gap: 4px; margin-top: 4px;">
+                                    <div style="width: 10px; height: 10px; background: var(--color-brand-green); border-radius: 2px;"></div>
+                                    <span>#007C00</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -419,17 +487,29 @@
                     <a href="contact.html" class="btn btn-glow-outline">Optimize Your Infrastructure</a>
                 </div>
                 
-                <div class="pillar-visual-wrapper" style="flex-direction: column; gap: 10px;">
-                    <div class="server-logs">
-                        <div class="server-log-line success">[OK] Container built successfully (ID: f0921)</div>
-                        <div class="server-log-line">[RUN] Staging deploy on AWS cluster...</div>
-                        <div class="server-log-line success">[OK] Health checks passing (100% stable)</div>
-                        <div class="server-log-line success">[SSL] Certificate mapping active</div>
+                <div class="pillar-visual-wrapper" style="flex-direction: column; gap: 12px; padding: 2rem;">
+                    <!-- Cloud Logs Console -->
+                    <div class="server-logs" style="width: 100%; max-width: 350px; height: 170px; margin: 0; box-shadow: var(--shadow-glass);">
+                        <div class="server-log-line success" style="color: #34d399;">[OK] Docker Build complete (abt-api-prod:v2.4)</div>
+                        <div class="server-log-line" style="color: #38bdf8;">[RUN] Kubernetes rolling update initiated</div>
+                        <div class="server-log-line success" style="color: #34d399;">[OK] Nodes replica sync (3/3 running)</div>
+                        <div class="server-log-line success" style="color: #34d399;">[OK] CDN caching refreshed globally</div>
+                        <div class="server-log-line" style="color: #a855f7;">[SVC] SSL auto-renew: OK</div>
                     </div>
-                    <div class="node-map">
-                        <div class="node-circle active">DNS</div>
-                        <div class="node-circle active">AWS</div>
-                        <div class="node-circle active">CDN</div>
+                    <!-- Live Infrastructure Topology Map -->
+                    <div class="node-map" style="width: 100%; max-width: 350px; height: 120px; margin: 0; display: flex; justify-content: space-around; align-items: center; background: #ffffff; border: 1px solid var(--color-border); border-radius: 14px; box-shadow: var(--shadow-glass);">
+                        <div style="text-align: center;">
+                            <div class="node-circle active" style="width: 44px; height: 44px; border-radius: 50%; border: 2.5px solid var(--color-neon-green); display: flex; justify-content: center; align-items: center; background: rgba(0, 124, 0, 0.05); color: var(--color-brand-green); font-size: 0.65rem; font-weight: 800; box-shadow: 0 0 12px rgba(0, 179, 0, 0.25); transition: var(--transition-smooth);">Cloudflare</div>
+                            <span style="font-size: 0.55rem; color: var(--color-text-muted); display: block; margin-top: 4px;">Edge CDN</span>
+                        </div>
+                        <div style="text-align: center;">
+                            <div class="node-circle active" style="width: 44px; height: 44px; border-radius: 50%; border: 2.5px solid var(--color-neon-green); display: flex; justify-content: center; align-items: center; background: rgba(0, 124, 0, 0.05); color: var(--color-brand-green); font-size: 0.65rem; font-weight: 800; box-shadow: 0 0 12px rgba(0, 179, 0, 0.25); transition: var(--transition-smooth);">AWS EKS</div>
+                            <span style="font-size: 0.55rem; color: var(--color-text-muted); display: block; margin-top: 4px;">App Pods</span>
+                        </div>
+                        <div style="text-align: center;">
+                            <div class="node-circle active" style="width: 44px; height: 44px; border-radius: 50%; border: 2.5px solid var(--color-neon-green); display: flex; justify-content: center; align-items: center; background: rgba(0, 124, 0, 0.05); color: var(--color-brand-green); font-size: 0.65rem; font-weight: 800; box-shadow: 0 0 12px rgba(0, 179, 0, 0.25); transition: var(--transition-smooth);">RDS PG</div>
+                            <span style="font-size: 0.55rem; color: var(--color-text-muted); display: block; margin-top: 4px;">Multi-AZ DB</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -468,12 +548,52 @@
                 </div>
                 
                 <div class="pillar-visual-wrapper">
-                    <div class="crm-funnel" style="width: 230px;">
-                        <div class="crm-funnel-title">Lead Management Pipelines</div>
-                        <div class="funnel-stage funnel-stage-1"><span>New Leads</span><span>142</span></div>
-                        <div class="funnel-stage funnel-stage-2"><span>Contacted</span><span>98</span></div>
-                        <div class="funnel-stage funnel-stage-3"><span>Proposals</span><span>54</span></div>
-                        <div class="funnel-stage funnel-stage-4"><span>Deals Won</span><span>38</span></div>
+                    <div class="mockup-app-window crm-panel" style="width: 100%; max-width: 350px; height: 300px; z-index: 5; background: #ffffff; border-radius: 14px; border: 1px solid var(--color-border); box-shadow: var(--shadow-glass); display: flex; flex-direction: column; overflow: hidden; animation: float 6s infinite ease-in-out;">
+                        <div class="window-header" style="padding: 0.8rem; background: var(--color-brand-charcoal); display: flex; align-items: center; gap: 6px;">
+                            <span class="window-dot dot-close" style="width: 8px; height: 8px; border-radius: 50%; background: #ff5f56; display: inline-block;"></span>
+                            <span class="window-dot dot-minimize" style="width: 8px; height: 8px; border-radius: 50%; background: #ffbd2e; display: inline-block;"></span>
+                            <span class="window-dot dot-expand" style="width: 8px; height: 8px; border-radius: 50%; background: #27c93f; display: inline-block;"></span>
+                            <span class="window-title" style="color: rgba(255,255,255,0.8); font-size: 0.7rem; font-family: monospace;">crm-leads-pipeline.php</span>
+                        </div>
+                        <div class="window-body" style="padding: 1rem 1.2rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff; text-align: left;">
+                            <div style="font-size: 0.8rem; font-weight: 800; color: var(--color-text-primary); border-bottom: 1px solid var(--color-border); padding-bottom: 6px;">Lead Conversion Funnel</div>
+                            
+                            <div style="display: flex; flex-direction: column; gap: 8px; margin: 10px 0; flex-grow: 1; justify-content: center;">
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <span style="font-size: 0.65rem; width: 60px; color: var(--color-text-secondary); font-weight: 600;">Incoming</span>
+                                    <div style="flex-grow: 1; height: 18px; background: rgba(59, 130, 246, 0.15); border-radius: 4px; overflow: hidden; position: relative;">
+                                        <div style="width: 100%; height: 100%; background: #3b82f6;"></div>
+                                        <span style="position: absolute; right: 8px; top: 2px; font-size: 0.55rem; font-weight: 800; color: #fff;">180 Leads</span>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <span style="font-size: 0.65rem; width: 60px; color: var(--color-text-secondary); font-weight: 600;">Qualified</span>
+                                    <div style="flex-grow: 1; height: 18px; background: rgba(99, 102, 241, 0.15); border-radius: 4px; overflow: hidden; position: relative;">
+                                        <div style="width: 75%; height: 100%; background: #6366f1;"></div>
+                                        <span style="position: absolute; right: 8px; top: 2px; font-size: 0.55rem; font-weight: 800; color: #6366f1;">135 Qual</span>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <span style="font-size: 0.65rem; width: 60px; color: var(--color-text-secondary); font-weight: 600;">Proposal</span>
+                                    <div style="flex-grow: 1; height: 18px; background: rgba(168, 85, 247, 0.15); border-radius: 4px; overflow: hidden; position: relative;">
+                                        <div style="width: 50%; height: 100%; background: #a855f7;"></div>
+                                        <span style="position: absolute; right: 8px; top: 2px; font-size: 0.55rem; font-weight: 800; color: #a855f7;">90 Sent</span>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <span style="font-size: 0.65rem; width: 60px; color: var(--color-text-secondary); font-weight: 600;">Won Deals</span>
+                                    <div style="flex-grow: 1; height: 18px; background: rgba(0, 124, 0, 0.15); border-radius: 4px; overflow: hidden; position: relative;">
+                                        <div style="width: 32%; height: 100%; background: var(--color-brand-green);"></div>
+                                        <span style="position: absolute; right: 8px; top: 2px; font-size: 0.55rem; font-weight: 800; color: var(--color-brand-green);">58 Won</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="border-top: 1px solid var(--color-border); padding-top: 8px; display: flex; justify-content: space-between; align-items: center; font-size: 0.65rem; font-weight: 700;">
+                                <span style="color: var(--color-text-secondary);">Conversion Rate:</span>
+                                <span style="color: var(--color-brand-green); font-size: 0.75rem;">32.2% (Top 5% Industry)</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -516,25 +636,38 @@
                 </div>
                 
                 <div class="pillar-visual-wrapper">
-                    <div class="shipping-tracker" style="width: 240px;">
-                        <div style="font-weight: 700; font-size: 0.8rem; margin-bottom: 12px; color: var(--color-brand-charcoal); border-bottom: 1px solid var(--color-border); padding-bottom: 6px;">Ledger Invoices System</div>
-                        <div style="font-size: 0.7rem; display: flex; flex-direction: column; gap: 8px;">
-                            <div style="display: flex; justify-content: space-between;">
-                                <span>INV-2026-081</span>
-                                <span style="font-weight: 700; color: #10b981;">$14,250 Paid</span>
-                            </div>
-                            <div style="display: flex; justify-content: space-between;">
-                                <span>INV-2026-082</span>
-                                <span style="font-weight: 700; color: #10b981;">$8,900 Paid</span>
-                            </div>
-                            <div style="display: flex; justify-content: space-between;">
-                                <span>INV-2026-083</span>
-                                <span style="font-weight: 700; color: #f59e0b;">$4,120 Pending</span>
-                            </div>
+                    <div class="mockup-app-window erp-panel" style="width: 100%; max-width: 350px; height: 300px; z-index: 5; background: #ffffff; border-radius: 14px; border: 1px solid var(--color-border); box-shadow: var(--shadow-glass); display: flex; flex-direction: column; overflow: hidden; animation: float 5.5s infinite ease-in-out;">
+                        <div class="window-header" style="padding: 0.8rem; background: var(--color-brand-charcoal); display: flex; align-items: center; gap: 6px;">
+                            <span class="window-dot dot-close" style="width: 8px; height: 8px; border-radius: 50%; background: #ff5f56; display: inline-block;"></span>
+                            <span class="window-dot dot-minimize" style="width: 8px; height: 8px; border-radius: 50%; background: #ffbd2e; display: inline-block;"></span>
+                            <span class="window-dot dot-expand" style="width: 8px; height: 8px; border-radius: 50%; background: #27c93f; display: inline-block;"></span>
+                            <span class="window-title" style="color: rgba(255,255,255,0.8); font-size: 0.7rem; font-family: monospace;">erp-ledger-flow.json</span>
                         </div>
-                        <div style="margin-top: 12px; display: flex; align-items: center; gap: 8px; font-size: 0.65rem; background: rgba(0,124,0,0.06); padding: 6px; border-radius: 6px; border: 1px dashed var(--color-brand-green);">
-                            <div class="pulse-dot"></div>
-                            <span style="font-weight: 700; color: var(--color-brand-green);">QuickBooks API Sync: Online</span>
+                        <div class="window-body" style="padding: 1.1rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff; text-align: left;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--color-border); padding-bottom: 6px;">
+                                <span style="font-weight: 800; font-size: 0.75rem; color: var(--color-brand-charcoal);">Ledger & Invoices System</span>
+                                <span style="font-size: 0.6rem; color: var(--color-text-muted);">Real-Time Sync</span>
+                            </div>
+                            
+                            <div style="font-size: 0.7rem; display: flex; flex-direction: column; gap: 8px; margin: 12px 0;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed #f1f5f9; padding-bottom: 4px;">
+                                    <span style="font-weight: 500;">INV-2026-081 (Akhuwat)</span>
+                                    <span style="font-weight: 700; color: var(--color-brand-green); background: rgba(0, 124, 0, 0.05); padding: 1px 6px; border-radius: 4px;">$14,250 Paid</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed #f1f5f9; padding-bottom: 4px;">
+                                    <span style="font-weight: 500;">INV-2026-082 (Ozo Trips)</span>
+                                    <span style="font-weight: 700; color: var(--color-brand-green); background: rgba(0, 124, 0, 0.05); padding: 1px 6px; border-radius: 4px;">$8,900 Paid</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed #f1f5f9; padding-bottom: 4px;">
+                                    <span style="font-weight: 500;">INV-2026-083 (Habibulhujjaj)</span>
+                                    <span style="font-weight: 700; color: #f59e0b; background: rgba(245, 158, 11, 0.05); padding: 1px 6px; border-radius: 4px;">$4,120 Pending</span>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.65rem; background: rgba(0,124,0,0.06); padding: 8px; border-radius: 8px; border: 1px dashed rgba(0, 124, 0, 0.3);">
+                                <div class="pulse-dot green" style="width: 6px; height: 6px; background: #10b981; border-radius: 50%;"></div>
+                                <span style="font-weight: 700; color: var(--color-brand-green);">QuickBooks & FBR API: Live & Synced</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -578,23 +711,51 @@
                 </div>
                 
                 <div class="pillar-visual-wrapper">
-                    <div class="team-roster">
-                        <div class="crm-funnel-title">Offshore Vetted Resources</div>
-                        <div class="roster-card">
-                            <div class="roster-avatar"></div>
-                            <div class="roster-info">
-                                <span class="roster-name">Hamza Khan</span>
-                                <span class="roster-role">Senior React Dev</span>
-                            </div>
-                            <span class="roster-badge">Available</span>
+                    <div class="mockup-app-window team-panel" style="width: 100%; max-width: 350px; height: 300px; z-index: 5; background: #ffffff; border-radius: 14px; border: 1px solid var(--color-border); box-shadow: var(--shadow-glass); display: flex; flex-direction: column; overflow: hidden; animation: float 6s infinite ease-in-out;">
+                        <div class="window-header" style="padding: 0.8rem; background: var(--color-brand-charcoal); display: flex; align-items: center; gap: 6px;">
+                            <span class="window-dot dot-close" style="width: 8px; height: 8px; border-radius: 50%; background: #ff5f56; display: inline-block;"></span>
+                            <span class="window-dot dot-minimize" style="width: 8px; height: 8px; border-radius: 50%; background: #ffbd2e; display: inline-block;"></span>
+                            <span class="window-dot dot-expand" style="width: 8px; height: 8px; border-radius: 50%; background: #27c93f; display: inline-block;"></span>
+                            <span class="window-title" style="color: rgba(255,255,255,0.8); font-size: 0.7rem; font-family: monospace;">offshore-team-roster.html</span>
                         </div>
-                        <div class="roster-card">
-                            <div class="roster-avatar" style="background: linear-gradient(135deg, #10b981 0%, #34d399 100%);"></div>
-                            <div class="roster-info">
-                                <span class="roster-name">Ayesha Bibi</span>
-                                <span class="roster-role">Senior Flutter Dev</span>
+                        <div class="window-body" style="padding: 1rem; flex-grow: 1; display: flex; flex-direction: column; gap: 8px; background: #ffffff; text-align: left;">
+                            <div style="font-weight: 800; font-size: 0.75rem; color: var(--color-brand-charcoal); border-bottom: 1px solid var(--color-border); padding-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Vetted Offshore Team</span>
+                                <span style="font-size: 0.6rem; color: #10b981; background: rgba(16, 185, 129, 0.08); padding: 1px 6px; border-radius: 4px; font-weight: 700;">100% Client Ready</span>
                             </div>
-                            <span class="roster-badge">Available</span>
+                            
+                            <div class="roster-card" style="display: flex; align-items: center; gap: 10px; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--color-border); background: #f8fafc;">
+                                <div class="roster-avatar" style="width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, var(--color-brand-green) 0%, var(--color-neon-green) 100%); position: relative;">
+                                    <span style="position: absolute; bottom: 0; right: 0; width: 8px; height: 8px; border-radius: 50%; background: #10b981; border: 1.5px solid #fff;"></span>
+                                </div>
+                                <div style="flex-grow: 1; display: flex; flex-direction: column;">
+                                    <span class="roster-name" style="font-size: 0.75rem; font-weight: 800;">Hamza Khan</span>
+                                    <span class="roster-role" style="font-size: 0.6rem; color: var(--color-text-muted);">Senior React & Next.js Developer</span>
+                                </div>
+                                <span class="roster-badge" style="font-size: 0.55rem; background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 2px 6px; border-radius: 100px; font-weight: 700;">Active</span>
+                            </div>
+                            
+                            <div class="roster-card" style="display: flex; align-items: center; gap: 10px; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--color-border); background: #f8fafc;">
+                                <div class="roster-avatar" style="width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, #10b981 0%, #34d399 100%); position: relative;">
+                                    <span style="position: absolute; bottom: 0; right: 0; width: 8px; height: 8px; border-radius: 50%; background: #10b981; border: 1.5px solid #fff;"></span>
+                                </div>
+                                <div style="flex-grow: 1; display: flex; flex-direction: column;">
+                                    <span class="roster-name" style="font-size: 0.75rem; font-weight: 800;">Ayesha Bibi</span>
+                                    <span class="roster-role" style="font-size: 0.6rem; color: var(--color-text-muted);">Senior Flutter / iOS & Android Dev</span>
+                                </div>
+                                <span class="roster-badge" style="font-size: 0.55rem; background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 2px 6px; border-radius: 100px; font-weight: 700;">Active</span>
+                            </div>
+                            
+                            <div class="roster-card" style="display: flex; align-items: center; gap: 10px; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--color-border); background: #f8fafc;">
+                                <div class="roster-avatar" style="width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%); position: relative;">
+                                    <span style="position: absolute; bottom: 0; right: 0; width: 8px; height: 8px; border-radius: 50%; background: #f59e0b; border: 1.5px solid #fff;"></span>
+                                </div>
+                                <div style="flex-grow: 1; display: flex; flex-direction: column;">
+                                    <span class="roster-name" style="font-size: 0.75rem; font-weight: 800;">Zainab Sheikh</span>
+                                    <span class="roster-role" style="font-size: 0.6rem; color: var(--color-text-muted);">QA Automation Engineer</span>
+                                </div>
+                                <span class="roster-badge" style="font-size: 0.55rem; background: rgba(245, 158, 11, 0.1); color: #f59e0b; padding: 2px 6px; border-radius: 100px; font-weight: 700;">Interview</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -638,28 +799,206 @@
                 </div>
                 
                 <div class="pillar-visual-wrapper">
-                    <div class="shipping-tracker">
-                        <div class="tracker-row">
-                            <span>Shipment FBA-92A</span>
-                            <span class="tracker-status">In Transit</span>
+                    <div class="mockup-app-window store-panel" style="width: 100%; max-width: 350px; height: 300px; z-index: 5; background: #ffffff; border-radius: 14px; border: 1px solid var(--color-border); box-shadow: var(--shadow-glass); display: flex; flex-direction: column; overflow: hidden; animation: float 5.5s infinite ease-in-out;">
+                        <div class="window-header" style="padding: 0.8rem; background: var(--color-brand-charcoal); display: flex; align-items: center; gap: 6px;">
+                            <span class="window-dot dot-close" style="width: 8px; height: 8px; border-radius: 50%; background: #ff5f56; display: inline-block;"></span>
+                            <span class="window-dot dot-minimize" style="width: 8px; height: 8px; border-radius: 50%; background: #ffbd2e; display: inline-block;"></span>
+                            <span class="window-dot dot-expand" style="width: 8px; height: 8px; border-radius: 50%; background: #27c93f; display: inline-block;"></span>
+                            <span class="window-title" style="color: rgba(255,255,255,0.8); font-size: 0.7rem; font-family: monospace;">shopify-seller-dashboard.html</span>
                         </div>
-                        <div class="tracker-progress-track">
-                            <div class="tracker-progress-fill"></div>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; align-items: flex-end;">
-                            <div>
-                                <span style="font-size: 0.6rem; color: var(--color-text-muted);">Est. Profit Margin</span>
-                                <div class="tracker-metric">42.8%</div>
+                        <div class="window-body" style="padding: 1rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff; text-align: left;">
+                            <div style="font-weight: 800; font-size: 0.75rem; color: var(--color-brand-charcoal); border-bottom: 1px solid var(--color-border); padding-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Shopify & Amazon Seller Stats</span>
+                                <span style="font-size: 0.6rem; color: var(--color-brand-green); font-weight: 700;">Live Feed</span>
                             </div>
-                            <div style="text-align: right;">
-                                <span style="font-size: 0.6rem; color: var(--color-text-muted);">Weekly Orders</span>
-                                <div style="font-size: 0.95rem; font-weight: 800; color: var(--color-brand-green);">1,450+</div>
+                            
+                            <div style="display: flex; gap: 10px; align-items: center; margin: 8px 0;">
+                                <div style="flex-grow: 1;">
+                                    <span style="font-size: 0.6rem; color: var(--color-text-muted); display: block;">Total Revenue (MTD)</span>
+                                    <span style="font-size: 1.3rem; font-weight: 900; color: var(--color-text-primary);">$34,820 USD</span>
+                                </div>
+                                <div style="text-align: right;">
+                                    <span style="font-size: 0.6rem; color: var(--color-text-muted); display: block;">Net Margin</span>
+                                    <span style="font-size: 0.85rem; font-weight: 800; color: var(--color-brand-green);">42.8%</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Progress shipping bar -->
+                            <div style="background: #f1f5f9; padding: 8px; border-radius: 6px; border: 1px solid var(--color-border); font-size: 0.65rem;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 4px; font-weight: 700;">
+                                    <span>Shipment FBA-92A</span>
+                                    <span style="color: var(--color-brand-green);">In Transit (75%)</span>
+                                </div>
+                                <div style="height: 6px; background: var(--color-border); border-radius: 100px; overflow: hidden;">
+                                    <div style="width: 75%; height: 100%; background: linear-gradient(90deg, var(--color-brand-green) 0%, var(--color-neon-green) 100%);"></div>
+                                </div>
+                            </div>
+                            
+                            <div style="border-top: 1px solid var(--color-border); padding-top: 6px; display: flex; justify-content: space-between; align-items: center; font-size: 0.65rem; font-weight: 700; color: var(--color-text-secondary);">
+                                <span>Weekly Orders: <span style="color: var(--color-brand-green);">1,450+</span></span>
+                                <span>WooCommerce Sync: <span style="color: #10b981;">Online</span></span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+        </div>
+    </section>
+
+    <!-- --- INTERACTIVE COST ESTIMATOR CALCULATOR --- -->
+    <section class="cost-calculator-section" id="pricingCalculator">
+        <div class="container">
+            <div class="section-title-wrap text-center">
+                <span class="section-tag">FLEXIBLE ESTIMATOR</span>
+                <h2 class="section-title">Interactive Cost Calculator</h2>
+                <p class="section-subtitle">Estimate your one-time software development costs and recurring monthly retainers in real-time.</p>
+            </div>
+            
+            <div class="calc-container">
+                <!-- Left Column: inputs -->
+                <div class="calc-card">
+                    <!-- Project Scale Slider -->
+                    <div class="calc-group">
+                        <div class="calc-label">
+                            <span>Project Base Scope / Scale</span>
+                            <span class="slider-val-badge" id="sliderVal">$5,000 USD</span>
+                        </div>
+                        <div class="calc-slider-wrap">
+                            <input type="range" id="projectScale" class="calc-slider" min="1000" max="50000" step="500" value="5000">
+                            <div class="calc-slider-labels">
+                                <span>$1,000 USD (Minimum)</span>
+                                <span>$25,000</span>
+                                <span>Enterprise Unlimited</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- One-Time Add-ons -->
+                    <div class="calc-group">
+                        <div class="calc-label">One-Time Technical Add-ons</div>
+                        <div class="checkbox-grid">
+                            <label class="checkbox-card" id="cardWeb">
+                                <input type="checkbox" id="addWeb" value="1500">
+                                <div class="checkbox-info">
+                                    <span class="checkbox-title">Custom Web Application</span>
+                                    <span class="checkbox-price">+$1,500 USD</span>
+                                </div>
+                            </label>
+                            <label class="checkbox-card" id="cardMobile">
+                                <input type="checkbox" id="addMobile" value="2500">
+                                <div class="checkbox-info">
+                                    <span class="checkbox-title">Mobile App (Android/iOS)</span>
+                                    <span class="checkbox-price">+$2,500 USD</span>
+                                </div>
+                            </label>
+                            <label class="checkbox-card" id="cardAI">
+                                <input type="checkbox" id="addAI" value="2000">
+                                <div class="checkbox-info">
+                                    <span class="checkbox-title">AI Agent & LLM Chatbot</span>
+                                    <span class="checkbox-price">+$2,000 USD</span>
+                                </div>
+                            </label>
+                            <label class="checkbox-card" id="cardERP">
+                                <input type="checkbox" id="addERP" value="3500">
+                                <div class="checkbox-info">
+                                    <span class="checkbox-title">Custom ERP & CRM System</span>
+                                    <span class="checkbox-price">+$3,500 USD</span>
+                                </div>
+                            </label>
+                            <label class="checkbox-card" id="cardAPI">
+                                <input type="checkbox" id="addAPI" value="800">
+                                <div class="checkbox-info">
+                                    <span class="checkbox-title">Third-Party API Integrations</span>
+                                    <span class="checkbox-price">+$800 USD</span>
+                                </div>
+                            </label>
+                            <label class="checkbox-card" id="cardUX">
+                                <input type="checkbox" id="addUX" value="800">
+                                <div class="checkbox-info">
+                                    <span class="checkbox-title">Premium UI/UX Design Assets</span>
+                                    <span class="checkbox-price">+$800 USD</span>
+                                </div>
+                            </label>
+                            <label class="checkbox-card" id="cardDevOps">
+                                <input type="checkbox" id="addDevOps" value="700">
+                                <div class="checkbox-info">
+                                    <span class="checkbox-title">CI/CD & DevOps Pipeline Setup</span>
+                                    <span class="checkbox-price">+$700 USD</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Monthly Retainers -->
+                    <div class="calc-group">
+                        <div class="calc-label">Monthly Support & Growth Retainers</div>
+                        <div class="checkbox-grid">
+                            <label class="checkbox-card" id="cardSEO">
+                                <input type="checkbox" id="addSEO" value="499">
+                                <div class="checkbox-info">
+                                    <span class="checkbox-title">Technical SEO & Marketing</span>
+                                    <span class="checkbox-price">+$499 / mo</span>
+                                </div>
+                            </label>
+                            <label class="checkbox-card" id="cardEcom">
+                                <input type="checkbox" id="addEcom" value="299">
+                                <div class="checkbox-info">
+                                    <span class="checkbox-title">Shopify / WooCommerce Mgmt</span>
+                                    <span class="checkbox-price">+$299 / mo</span>
+                                </div>
+                            </label>
+                            <label class="checkbox-card" id="cardDev">
+                                <input type="checkbox" id="addDev" value="2500">
+                                <div class="checkbox-info">
+                                    <span class="checkbox-title">Dedicated Offshore Dev Slot</span>
+                                    <span class="checkbox-price">+$2,500 / mo</span>
+                                </div>
+                            </label>
+                            <label class="checkbox-card" id="cardCloud">
+                                <input type="checkbox" id="addCloud" value="199">
+                                <div class="checkbox-info">
+                                    <span class="checkbox-title">SLA Support & Server Monitoring</span>
+                                    <span class="checkbox-price">+$199 / mo</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column: Sticky Summary -->
+                <div class="calc-summary-card">
+                    <h3 class="summary-title">
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4 6h-4v2h4v2h-4v2h4v2H9V7h6v2z"/></svg>
+                        Project Estimate Summary
+                    </h3>
+                    
+                    <div class="summary-row">
+                        <span class="summary-row-label">One-Time Development Cost:</span>
+                        <div class="summary-price-wrap">
+                            <div class="summary-price-one-time" id="outOneTime">$5,000 USD</div>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-row">
+                        <span class="summary-row-label">Monthly Recurring Support:</span>
+                        <div class="summary-price-wrap">
+                            <div class="summary-price-recurring" id="outRecurring">$0 / mo</div>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-divider"></div>
+                    
+                    <button class="calc-cta-btn" id="calcCtaBtn">
+                        <span>Book Project Consultation</span>
+                        <svg style="width: 18px; height: 18px; fill: currentColor;" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+                    </button>
+                    
+                    <p class="calc-notes">
+                        * Estimates are for budget projections only. Final scope specifications will be determined during deep-dive strategy calls. Custom enterprise quotes automatically include dedicated QA and project managers.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 

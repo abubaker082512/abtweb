@@ -399,5 +399,203 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Run initial form setup layout
         updateFormLayout();
+
+        // --- 9d. PREFILL FROM ESTIMATOR REDIRECT ---
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('source') === 'calculator') {
+            const scaleVal = urlParams.get('scale');
+            const onetime = urlParams.get('onetime') ? urlParams.get('onetime').split(',') : [];
+            const monthly = urlParams.get('monthly') ? urlParams.get('monthly').split(',') : [];
+            const totalOnetime = parseFloat(urlParams.get('totalOnetime') || '0');
+            const totalMonthly = parseFloat(urlParams.get('totalMonthly') || '0');
+            
+            // Helper mapping from checkbox IDs to select card IDs
+            const cardMap = {
+                'addWeb': 'selCardWeb',
+                'addMobile': 'selCardMobile',
+                'addAI': 'selCardAI',
+                'addERP': 'selCardERP',
+                'addUX': 'selCardUIUX',
+                'addDevOps': 'selCardDevOps',
+                'addAPI': 'selCardBICRM',
+                'addSEO': 'selCardMarketing',
+                'addEcom': 'selCardAmazon',
+                'addDev': 'selCardOutsourcing',
+                'addCloud': 'selCardDevOps'
+            };
+
+            // Pre-select service cards based on calculator options
+            selectedServices = [];
+            [...onetime, ...monthly].forEach(id => {
+                const cardId = cardMap[id];
+                if (cardId) {
+                    const cardEl = document.getElementById(cardId);
+                    if (cardEl) {
+                        cardEl.classList.add('selected');
+                        const serviceVal = cardEl.getAttribute('data-service');
+                        if (serviceVal && !selectedServices.includes(serviceVal)) {
+                            selectedServices.push(serviceVal);
+                        }
+                    }
+                }
+            });
+
+            // Set budget slider index based on calculated price
+            const budgetRange = document.getElementById('budgetRange');
+            const budgetValueDisplay = document.getElementById('budgetValueDisplay');
+            if (budgetRange && budgetValueDisplay) {
+                let budgetIdx = 0;
+                if (scaleVal === '50000' || totalOnetime >= 100000) {
+                    budgetIdx = 4;
+                } else if (totalOnetime >= 50000) {
+                    budgetIdx = 3;
+                } else if (totalOnetime >= 25000) {
+                    budgetIdx = 2;
+                } else if (totalOnetime >= 10000) {
+                    budgetIdx = 1;
+                } else {
+                    budgetIdx = 0;
+                }
+                budgetRange.value = budgetIdx;
+                selectedBudget = budgets[budgetIdx];
+                budgetValueDisplay.innerText = selectedBudget;
+            }
+
+            // Fill initial Project Description brief details
+            const clientMsg = document.getElementById('clientMsg');
+            if (clientMsg) {
+                let servicesText = onetime.map(id => {
+                    const card = document.getElementById(cardMap[id]);
+                    return card ? card.getAttribute('data-service') : id;
+                }).filter(Boolean).join(', ');
+                
+                let monthlyText = monthly.map(id => {
+                    const card = document.getElementById(cardMap[id]);
+                    return card ? card.getAttribute('data-service') : id;
+                }).filter(Boolean).join(', ');
+
+                let baseText = scaleVal === '50000' ? 'Enterprise (Unlimited)' : `$${parseFloat(scaleVal).toLocaleString()} USD`;
+                let oneTimeFormatted = scaleVal === '50000' ? 'Custom Enterprise Quote' : `$${totalOnetime.toLocaleString()} USD`;
+                let monthlyFormatted = `$${totalMonthly.toLocaleString()} / mo`;
+
+                clientMsg.value = `Hello ABT IT team! I used your Cost Calculator and would like to request a consultation. Here are my project details:\n\n` +
+                    `- Base Project Scope: ${baseText}\n` +
+                    `- One-Time Technical Add-ons: ${servicesText || 'None'}\n` +
+                    `- Monthly Retainers: ${monthlyText || 'None'}\n` +
+                    `- Calculated One-time Price: ${oneTimeFormatted}\n` +
+                    `- Calculated Monthly Retainer: ${monthlyFormatted}\n\n` +
+                    `Looking forward to discussing this project with you!`;
+            }
+        }
+    }
+
+    // --- 10. INTERACTIVE COST CALCULATOR LOGIC (services.html) ---
+    const scaleSlider = document.getElementById('projectScale');
+    const sliderValBadge = document.getElementById('sliderVal');
+    const outOneTime = document.getElementById('outOneTime');
+    const outRecurring = document.getElementById('outRecurring');
+    const calcCtaBtn = document.getElementById('calcCtaBtn');
+
+    if (scaleSlider && outOneTime && outRecurring) {
+        const oneTimeCheckboxes = [
+            document.getElementById('addWeb'),
+            document.getElementById('addMobile'),
+            document.getElementById('addAI'),
+            document.getElementById('addERP'),
+            document.getElementById('addAPI'),
+            document.getElementById('addUX'),
+            document.getElementById('addDevOps')
+        ];
+        
+        const monthlyCheckboxes = [
+            document.getElementById('addSEO'),
+            document.getElementById('addEcom'),
+            document.getElementById('addDev'),
+            document.getElementById('addCloud')
+        ];
+
+        function updateCalculator() {
+            const baseScale = parseInt(scaleSlider.value, 10);
+            const isMaxScale = (baseScale === 50000);
+            
+            // Update slider badge label
+            if (isMaxScale) {
+                if (sliderValBadge) sliderValBadge.innerText = "Enterprise (Unlimited)";
+            } else {
+                if (sliderValBadge) sliderValBadge.innerText = `$${baseScale.toLocaleString()} USD`;
+            }
+
+            // Sum One-time additions
+            let oneTimeSum = isMaxScale ? 0 : baseScale;
+            let selectedOnetimeIds = [];
+            
+            oneTimeCheckboxes.forEach(cb => {
+                if (!cb) return;
+                const parentCard = cb.closest('.checkbox-card');
+                if (cb.checked) {
+                    oneTimeSum += parseInt(cb.value, 10);
+                    if (parentCard) parentCard.classList.add('checked');
+                    selectedOnetimeIds.push(cb.id);
+                } else {
+                    if (parentCard) parentCard.classList.remove('checked');
+                }
+            });
+
+            // Sum Monthly additions
+            let monthlySum = 0;
+            let selectedMonthlyIds = [];
+            
+            monthlyCheckboxes.forEach(cb => {
+                if (!cb) return;
+                const parentCard = cb.closest('.checkbox-card');
+                if (cb.checked) {
+                    monthlySum += parseInt(cb.value, 10);
+                    if (parentCard) parentCard.classList.add('checked');
+                    selectedMonthlyIds.push(cb.id);
+                } else {
+                    if (parentCard) parentCard.classList.remove('checked');
+                }
+            });
+
+            // Update outputs
+            if (isMaxScale) {
+                outOneTime.innerText = "Custom Enterprise Quote";
+            } else {
+                outOneTime.innerText = `$${oneTimeSum.toLocaleString()} USD`;
+            }
+            
+            outRecurring.innerText = `$${monthlySum.toLocaleString()} / mo`;
+
+            return {
+                baseScale,
+                oneTimeSum,
+                monthlySum,
+                selectedOnetimeIds,
+                selectedMonthlyIds
+            };
+        }
+
+        // Add event listeners
+        scaleSlider.addEventListener('input', updateCalculator);
+        [...oneTimeCheckboxes, ...monthlyCheckboxes].forEach(cb => {
+            if (cb) cb.addEventListener('change', updateCalculator);
+        });
+
+        // Initialize display
+        updateCalculator();
+
+        // Bind click events to redirect to contact.html with prefill parameter data
+        if (calcCtaBtn) {
+            calcCtaBtn.addEventListener('click', () => {
+                const calcState = updateCalculator();
+                const scale = calcState.baseScale;
+                const onetime = calcState.selectedOnetimeIds.join(',');
+                const monthly = calcState.selectedMonthlyIds.join(',');
+                const oneTimeTotal = calcState.oneTimeSum;
+                const monthlyTotal = calcState.monthlySum;
+
+                window.location.href = `contact.html?source=calculator&scale=${scale}&onetime=${encodeURIComponent(onetime)}&monthly=${encodeURIComponent(monthly)}&totalOnetime=${oneTimeTotal}&totalMonthly=${monthlyTotal}`;
+            });
+        }
     }
 });
