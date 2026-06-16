@@ -440,16 +440,8 @@
             alert("Thank you! Your application for " + document.getElementById('applyPosition').value + " has been successfully submitted to ABT IT Innovations. Our HR team will reach out to you shortly.");
             event.target.reset();
         }
-        
-        // Mobile Navigation Toggle
-        const menuToggle = document.querySelector('.mobile-nav-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        if (menuToggle && navLinks) {
-            menuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-                menuToggle.innerText = navLinks.classList.contains('active') ? '✕' : '☰';
-            });
-        }
     </script>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
