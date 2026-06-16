@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Selected values tracking
         let selectedServices = [];
-        let selectedBudget = '$5,000 - $10,000';
+        let selectedBudget = '$500 - $2,000';
         let selectedTimeline = '1-3 Months';
         
         // 9a. Step 1: Service Selection cards
@@ -266,11 +266,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const budgetSlider = document.getElementById('budgetRange');
         const budgetDisplay = document.getElementById('budgetValueDisplay');
         const budgets = [
-            '$5,000 - $10,000',
-            '$10,000 - $25,000',
-            '$25,000 - $50,000',
-            '$50,000 - $100,000',
-            '$100,000+'
+            '$500 - $2,000',
+            '$2,000 - $5,000',
+            '$5,000 - $15,000',
+            '$15,000 - $35,000',
+            '$35,000+'
         ];
         
         if (budgetSlider && budgetDisplay) {
@@ -470,13 +470,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const budgetValueDisplay = document.getElementById('budgetValueDisplay');
             if (budgetRange && budgetValueDisplay) {
                 let budgetIdx = 0;
-                if (scaleVal === '50000' || totalOnetime >= 100000) {
+                if (scaleVal === '50000' || totalOnetime >= 35000) {
                     budgetIdx = 4;
-                } else if (totalOnetime >= 50000) {
+                } else if (totalOnetime >= 15000) {
                     budgetIdx = 3;
-                } else if (totalOnetime >= 25000) {
+                } else if (totalOnetime >= 5000) {
                     budgetIdx = 2;
-                } else if (totalOnetime >= 10000) {
+                } else if (totalOnetime >= 2000) {
                     budgetIdx = 1;
                 } else {
                     budgetIdx = 0;
@@ -785,7 +785,7 @@ document.addEventListener('DOMContentLoaded', () => {
             enableInput("Type budget or ask a question...");
             appendBotMessage("Perfect. What is your estimated budget scope for this project?");
             setTimeout(() => {
-                const budgetsList = ["Under $5,000 USD", "$5,000 - $10,000", "$10,000 - $25,000", "Enterprise ($25,000+)"];
+                const budgetsList = ["Under $500 USD", "$500 - $2,000", "$2,000 - $5,000", "Enterprise ($5,000+)"];
                 appendOptions(budgetsList, (choice) => {
                     appendUserMessage(choice);
                     userAnswers.budget = choice;
@@ -902,12 +902,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 3. Check if they are answering budget in State 2
             if (chatState === 2) {
-                const budgetsList = ["under $5,000 usd", "$5,000 - $10,000", "$10,000 - $25,000", "enterprise ($25,000+)"];
-                const matchedBudget = budgetsList.find(b => q.includes(b.replace(/[$,+]/g, '').toLowerCase()) || q.includes('under 5') || q.includes('5000') || q.includes('10000') || q.includes('25000') || q.includes('enterprise'));
+                const budgetsList = ["under $500 usd", "$500 - $2,000", "$2,000 - $5,000", "enterprise ($5,000+)"];
+                const matchedBudget = budgetsList.find(b => q.includes(b.replace(/[$,+]/g, '').toLowerCase()) || q.includes('under 500') || q.includes('500') || q.includes('2000') || q.includes('5000') || q.includes('enterprise'));
                 if (matchedBudget) {
-                    userAnswers.budget = matchedBudget === "under $5,000 usd" ? "Under $5,000 USD" :
-                                         matchedBudget === "$5,000 - $10,000" ? "$5,000 - $10,000" :
-                                         matchedBudget === "$10,000 - $25,000" ? "$10,000 - $25,000" : "Enterprise ($25,000+)";
+                    userAnswers.budget = matchedBudget === "under $500 usd" ? "Under $500 USD" :
+                                         matchedBudget === "$500 - $2,000" ? "$500 - $2,000" :
+                                         matchedBudget === "$2,000 - $5,000" ? "$2,000 - $5,000" : "Enterprise ($5,000+)";
                     chatState = 3;
                     const existingOptions = chatBody.querySelectorAll('.chatbot-options-container');
                     existingOptions.forEach(el => el.remove());
@@ -954,7 +954,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Pricing / Cost
             if (q.includes('price') || q.includes('cost') || q.includes('budget') || q.includes('rate') || q.includes('pricing') || q.includes('calculator') || q.includes('how much') || q.includes('fee')) {
                 setTimeout(() => {
-                    appendBotMessage("Our software projects start from a minimum budget of $5,000 USD (e.g. for custom web or mobile modules) and scale up to enterprise-level software. You can get an instant estimate using our interactive Cost Calculator on the Services page, or choose 'Yes, let's start!' in this chat to request a custom proposal.");
+                    appendBotMessage("Our software projects start from a minimum budget of $500 USD (e.g. for custom web or mobile modules) and scale up to enterprise-level software. You can get an instant estimate using our interactive Cost Calculator on the Services page, or choose 'Yes, let's start!' in this chat to request a custom proposal.");
                 }, 400);
                 return;
             }
