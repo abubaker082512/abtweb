@@ -172,17 +172,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 2. HEADER SCROLL STATE ---
     const header = document.querySelector('.header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('header-scrolled');
-        } else {
-            header.classList.remove('header-scrolled');
-        }
-    });
+    if (header) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+    }
 
 
     // --- 3. MOBILE MENU TOGGLE ---
-    const mobileToggle = document.querySelector('.mobile-nav-toggle');
+    // (mobileToggle is already queried as a DOMContentLoaded global)
     const navLinks = document.querySelector('.nav-links');
     
     if (mobileToggle) {
