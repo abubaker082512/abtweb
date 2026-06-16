@@ -11,6 +11,55 @@
     
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="Branding/ABT IT NEW LOGO Sq WB.png">
+    <!-- Structured Data JSON-LD for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ITServicesAndITConsulting",
+      "name": "ABT IT Innovations",
+      "alternateName": "ABT IT",
+      "url": "https://abtit.online/",
+      "logo": "https://abtit.online/Branding/ABT%20IT%20NEW%20LOGO.png",
+      "description": "ABT IT Innovations is a top-tier Pakistan-based software house and IT services provider delivering web development, Android/iOS mobile apps, AI & SaaS products, and digital marketing globally.",
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "ABT IT Innovations PVT LTD.",
+          "addressLocality": "Islamabad",
+          "addressRegion": "Islamabad Capital Territory",
+          "postalCode": "44000",
+          "addressCountry": "PK"
+        },
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "206 High Street",
+          "addressLocality": "Cowdenbeath",
+          "addressRegion": "Fife",
+          "postalCode": "KY4 9NP",
+          "addressCountry": "GB"
+        },
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "Miami",
+          "addressLocality": "Miami",
+          "addressRegion": "Florida",
+          "postalCode": "33101",
+          "addressCountry": "US"
+        }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+92-333-5954599",
+        "contactType": "sales",
+        "areaServed": ["PK", "US", "GB", "AE", "CA"],
+        "availableLanguage": ["en", "ur"]
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/abt-it-innovations",
+        "https://www.facebook.com/abtitinnovations"
+      ]
+    }
+    </script>
 </head>
 <body>
 
@@ -56,8 +105,28 @@
                 <p>We work as a dedicated extension of our clients' core teams, focusing on scalability and reliability. By using modern web architectures (Next.js, TypeScript), mobile environments (Flutter, native iOS/Android), and custom artificial intelligence pipelines, we future-proof platforms for growth.</p>
             </div>
             
-            <div class="about-intro-visual">
-                <img src="images/ai_saas_illustration.png" alt="ABT IT Innovations Global Network" style="width: 100%; height: 100%; object-fit: cover;">
+            <div class="about-intro-visual sync-diagram-card" style="border: none; background: rgba(255, 255, 255, 0.6); box-shadow: var(--shadow-glass); display: flex; justify-content: center; align-items: center; position: relative;">
+                <!-- Client Latency / Overlap Indicator -->
+                <div class="sync-metric-badge sync-metric-latency" style="top: 30px;">Timezone Overlap: 5-8 Hours</div>
+                <div class="sync-metric-badge sync-metric-overlap" style="bottom: 30px;">Daily Standups: Guaranteed</div>
+                
+                <div class="sync-node-container" style="width: 90%;">
+                   <!-- Left Node: Client -->
+                   <div class="sync-node node-client" title="Global Client Office">
+                       <span class="sync-node-flag">🇺🇸 🇬🇧 🇪🇺</span>
+                       <span class="sync-node-label" style="font-size: 0.6rem;">Global Markets</span>
+                   </div>
+                   
+                   <!-- Connecting Bridge -->
+                   <div class="sync-bridge-line"></div>
+                   <div class="sync-signal-pulse"></div>
+                   
+                   <!-- Right Node: Hub -->
+                   <div class="sync-node node-hub" title="ABT IT Pakistan Engineering Hub">
+                       <span class="sync-node-flag">🇵🇰</span>
+                       <span class="sync-node-label" style="font-size: 0.6rem;">Islamabad Hub</span>
+                   </div>
+                </div>
             </div>
         </div>
     </section>
