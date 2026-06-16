@@ -208,11 +208,33 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileToggle.innerHTML = navLinks.classList.contains('mobile-active') ? '✕' : '☰';
         });
 
-        // Close menu when clicking a link
+        // Close menu on links click (or toggle dropdown on mobile)
         navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('mobile-active');
-                mobileToggle.innerHTML = '☰';
+            link.addEventListener('click', (e) => {
+                if (link.parentElement.classList.contains('dropdown') && window.innerWidth <= 992) {
+                    e.preventDefault();
+                    link.parentElement.classList.toggle('open');
+                    const dropdownMenu = link.parentElement.querySelector('.dropdown-menu');
+                    if (dropdownMenu) {
+                        dropdownMenu.classList.toggle('active-dropdown');
+                        const isOpen = dropdownMenu.classList.contains('active-dropdown');
+                        const arrow = link.querySelector('.dropdown-arrow');
+                        if (arrow) {
+                            arrow.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+                        }
+                    }
+                } else {
+                    navLinks.classList.remove('mobile-active');
+                    mobileToggle.innerHTML = '☰';
+                    
+                    // Reset mobile active dropdown states when menu is closed
+                    const activeDropdowns = navLinks.querySelectorAll('.dropdown-menu');
+                    activeDropdowns.forEach(menu => menu.classList.remove('active-dropdown'));
+                    const dropdownLis = navLinks.querySelectorAll('.dropdown');
+                    dropdownLis.forEach(li => li.classList.remove('open'));
+                    const arrows = navLinks.querySelectorAll('.dropdown-arrow');
+                    arrows.forEach(arr => arr.style.transform = 'rotate(0deg)');
+                }
             });
         });
     }
