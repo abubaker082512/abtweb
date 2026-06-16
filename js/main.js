@@ -336,6 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Final submission step validation
                     const clientName = document.getElementById('clientName').value.trim();
                     const clientEmail = document.getElementById('clientEmail').value.trim();
+                    const clientPhone = document.getElementById('clientPhone').value.trim();
                     const clientMessage = document.getElementById('clientMsg').value.trim();
                     
                     if (!clientName) {
@@ -346,13 +347,17 @@ document.addEventListener('DOMContentLoaded', () => {
                         alert('Please enter a valid email address.');
                         return;
                     }
+                    if (!clientPhone) {
+                        alert('Please enter your Phone or WhatsApp number.');
+                        return;
+                    }
                     if (!clientMessage) {
                         alert('Please provide a brief details summary of your project requirements.');
                         return;
                     }
                     
                     // Trigger Simulated submit
-                    submitProjectPlanner(clientName, clientEmail, clientMessage);
+                    submitProjectPlanner(clientName, clientEmail, clientPhone, clientMessage);
                 } else {
                     currentStepIndex++;
                     updateFormLayout();
@@ -374,7 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return re.test(String(email).toLowerCase());
         }
         
-        function submitProjectPlanner(name, email, msg) {
+        function submitProjectPlanner(name, email, phone, msg) {
             // Show loading animation on the button
             nextBtn.disabled = true;
             nextBtn.innerText = 'Sending Request...';
@@ -390,6 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         source: 'Project Planner',
                         name: name,
                         email: email,
+                        phone: phone,
                         service: selectedServices.join(', ') || 'Custom Solution',
                         budget: selectedBudget || 'Custom Range'
                     };
@@ -407,6 +413,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log('--- PROJECT ESTIMATE SUBMISSION RECEIVED ---');
                 console.log(`Name: ${name}`);
                 console.log(`Email: ${email}`);
+                console.log(`Phone: ${phone}`);
                 console.log(`Services requested: ${selectedServices.join(', ')}`);
                 console.log(`Budget estimation: ${selectedBudget}`);
                 console.log(`Timeline: ${selectedTimeline}`);
@@ -831,12 +838,27 @@ document.addEventListener('DOMContentLoaded', () => {
                     userAnswers.email = val;
                     disableInput();
                     chatState = 5;
-                    setTimeout(completeLeadCapture, 600);
+                    setTimeout(() => {
+                        appendBotMessage(`Perfect! Lastly, what is your Phone or WhatsApp Number?`);
+                        setTimeout(() => {
+                            enableInput("Enter your Phone or WhatsApp...");
+                        }, 400);
+                    }, 600);
                 } else {
                     appendBotMessage("Oops! That email address doesn't look valid. Please enter a valid email address (e.g. name@company.com):");
                 }
+            } else if (chatState === 5) {
+                if (val.length >= 7) {
+                    appendUserMessage(val);
+                    userAnswers.phone = val;
+                    disableInput();
+                    chatState = 6;
+                    setTimeout(completeLeadCapture, 600);
+                } else {
+                    appendBotMessage("Please enter a valid Phone or WhatsApp number (at least 7 characters):");
+                }
             } else {
-                // Free-text query or start intent when not in capturing name/email states
+                // Free-text query or start intent when not in capturing states
                 appendUserMessage(val);
                 chatInput.value = '';
                 processNLPQuery(val);
@@ -976,6 +998,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         source: 'Chatbot',
                         name: userAnswers.name,
                         email: userAnswers.email,
+                        phone: userAnswers.phone || 'N/A',
                         service: userAnswers.service || 'Custom Solution',
                         budget: userAnswers.budget || 'Custom Range'
                     };
@@ -987,7 +1010,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 appendBotMessage(`I've registered your interest for a ${userAnswers.service} within the budget of ${userAnswers.budget}.`);
                 setTimeout(() => {
-                    appendBotMessage(`Our tech coordinator based in Islamabad is compiling your proposal and will contact you at ${userAnswers.email} within 24 hours.`);
+                    appendBotMessage(`Our tech coordinator based in Islamabad is compiling your proposal and will contact you at ${userAnswers.email} / ${userAnswers.phone} within 24 hours.`);
                     
                     setTimeout(() => {
                         enableInput("Ask anything about our company...");
@@ -997,6 +1020,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.log('--- CONVERSATIONAL LEAD CATCHER SUBMISSION ---');
                     console.log(`Name: ${userAnswers.name}`);
                     console.log(`Email: ${userAnswers.email}`);
+                    console.log(`Phone: ${userAnswers.phone}`);
                     console.log(`System Type: ${userAnswers.service}`);
                     console.log(`Budget Range: ${userAnswers.budget}`);
                     console.log('----------------------------------------------');
@@ -1011,5 +1035,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 handleUserInput();
             }
         });
+    })();
+
+    // --- 11a. FLOATING WHATSAPP BUTTON ---
+    (function initWhatsAppFloat() {
+        const waBtn = document.createElement('a');
+        waBtn.className = 'whatsapp-float-btn';
+        waBtn.href = 'https://wa.me/923335954599';
+        waBtn.target = '_blank';
+        waBtn.setAttribute('aria-label', 'Chat on WhatsApp');
+        waBtn.innerHTML = `
+            <div class="whatsapp-pulse-ring"></div>
+            <svg viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.333 4.982L2 22l5.233-1.371a9.92 9.92 0 0 0 4.778 1.226h.004c5.505 0 9.989-4.478 9.99-9.984A9.97 9.97 0 0 0 12.012 2zm5.748 14.124c-.241.678-1.205 1.258-1.657 1.353-.408.086-.938.163-3.11-.743-2.776-1.155-4.544-3.99-4.683-4.175-.138-.184-1.121-1.493-1.121-2.848 0-1.356.708-2.014.962-2.28.252-.266.551-.33.735-.33.184 0 .367.002.527.009.168.007.394-.063.618.478.225.542.766 1.868.832 2.001.066.134.11.291.02.469-.09.177-.134.291-.266.444-.132.154-.277.344-.396.463-.133.133-.271.278-.118.542.152.264.678 1.117 1.455 1.808.997.89 1.838 1.166 2.098 1.297.26.13.411.109.563-.067.153-.177.653-.761.826-1.02.174-.26.347-.217.584-.13.238.087 1.503.71 1.761.84.258.128.43.193.493.302.063.109.063.63-.178 1.309z"/></svg>
+        `;
+        document.body.appendChild(waBtn);
     })();
 });

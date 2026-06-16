@@ -4083,4 +4083,155 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+/* --- FLOATING WHATSAPP BUTTON --- */
+.whatsapp-float-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #25d366;
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 99999;
+}
+.whatsapp-float-btn:hover {
+    transform: scale(1.08) translateY(-3px);
+    box-shadow: 0 12px 35px rgba(37, 211, 102, 0.5);
+    background: #20ba5a;
+}
+.whatsapp-float-btn svg {
+    width: 32px;
+    height: 32px;
+    fill: currentColor;
+}
+.whatsapp-pulse-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid #25d366;
+    animation: waGlow 2s infinite ease-out;
+    pointer-events: none;
+}
+@keyframes waGlow {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.4);
+        opacity: 0;
+    }
+}
+
+/* --- PREMIUM DROPDOWN MENU --- */
+.nav-links li {
+    position: relative;
+}
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(15px);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 124, 0, 0.15);
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    list-style: none;
+    padding: 10px 0;
+    min-width: 240px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+}
+.nav-links li.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(5px);
+}
+.dropdown-menu li {
+    width: 100%;
+}
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--color-brand-charcoal);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+.dropdown-menu li a:hover {
+    background: rgba(0, 124, 0, 0.05);
+    color: var(--color-brand-green);
+    padding-left: 25px;
+}
+.dropdown-arrow {
+    font-size: 0.65rem;
+    margin-left: 4px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+.dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+@media (max-width: 992px) {
+    .whatsapp-float-btn {
+        bottom: 20px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+    }
+    .whatsapp-float-btn svg {
+        width: 26px;
+        height: 26px;
+    }
+    .nav-links li.dropdown:hover .dropdown-menu,
+    .nav-links li.dropdown:focus-within .dropdown-menu {
+        display: block;
+    }
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        box-shadow: none;
+        background: rgba(255, 255, 255, 0.03);
+        border-left: 2px solid var(--color-brand-green);
+        border-radius: 0;
+        padding: 5px 0 5px 15px;
+        margin-top: 5px;
+        min-width: unset;
+        display: none;
+    }
+    .dropdown-menu li a {
+        padding: 8px 0;
+        color: var(--color-brand-charcoal) !important;
+        font-size: 0.8rem;
+    }
+    /* In mobile sidebar when text links are white */
+    .nav-links.mobile-active .dropdown-menu li a {
+        color: rgba(255,255,255,0.8) !important;
+    }
+    .dropdown-menu li a:hover {
+        padding-left: 5px;
+        color: var(--color-brand-green) !important;
+    }
+    .nav-links.mobile-active .dropdown-menu li a:hover {
+        color: var(--color-neon-green) !important;
+    }
+}
+
 
