@@ -94,7 +94,7 @@
                     <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
                     <li><a href="about.html" class="nav-link">About Us</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
-                    <li><a href="contact.html" class="btn btn-glow-outline" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Get Estimate</a></li>
+                    <li><a href="#pricingCalculator" class="btn btn-glow-outline" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Get Estimate</a></li>
                 </ul>
             </nav>
         </div>
@@ -179,7 +179,7 @@
                 <p class="hero-desc">Partner with Islamabad's leading custom software development company. We design and construct premium web systems, cross-platform Android & iOS mobile apps, custom AI-driven products, API integrations, high-converting Shopify & WooCommerce e-commerce engines, and result-oriented digital marketing campaigns to scale your brand globally.</p>
                 <div class="hero-buttons">
                     <a href="contact.html" class="btn btn-primary" id="heroCtaPrimary">Start Your Project</a>
-                    <a href="services.html" class="btn btn-secondary" id="heroCtaSecondary">Explore Services</a>
+                    <a href="#pricingCalculator" class="btn btn-secondary" id="heroCtaSecondary">Cost Calculator</a>
                 </div>
             </div>
             
@@ -1062,6 +1062,162 @@ gateway.syncAkhuwatDB() <span class="code-comment">// Sync completed: 0ms latenc
         </div>
     </section>
 
+    <!-- --- INTERACTIVE COST ESTIMATOR CALCULATOR --- -->
+    <section class="cost-calculator-section" id="pricingCalculator">
+        <div class="container">
+            <div class="section-title-wrap text-center">
+                <span class="section-tag">FLEXIBLE ESTIMATOR</span>
+                <h2 class="section-title">Interactive Cost Calculator</h2>
+                <p class="section-subtitle">Estimate your one-time software development costs and recurring monthly retainers in real-time.</p>
+            </div>
+            
+            <div class="calc-container">
+                <!-- Left Column: inputs -->
+                <div class="calc-card">
+                    <!-- Project Scale Slider -->
+                    <div class="calc-group">
+                        <div class="calc-label">
+                            <span>Project Base Scope / Scale</span>
+                            <span class="slider-val-badge" id="sliderVal">$5,000 USD</span>
+                        </div>
+                        <div class="calc-slider-wrap">
+                            <input type="range" id="projectScale" class="calc-slider" min="1000" max="50000" step="500" value="5000">
+                            <div class="calc-slider-labels">
+                                <span>$1,000 USD (Minimum)</span>
+                                <span>$25,000</span>
+                                <span>Enterprise Unlimited</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- One-Time Add-ons -->
+                    <div class="calc-group">
+                        <div class="calc-label">One-Time Technical Add-ons</div>
+                        <div class="checkbox-grid">
+                            <label class="checkbox-card" id="cardWeb">
+                                <input type="checkbox" id="addWeb" value="1500">
+                                <div class="checkbox-info">
+                                    <span class="checkbox-title">Custom Web Application</span>
+                                    <span class="checkbox-price">+$1,500 USD</span>
+                                </div>
+                            </label>
+                            <label class="checkbox-card" id="cardMobile">
+                                <input type="checkbox" id="addMobile" value="2500">
+                                <div class="checkbox-info">
+                                    <span class="checkbox-title">Mobile App (Android/iOS)</span>
+                                    <span class="checkbox-price">+$2,500 USD</span>
+                                </div>
+                            </label>
+                            <label class="checkbox-card" id="cardAI">
+                                <input type="checkbox" id="addAI" value="2000">
+                                <div class="checkbox-info">
+                                    <span class="checkbox-title">AI Agent & LLM Chatbot</span>
+                                    <span class="checkbox-price">+$2,000 USD</span>
+                                </div>
+                            </label>
+                            <label class="checkbox-card" id="cardERP">
+                                <input type="checkbox" id="addERP" value="3500">
+                                <div class="checkbox-info">
+                                    <span class="checkbox-title">Custom ERP & CRM System</span>
+                                    <span class="checkbox-price">+$3,500 USD</span>
+                                </div>
+                            </label>
+                            <label class="checkbox-card" id="cardAPI">
+                                <input type="checkbox" id="addAPI" value="800">
+                                <div class="checkbox-info">
+                                    <span class="checkbox-title">Third-Party API Integrations</span>
+                                    <span class="checkbox-price">+$800 USD</span>
+                                </div>
+                            </label>
+                            <label class="checkbox-card" id="cardUX">
+                                <input type="checkbox" id="addUX" value="800">
+                                <div class="checkbox-info">
+                                    <span class="checkbox-title">Premium UI/UX Design Assets</span>
+                                    <span class="checkbox-price">+$800 USD</span>
+                                </div>
+                            </label>
+                            <label class="checkbox-card" id="cardDevOps">
+                                <input type="checkbox" id="addDevOps" value="700">
+                                <div class="checkbox-info">
+                                    <span class="checkbox-title">CI/CD & DevOps Pipeline Setup</span>
+                                    <span class="checkbox-price">+$700 USD</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Monthly Retainers -->
+                    <div class="calc-group">
+                        <div class="calc-label">Monthly Support & Growth Retainers</div>
+                        <div class="checkbox-grid">
+                            <label class="checkbox-card" id="cardSEO">
+                                <input type="checkbox" id="addSEO" value="499">
+                                <div class="checkbox-info">
+                                    <span class="checkbox-title">Technical SEO & Marketing</span>
+                                    <span class="checkbox-price">+$499 / mo</span>
+                                </div>
+                            </label>
+                            <label class="checkbox-card" id="cardEcom">
+                                <input type="checkbox" id="addEcom" value="299">
+                                <div class="checkbox-info">
+                                    <span class="checkbox-title">Shopify / WooCommerce Mgmt</span>
+                                    <span class="checkbox-price">+$299 / mo</span>
+                                </div>
+                            </label>
+                            <label class="checkbox-card" id="cardDev">
+                                <input type="checkbox" id="addDev" value="2500">
+                                <div class="checkbox-info">
+                                    <span class="checkbox-title">Dedicated Offshore Dev Slot</span>
+                                    <span class="checkbox-price">+$2,500 / mo</span>
+                                </div>
+                            </label>
+                            <label class="checkbox-card" id="cardCloud">
+                                <input type="checkbox" id="addCloud" value="199">
+                                <div class="checkbox-info">
+                                    <span class="checkbox-title">SLA Support & Server Monitoring</span>
+                                    <span class="checkbox-price">+$199 / mo</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column: Sticky Summary -->
+                <div class="calc-summary-card">
+                    <h3 class="summary-title">
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4 6h-4v2h4v2h-4v2h4v2H9V7h6v2z"/></svg>
+                        Project Estimate Summary
+                    </h3>
+                    
+                    <div class="summary-row">
+                        <span class="summary-row-label">One-Time Development Cost:</span>
+                        <div class="summary-price-wrap">
+                            <div class="summary-price-one-time" id="outOneTime">$5,000 USD</div>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-row">
+                        <span class="summary-row-label">Monthly Recurring Support:</span>
+                        <div class="summary-price-wrap">
+                            <div class="summary-price-recurring" id="outRecurring">$0 / mo</div>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-divider"></div>
+                    
+                    <button class="calc-cta-btn" id="calcCtaBtn">
+                        <span>Book Project Consultation</span>
+                        <svg style="width: 18px; height: 18px; fill: currentColor;" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+                    </button>
+                    
+                    <p class="calc-notes">
+                        * Estimates are for budget projections only. Final scope specifications will be determined during deep-dive strategy calls. Custom enterprise quotes automatically include dedicated QA and project managers.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- --- CTA CONVERT CARD SECTION --- -->
     <section class="section animate-fade-in" id="ctaConvertSection">
         <div class="container">
@@ -1070,7 +1226,7 @@ gateway.syncAkhuwatDB() <span class="code-comment">// Sync completed: 0ms latenc
                 <div style="position: relative; z-index: 2; max-width: 700px; margin: 0 auto;">
                     <h2 style="font-size: 2.8rem; margin-bottom: 1.5rem;">Ready to Build Something <span class="text-gradient">Extraordinary</span>?</h2>
                     <p style="color: var(--color-text-secondary); font-size: 1.15rem; margin-bottom: 2.5rem;">Partner with ABT IT Innovations. Let's calculate your project scope and budget today using our custom interactive planner tool.</p>
-                    <a href="contact.html" class="btn btn-primary" id="ctaSectionCta">Use Our Project Planner</a>
+                    <a href="#pricingCalculator" class="btn btn-primary" id="ctaSectionCta">Estimate Project Cost</a>
                 </div>
             </div>
         </div>
@@ -1116,6 +1272,7 @@ gateway.syncAkhuwatDB() <span class="code-comment">// Sync completed: 0ms latenc
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="about.html#advantages">The Pakistan Hub</a></li>
                     <li><a href="index.html#processSection">Our Process</a></li>
+                    <li><a href="#pricingCalculator">Cost Calculator</a></li>
                     <li><a href="careers.html">Careers</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
