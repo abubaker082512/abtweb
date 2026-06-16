@@ -1,4 +1,140 @@
+// Check theme preference instantly to prevent flash of light theme
+(function() {
+    const savedTheme = localStorage.getItem('abt_theme');
+    if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark-theme');
+        // If document.body is already parsed, apply to body as well
+        if (document.body) {
+            document.body.classList.add('dark-theme');
+        }
+    }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
+    // Sync body class with html element if theme check applied early
+    if (document.documentElement.classList.contains('dark-theme')) {
+        document.body.classList.add('dark-theme');
+    }
+
+    // --- 0. THEME SWITCHER INJECTION ---
+    const mobileToggle = document.querySelector('.mobile-nav-toggle');
+    const themeBtn = document.createElement('button');
+    themeBtn.className = 'theme-toggle-btn';
+    themeBtn.setAttribute('aria-label', 'Toggle Theme');
+    themeBtn.innerHTML = `
+        <svg class="theme-icon sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="theme-icon moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+    `;
+    
+    if (mobileToggle) {
+        mobileToggle.parentNode.insertBefore(themeBtn, mobileToggle);
+    } else {
+        const navContainer = document.querySelector('.nav-container');
+        if (navContainer) {
+            navContainer.appendChild(themeBtn);
+        }
+    }
+    
+    themeBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-theme');
+        document.documentElement.classList.toggle('dark-theme');
+        const isDark = document.body.classList.contains('dark-theme');
+        localStorage.setItem('abt_theme', isDark ? 'dark' : 'light');
+    });
+
+    // --- 0a. SCROLL PROGRESS BAR ---
+    const scrollBar = document.createElement('div');
+    scrollBar.className = 'scroll-progress-bar';
+    document.body.appendChild(scrollBar);
+    
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        scrollBar.style.width = `${scrollPercent}%`;
+    });
+
+    // --- 0b. CARD HOVER GLOWS ---
+    const cards = document.querySelectorAll('.glass-panel');
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+
+    // --- 0c. MAGNETIC BUTTON PULL EFFECT ---
+    const magneticItems = document.querySelectorAll('.btn, .whatsapp-float-btn, .theme-toggle-btn');
+    magneticItems.forEach(item => {
+        item.addEventListener('mousemove', (e) => {
+            const rect = item.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            item.style.transform = `translate(${x * 0.18}px, ${y * 0.18}px)`;
+        });
+        item.addEventListener('mouseleave', () => {
+            item.style.transform = '';
+        });
+    });
+
+    // --- 0d. HERO TYPEWRITER EFFECT ---
+    const typedSpan = document.getElementById('typedText');
+    if (typedSpan) {
+        const phrases = [
+            'Elite Custom Software',
+            'AI & SaaS Systems',
+            'High-Performance Mobile Apps',
+            'DevOps & Cloud Systems',
+            'Scalable Tech Architectures'
+        ];
+        let phraseIndex = 0;
+        let charIndex = phrases[0].length;
+        let isDeleting = true; // Start by erasing placeholder after a delay
+        let typingSpeed = 100;
+        
+        function type() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                typedSpan.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+                typingSpeed = 50;
+            } else {
+                typedSpan.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+                typingSpeed = 100;
+            }
+            
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                isDeleting = true;
+                typingSpeed = 2000; // Pause showing full phrase
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typingSpeed = 500; // Short pause before typing next
+            }
+            
+            setTimeout(type, typingSpeed);
+        }
+        
+        // Initial delay matches pause length before erasing starts
+        setTimeout(type, 2000);
+    }
     
     // --- 1. CURSOR GLOW EFFECT ---
     const cursorGlow = document.createElement('div');

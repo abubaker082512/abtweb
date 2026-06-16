@@ -27,6 +27,12 @@
     --color-text-secondary: #475569;
     --color-text-muted: #64748b;
     
+    /* Dynamic Header & Grid Overlays */
+    --color-header-bg: rgba(248, 250, 252, 0.8);
+    --color-header-bg-scrolled: rgba(248, 250, 252, 0.95);
+    --color-grid-line: rgba(15, 23, 42, 0.012);
+    --color-gradient-start: #0f172a;
+    
     /* Transitions & Shadows */
     --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     --transition-quick: all 0.2s ease;
@@ -34,9 +40,146 @@
     --shadow-glass: 0 8px 32px 0 rgba(15, 23, 42, 0.05);
 }
 
-/* Dark Theme Overrides for Sections */
-.theme-dark-section {
-    /* Disabled: Unified Light Theme redesign */
+/* Premium Dark Theme Variable Overrides */
+html.dark-theme, body.dark-theme {
+    --color-bg-dark: #090d16; /* Deep space dark base */
+    --color-bg-card: rgba(17, 24, 39, 0.7); /* Sleek glassmorphism charcoal card */
+    --color-bg-card-hover: rgba(17, 24, 39, 0.85);
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-border-glow: rgba(0, 179, 0, 0.35); /* Neon border highlight */
+    
+    --color-text-primary: #f8fafc;
+    --color-text-secondary: #94a3b8;
+    --color-text-muted: #64748b;
+    
+    --color-header-bg: rgba(9, 13, 22, 0.85);
+    --color-header-bg-scrolled: rgba(9, 13, 22, 0.95);
+    --color-grid-line: rgba(255, 255, 255, 0.02);
+    --color-gradient-start: #f8fafc;
+    
+    --shadow-neon: 0 8px 30px rgba(0, 179, 0, 0.15);
+    --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Global Transitions for Theme Swapping */
+body, header, .logo-text, .nav-link, footer, .glass-panel, .btn-secondary, .theme-toggle-btn {
+    transition: background 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- THEME TOGGLE BUTTON STYLES --- */
+.theme-toggle-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 124, 0, 0.05);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    z-index: 1010;
+}
+
+.theme-toggle-btn:hover {
+    border-color: var(--color-brand-green);
+    background: rgba(0, 124, 0, 0.1);
+    box-shadow: var(--shadow-neon);
+}
+
+.theme-icon {
+    position: absolute;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    width: 18px;
+    height: 18px;
+}
+
+/* Toggle Rotations and Opacity Switches */
+body:not(.dark-theme) .sun-icon {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.5);
+}
+body:not(.dark-theme) .moon-icon {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+}
+
+body.dark-theme .sun-icon {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+    color: #fbbf24; /* Golden glow sun */
+}
+body.dark-theme .moon-icon {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5);
+}
+
+/* --- SCROLL PROGRESS BAR --- */
+.scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-brand-green), var(--color-neon-green));
+    z-index: 9999;
+    width: 0%;
+    pointer-events: none;
+    transition: width 0.1s ease-out;
+}
+
+/* --- MOUSE GLOW CARD OVERLAYS --- */
+.glass-panel {
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+        300px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+        rgba(0, 124, 0, 0.08),
+        transparent 65%
+    );
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.glass-panel:hover::before {
+    opacity: 1;
+}
+
+/* Ensure contents sit above glow overlay */
+.glass-panel > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* --- BLINKING TYPING CURSOR --- */
+.typed-cursor {
+    font-weight: 300;
+    animation: cursor-blink 0.8s infinite;
+    color: var(--color-neon-green);
+    margin-left: 2px;
+}
+
+@keyframes cursor-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 /* --- RESET & BASE STYLES --- */
@@ -71,8 +214,8 @@ body::before {
     background-image: 
         radial-gradient(circle at 20% 30%, rgba(0, 124, 0, 0.02) 0%, transparent 40%),
         radial-gradient(circle at 80% 70%, rgba(0, 124, 0, 0.02) 0%, transparent 40%),
-        linear-gradient(rgba(15, 23, 42, 0.012) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(15, 23, 42, 0.012) 1px, transparent 1px);
+        linear-gradient(var(--color-grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--color-grid-line) 1px, transparent 1px);
     background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
     z-index: -2;
     pointer-events: none;
@@ -113,7 +256,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text-gradient {
-    background: linear-gradient(135deg, #0f172a 30%, var(--color-brand-green) 100%);
+    background: linear-gradient(135deg, var(--color-gradient-start) 30%, var(--color-brand-green) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -245,7 +388,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(248, 250, 252, 0.8);
+    background: var(--color-header-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--color-border);
@@ -254,7 +397,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .header-scrolled {
     padding: 0.6rem 0;
-    background: rgba(248, 250, 252, 0.95);
+    background: var(--color-header-bg-scrolled);
     border-bottom-color: rgba(0, 124, 0, 0.15);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
@@ -266,10 +409,37 @@ h1, h2, h3, h4, h5, h6 {
     height: 70px;
 }
 
+.nav-container nav {
+    order: 2;
+    margin-left: auto;
+}
+
+.theme-toggle-btn {
+    order: 3;
+    margin-left: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .nav-container nav {
+        order: unset;
+        margin-left: 0;
+    }
+    .theme-toggle-btn {
+        order: 2;
+        margin-left: auto;
+    }
+    .mobile-nav-toggle {
+        order: 3;
+        margin-left: 1rem;
+        display: block; /* ensure display rule overrides default */
+    }
+}
+
 .logo-wrap {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    order: 1;
 }
 
 .logo-img {
@@ -4232,6 +4402,42 @@ h1, h2, h3, h4, h5, h6 {
     .nav-links.mobile-active .dropdown-menu li a:hover {
         color: var(--color-neon-green) !important;
     }
+}
+
+/* --- DARK MODE SPECIAL OVERRIDES --- */
+body.dark-theme {
+    background-color: var(--color-bg-dark) !important;
+}
+
+/* Override inline dark charcoal text colors on subpages */
+body.dark-theme [style*="color:var(--color-brand-charcoal)"],
+body.dark-theme [style*="color: var(--color-brand-charcoal)"],
+body.dark-theme [style*="color: rgb(38, 38, 38)"],
+body.dark-theme [style*="color:rgb(38, 38, 38)"] {
+    color: var(--color-text-primary) !important;
+}
+
+/* Sidebar Spotlight card override for dark mode on service detailed pages */
+body.dark-theme .service-hero + .section .container > div > div:nth-child(2) {
+    background: var(--color-bg-card) !important;
+    border-color: var(--color-border) !important;
+    box-shadow: var(--shadow-glass) !important;
+    border-radius: 24px;
+}
+
+/* Form inputs & interactive controls dark override */
+body.dark-theme input,
+body.dark-theme textarea,
+body.dark-theme select {
+    background-color: var(--color-bg-card) !important;
+    color: var(--color-text-primary) !important;
+    border-color: var(--color-border) !important;
+}
+
+/* Admin console panel body override */
+body.dark-theme#loginGate,
+body.dark-theme .admin-login-wrapper {
+    background: var(--color-bg-dark) !important;
 }
 
 
