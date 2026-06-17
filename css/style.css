@@ -2458,78 +2458,248 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 768px) {
+    /* Section spacing */
     .section {
-        padding: 5rem 0;
+        padding: 3.5rem 0;
     }
     
+    /* Typography scale-down */
     .section-title {
+        font-size: 1.9rem;
+        line-height: 1.2;
+    }
+    .section-tag {
+        font-size: 0.7rem;
+    }
+    
+    /* Hero Section - fit most content in single view */
+    .hero-section {
+        min-height: auto;
+        padding-top: 80px;
+        padding-bottom: 2rem;
+    }
+    .hero-grid {
+        gap: 2rem;
+        text-align: center;
+    }
+    .hero-title {
+        font-size: 2rem;
+        line-height: 1.15;
+        margin-bottom: 1rem;
+    }
+    .hero-desc {
+        font-size: 1rem;
+        margin: 0 auto 1.5rem;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+    .hero-visual {
+        height: 240px;
+    }
+    .tech-globe-container {
+        width: 220px;
+        height: 220px;
+    }
+    .hero-floating-client-card {
+        display: none !important;
+    }
+    
+    /* Stats grid */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    .stat-number {
         font-size: 2.2rem;
     }
     
-    .hero-title {
-        font-size: 2.8rem;
-    }
-    
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 3rem;
-    }
-    
+    /* Roadmap / Timeline */
     .roadmap-timeline::before {
         left: 20px;
     }
-    
     .roadmap-step {
         width: 100%;
         padding-left: 3.5rem;
         padding-right: 0;
         text-align: left;
-        margin-bottom: 3.5rem;
+        margin-bottom: 2.5rem;
     }
-    
     .roadmap-step:nth-child(even) {
         left: 0;
         padding-left: 3.5rem;
     }
-    
     .roadmap-node {
         left: 5px;
         right: auto;
     }
-    
     .roadmap-step:nth-child(even) .roadmap-node {
         left: 5px;
     }
     
+    /* Forms & Planner */
     .services-select-grid {
         grid-template-columns: 1fr;
     }
-    
     .tiles-select-grid {
         grid-template-columns: 1fr;
     }
-    
     .form-input-group {
         grid-template-columns: 1fr;
     }
-    
     .planner-form-card {
-        padding: 2rem 1.5rem;
+        padding: 1.5rem 1rem;
     }
     
+    /* Footer */
     .footer-grid {
         grid-template-columns: 1fr;
+        gap: 2rem;
     }
     
+    /* Cards & Grids */
     .advantage-grid {
         grid-template-columns: 1fr;
+        gap: 1.2rem;
     }
-    
     .values-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+    .deliverables-checklist {
         grid-template-columns: 1fr;
     }
     
-    .deliverables-checklist {
+    /* Glass panels */
+    .glass-panel {
+        padding: 2rem 1.2rem !important;
+    }
+    
+    /* Brand ticker */
+    .brand-bar-title {
+        font-size: 0.65rem;
+        margin-bottom: 1rem;
+    }
+    .brand-logo-text {
+        font-size: 1rem;
+    }
+    
+    /* Container padding on mobile */
+    .container {
+        padding: 0 1rem;
+    }
+}
+
+/* ---- EXTRA SMALL MOBILE (≤480px) ---- */
+@media (max-width: 480px) {
+    .section {
+        padding: 2.5rem 0;
+    }
+    .section-title {
+        font-size: 1.65rem;
+    }
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    .hero-desc {
+        font-size: 0.92rem;
+    }
+    .hero-visual {
+        height: 190px;
+    }
+    .tech-globe-container {
+        width: 180px;
+        height: 180px;
+    }
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    .portfolio-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.2rem !important;
+    }
+    .portfolio-img-wrap {
+        height: 180px;
+    }
+    /* Chatbot full-width on tiny screens */
+    .chatbot-window {
+        width: calc(100vw - 32px) !important;
+        height: 420px !important;
+        right: 16px !important;
+        bottom: 70px !important;
+    }
+    /* CTA buttons stacked */
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn {
+        font-size: 0.85rem;
+        padding: 0.65rem 1.4rem;
+    }
+    /* Service cards min-width reset */
+    .service-card, .calc-option-card {
+        min-width: unset !important;
+        width: 100% !important;
+    }
+    /* Overview section */
+    .overview-layout-grid {
+        grid-template-columns: 1fr !important;
+    }
+    /* Filter buttons wrap */
+    .filter-tabs {
+        flex-wrap: wrap;
+        gap: 0.4rem;
+    }
+    .filter-btn {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.9rem;
+    }
+    /* Footer tighter */
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+}
+
+/* ---- VERY SMALL MOBILE (≤360px) ---- */
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 1.55rem;
+    }
+    .section-title {
+        font-size: 1.45rem;
+    }
+    .hero-desc {
+        font-size: 0.85rem;
+    }
+    .btn {
+        font-size: 0.8rem;
+        padding: 0.6rem 1.1rem;
+    }
+    .logo-img {
+        height: 32px;
+    }
+    .nav-container {
+        height: 58px;
+    }
+    .nav-links {
+        top: 58px !important;
+        height: calc(100vh - 58px) !important;
+    }
+    .stats-grid {
         grid-template-columns: 1fr;
     }
 }
@@ -4657,12 +4827,4 @@ body.dark-theme .dropdown-menu li a {
 body.dark-theme .dropdown-menu li a:hover {
     background: rgba(255, 255, 255, 0.05) !important;
     color: var(--color-neon-green) !important;
-}
-
-/* --- MOBILE GRID OVERRIDES --- */
-@media (max-width: 480px) {
-    .portfolio-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-    }
 }
