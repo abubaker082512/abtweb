@@ -7,6 +7,19 @@
     <title>Latest Tech Insights & Case Studies | ABT IT Innovations Blog</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="Branding/ABT IT NEW LOGO Sq WB.png">
+    <style>
+        .blog-card {
+            transition: transform 0.3s ease, border-color 0.35s ease, box-shadow 0.35s ease !important;
+        }
+        .blog-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--color-neon-green) !important;
+            box-shadow: 0 12px 30px rgba(0, 179, 0, 0.15) !important;
+        }
+        .blog-card:hover .blog-img-wrap img {
+            transform: scale(1.06);
+        }
+    </style>
 </head>
 <body>
     <!-- --- HEADER --- -->
@@ -87,535 +100,830 @@
         <div class="container">
             <div class="portfolio-grid" id="blogGrid">
                 
-            <div class="blog-card glass-panel animate-fade-in" data-category="AI & SaaS" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">AI & SaaS</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">The Rise of Agentic AI Workflows: Agile Boutique Teams vs Enterprise Giants</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Discover how agentic AI workflows and multi-agent systems are implemented faster by boutique agencies compared to enterprise giants.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="AI & SaaS" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/ai_saas_illustration.png" alt="The Rise of Agentic AI Workflows: Agile Boutique Teams vs Enterprise Giants" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/rise-of-agentic-ai-workflows.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">AI & SaaS</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">The Rise of Agentic AI Workflows: Agile Boutique Teams vs Enterprise Giants</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Discover how agentic AI workflows and multi-agent systems are implemented faster by boutique agencies compared to enterprise giants.</p>
+                    </div>
+                    <a href="blog/rise-of-agentic-ai-workflows.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Mobile Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Mobile Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Edge AI and Small Language Models (SLMs): The Next Frontier for Mobile Applications</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Discover small language models (SLMs) and how running AI directly on mobile devices reduces cloud latency.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Mobile Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/mobile_dev_illustration.png" alt="Edge AI and Small Language Models (SLMs): The Next Frontier for Mobile Applications" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/edge-ai-and-small-language-models.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Mobile Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Edge AI and Small Language Models (SLMs): The Next Frontier for Mobile Applications</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Discover small language models (SLMs) and how running AI directly on mobile devices reduces cloud latency.</p>
+                    </div>
+                    <a href="blog/edge-ai-and-small-language-models.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Decentralized Web3 Architectures: Designing Modern Resilient SaaS Applications</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Explore how decentralized Web3 APIs and microservices shape modern secure SaaS architectures.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Decentralized Web3 Architectures: Designing Modern Resilient SaaS Applications" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/decentralized-web3-saas-architectures.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Decentralized Web3 Architectures: Designing Modern Resilient SaaS Applications</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Explore how decentralized Web3 APIs and microservices shape modern secure SaaS architectures.</p>
+                    </div>
+                    <a href="blog/decentralized-web3-saas-architectures.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="DevOps & Cloud" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">DevOps & Cloud</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Green Software Engineering: Transitioning DevOps to Carbon-Efficient Cloud Architectures</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Minimize your carbon footprint and optimize hosting budgets with green cloud computing and sustainable DevOps pipelines.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="DevOps & Cloud" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/devops_cloud_cover.png" alt="Green Software Engineering: Transitioning DevOps to Carbon-Efficient Cloud Architectures" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/green-software-engineering-devops.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">DevOps & Cloud</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Green Software Engineering: Transitioning DevOps to Carbon-Efficient Cloud Architectures</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Minimize your carbon footprint and optimize hosting budgets with green cloud computing and sustainable DevOps pipelines.</p>
+                    </div>
+                    <a href="blog/green-software-engineering-devops.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Why Boutique Teams Outperform Accenture in Web Development</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Accenture. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Why Boutique Teams Outperform Accenture in Web Development" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/boutique-performance-accenture-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Why Boutique Teams Outperform Accenture in Web Development</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Accenture. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/boutique-performance-accenture-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">How Accenture Scales Web Development vs Agile Boutique Houses</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Accenture. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="How Accenture Scales Web Development vs Agile Boutique Houses" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/scaling-comparison-accenture-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">How Accenture Scales Web Development vs Agile Boutique Houses</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Accenture. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/scaling-comparison-accenture-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">The Cost Efficiency of Boutique Agencies for Web Development vs Accenture</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Accenture. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="The Cost Efficiency of Boutique Agencies for Web Development vs Accenture" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/cost-analysis-accenture-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">The Cost Efficiency of Boutique Agencies for Web Development vs Accenture</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Accenture. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/cost-analysis-accenture-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Leveraging Web Development for Growth: Lessons from Accenture and ABT IT</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Accenture. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Leveraging Web Development for Growth: Lessons from Accenture and ABT IT" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/lessons-and-trends-accenture-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Leveraging Web Development for Growth: Lessons from Accenture and ABT IT</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Accenture. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/lessons-and-trends-accenture-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Why Mid-Markets Choose Boutique Providers for Web Development Over Accenture</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Accenture. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Why Mid-Markets Choose Boutique Providers for Web Development Over Accenture" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/mid-market-choice-accenture-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Why Mid-Markets Choose Boutique Providers for Web Development Over Accenture</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Accenture. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/mid-market-choice-accenture-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Bespoke Customization in Web Development: A Deep Dive into Accenture vs Boutique</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Accenture. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Bespoke Customization in Web Development: A Deep Dive into Accenture vs Boutique" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/bespoke-depth-accenture-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Bespoke Customization in Web Development: A Deep Dive into Accenture vs Boutique</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Accenture. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/bespoke-depth-accenture-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Accelerating Time-to-Market for Web Development - Agile Boutique vs Accenture</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Accenture. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Accelerating Time-to-Market for Web Development - Agile Boutique vs Accenture" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/speed-comparison-accenture-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Accelerating Time-to-Market for Web Development - Agile Boutique vs Accenture</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Accenture. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/speed-comparison-accenture-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Why Boutique Teams Outperform Infosys in Web Development</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Infosys. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Why Boutique Teams Outperform Infosys in Web Development" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/boutique-performance-infosys-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Why Boutique Teams Outperform Infosys in Web Development</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Infosys. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/boutique-performance-infosys-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">How Infosys Scales Web Development vs Agile Boutique Houses</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Infosys. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="How Infosys Scales Web Development vs Agile Boutique Houses" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/scaling-comparison-infosys-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">How Infosys Scales Web Development vs Agile Boutique Houses</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Infosys. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/scaling-comparison-infosys-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">The Cost Efficiency of Boutique Agencies for Web Development vs Infosys</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Infosys. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="The Cost Efficiency of Boutique Agencies for Web Development vs Infosys" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/cost-analysis-infosys-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">The Cost Efficiency of Boutique Agencies for Web Development vs Infosys</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Infosys. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/cost-analysis-infosys-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Leveraging Web Development for Growth: Lessons from Infosys and ABT IT</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Infosys. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Leveraging Web Development for Growth: Lessons from Infosys and ABT IT" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/lessons-and-trends-infosys-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Leveraging Web Development for Growth: Lessons from Infosys and ABT IT</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Infosys. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/lessons-and-trends-infosys-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Why Mid-Markets Choose Boutique Providers for Web Development Over Infosys</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Infosys. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Why Mid-Markets Choose Boutique Providers for Web Development Over Infosys" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/mid-market-choice-infosys-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Why Mid-Markets Choose Boutique Providers for Web Development Over Infosys</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Infosys. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/mid-market-choice-infosys-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Bespoke Customization in Web Development: A Deep Dive into Infosys vs Boutique</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Infosys. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Bespoke Customization in Web Development: A Deep Dive into Infosys vs Boutique" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/bespoke-depth-infosys-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Bespoke Customization in Web Development: A Deep Dive into Infosys vs Boutique</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Infosys. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/bespoke-depth-infosys-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Accelerating Time-to-Market for Web Development - Agile Boutique vs Infosys</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Infosys. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Accelerating Time-to-Market for Web Development - Agile Boutique vs Infosys" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/speed-comparison-infosys-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Accelerating Time-to-Market for Web Development - Agile Boutique vs Infosys</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Infosys. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/speed-comparison-infosys-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Why Boutique Teams Outperform Wipro in Web Development</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Wipro. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Why Boutique Teams Outperform Wipro in Web Development" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/boutique-performance-wipro-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Why Boutique Teams Outperform Wipro in Web Development</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Wipro. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/boutique-performance-wipro-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">How Wipro Scales Web Development vs Agile Boutique Houses</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Wipro. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="How Wipro Scales Web Development vs Agile Boutique Houses" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/scaling-comparison-wipro-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">How Wipro Scales Web Development vs Agile Boutique Houses</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Wipro. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/scaling-comparison-wipro-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">The Cost Efficiency of Boutique Agencies for Web Development vs Wipro</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Wipro. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="The Cost Efficiency of Boutique Agencies for Web Development vs Wipro" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/cost-analysis-wipro-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">The Cost Efficiency of Boutique Agencies for Web Development vs Wipro</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Wipro. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/cost-analysis-wipro-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Leveraging Web Development for Growth: Lessons from Wipro and ABT IT</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Wipro. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Leveraging Web Development for Growth: Lessons from Wipro and ABT IT" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/lessons-and-trends-wipro-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Leveraging Web Development for Growth: Lessons from Wipro and ABT IT</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Wipro. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/lessons-and-trends-wipro-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Why Mid-Markets Choose Boutique Providers for Web Development Over Wipro</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Wipro. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Why Mid-Markets Choose Boutique Providers for Web Development Over Wipro" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/mid-market-choice-wipro-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Why Mid-Markets Choose Boutique Providers for Web Development Over Wipro</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Wipro. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/mid-market-choice-wipro-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Bespoke Customization in Web Development: A Deep Dive into Wipro vs Boutique</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Wipro. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Bespoke Customization in Web Development: A Deep Dive into Wipro vs Boutique" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/bespoke-depth-wipro-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Bespoke Customization in Web Development: A Deep Dive into Wipro vs Boutique</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Wipro. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/bespoke-depth-wipro-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Accelerating Time-to-Market for Web Development - Agile Boutique vs Wipro</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Wipro. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Accelerating Time-to-Market for Web Development - Agile Boutique vs Wipro" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/speed-comparison-wipro-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Accelerating Time-to-Market for Web Development - Agile Boutique vs Wipro</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Wipro. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/speed-comparison-wipro-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Why Boutique Teams Outperform Cognizant in Web Development</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Cognizant. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Why Boutique Teams Outperform Cognizant in Web Development" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/boutique-performance-cognizant-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Why Boutique Teams Outperform Cognizant in Web Development</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Cognizant. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/boutique-performance-cognizant-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">How Cognizant Scales Web Development vs Agile Boutique Houses</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Cognizant. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="How Cognizant Scales Web Development vs Agile Boutique Houses" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/scaling-comparison-cognizant-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">How Cognizant Scales Web Development vs Agile Boutique Houses</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Cognizant. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/scaling-comparison-cognizant-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">The Cost Efficiency of Boutique Agencies for Web Development vs Cognizant</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Cognizant. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="The Cost Efficiency of Boutique Agencies for Web Development vs Cognizant" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/cost-analysis-cognizant-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">The Cost Efficiency of Boutique Agencies for Web Development vs Cognizant</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Cognizant. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/cost-analysis-cognizant-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Leveraging Web Development for Growth: Lessons from Cognizant and ABT IT</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Cognizant. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Leveraging Web Development for Growth: Lessons from Cognizant and ABT IT" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/lessons-and-trends-cognizant-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Leveraging Web Development for Growth: Lessons from Cognizant and ABT IT</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Cognizant. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/lessons-and-trends-cognizant-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Why Mid-Markets Choose Boutique Providers for Web Development Over Cognizant</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Cognizant. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Why Mid-Markets Choose Boutique Providers for Web Development Over Cognizant" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/mid-market-choice-cognizant-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Why Mid-Markets Choose Boutique Providers for Web Development Over Cognizant</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Cognizant. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/mid-market-choice-cognizant-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Bespoke Customization in Web Development: A Deep Dive into Cognizant vs Boutique</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Cognizant. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Bespoke Customization in Web Development: A Deep Dive into Cognizant vs Boutique" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/bespoke-depth-cognizant-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Bespoke Customization in Web Development: A Deep Dive into Cognizant vs Boutique</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Cognizant. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/bespoke-depth-cognizant-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Accelerating Time-to-Market for Web Development - Agile Boutique vs Cognizant</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Cognizant. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Accelerating Time-to-Market for Web Development - Agile Boutique vs Cognizant" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/speed-comparison-cognizant-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Accelerating Time-to-Market for Web Development - Agile Boutique vs Cognizant</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Cognizant. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/speed-comparison-cognizant-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Why Boutique Teams Outperform Globant in Web Development</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Globant. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Why Boutique Teams Outperform Globant in Web Development" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/boutique-performance-globant-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Why Boutique Teams Outperform Globant in Web Development</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Globant. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/boutique-performance-globant-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">How Globant Scales Web Development vs Agile Boutique Houses</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Globant. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="How Globant Scales Web Development vs Agile Boutique Houses" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/scaling-comparison-globant-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">How Globant Scales Web Development vs Agile Boutique Houses</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Globant. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/scaling-comparison-globant-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">The Cost Efficiency of Boutique Agencies for Web Development vs Globant</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Globant. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="The Cost Efficiency of Boutique Agencies for Web Development vs Globant" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/cost-analysis-globant-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">The Cost Efficiency of Boutique Agencies for Web Development vs Globant</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Globant. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/cost-analysis-globant-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Leveraging Web Development for Growth: Lessons from Globant and ABT IT</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Globant. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Leveraging Web Development for Growth: Lessons from Globant and ABT IT" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/lessons-and-trends-globant-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Leveraging Web Development for Growth: Lessons from Globant and ABT IT</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Globant. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/lessons-and-trends-globant-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Why Mid-Markets Choose Boutique Providers for Web Development Over Globant</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Globant. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Why Mid-Markets Choose Boutique Providers for Web Development Over Globant" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/mid-market-choice-globant-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Why Mid-Markets Choose Boutique Providers for Web Development Over Globant</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Globant. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/mid-market-choice-globant-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Bespoke Customization in Web Development: A Deep Dive into Globant vs Boutique</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Globant. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Bespoke Customization in Web Development: A Deep Dive into Globant vs Boutique" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/bespoke-depth-globant-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Bespoke Customization in Web Development: A Deep Dive into Globant vs Boutique</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Globant. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/bespoke-depth-globant-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Accelerating Time-to-Market for Web Development - Agile Boutique vs Globant</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Globant. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Accelerating Time-to-Market for Web Development - Agile Boutique vs Globant" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/speed-comparison-globant-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Accelerating Time-to-Market for Web Development - Agile Boutique vs Globant</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Globant. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/speed-comparison-globant-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Why Boutique Teams Outperform TCS in Web Development</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and TCS. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Why Boutique Teams Outperform TCS in Web Development" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/boutique-performance-tcs-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Why Boutique Teams Outperform TCS in Web Development</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and TCS. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/boutique-performance-tcs-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">How TCS Scales Web Development vs Agile Boutique Houses</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and TCS. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="How TCS Scales Web Development vs Agile Boutique Houses" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/scaling-comparison-tcs-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">How TCS Scales Web Development vs Agile Boutique Houses</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and TCS. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/scaling-comparison-tcs-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">The Cost Efficiency of Boutique Agencies for Web Development vs TCS</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and TCS. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="The Cost Efficiency of Boutique Agencies for Web Development vs TCS" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/cost-analysis-tcs-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">The Cost Efficiency of Boutique Agencies for Web Development vs TCS</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and TCS. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/cost-analysis-tcs-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Leveraging Web Development for Growth: Lessons from TCS and ABT IT</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and TCS. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Leveraging Web Development for Growth: Lessons from TCS and ABT IT" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/lessons-and-trends-tcs-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Leveraging Web Development for Growth: Lessons from TCS and ABT IT</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and TCS. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/lessons-and-trends-tcs-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Why Mid-Markets Choose Boutique Providers for Web Development Over TCS</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and TCS. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Why Mid-Markets Choose Boutique Providers for Web Development Over TCS" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/mid-market-choice-tcs-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Why Mid-Markets Choose Boutique Providers for Web Development Over TCS</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and TCS. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/mid-market-choice-tcs-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Bespoke Customization in Web Development: A Deep Dive into TCS vs Boutique</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and TCS. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Bespoke Customization in Web Development: A Deep Dive into TCS vs Boutique" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/bespoke-depth-tcs-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Bespoke Customization in Web Development: A Deep Dive into TCS vs Boutique</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and TCS. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/bespoke-depth-tcs-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Accelerating Time-to-Market for Web Development - Agile Boutique vs TCS</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and TCS. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Accelerating Time-to-Market for Web Development - Agile Boutique vs TCS" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/speed-comparison-tcs-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Accelerating Time-to-Market for Web Development - Agile Boutique vs TCS</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and TCS. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/speed-comparison-tcs-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Why Boutique Teams Outperform EPAM Systems in Web Development</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and EPAM Systems. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Why Boutique Teams Outperform EPAM Systems in Web Development" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/boutique-performance-epam-systems-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Why Boutique Teams Outperform EPAM Systems in Web Development</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and EPAM Systems. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/boutique-performance-epam-systems-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">How EPAM Systems Scales Web Development vs Agile Boutique Houses</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and EPAM Systems. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="How EPAM Systems Scales Web Development vs Agile Boutique Houses" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/scaling-comparison-epam-systems-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">How EPAM Systems Scales Web Development vs Agile Boutique Houses</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and EPAM Systems. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/scaling-comparison-epam-systems-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">The Cost Efficiency of Boutique Agencies for Web Development vs EPAM Systems</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and EPAM Systems. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="The Cost Efficiency of Boutique Agencies for Web Development vs EPAM Systems" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/cost-analysis-epam-systems-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">The Cost Efficiency of Boutique Agencies for Web Development vs EPAM Systems</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and EPAM Systems. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/cost-analysis-epam-systems-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Leveraging Web Development for Growth: Lessons from EPAM Systems and ABT IT</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and EPAM Systems. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Leveraging Web Development for Growth: Lessons from EPAM Systems and ABT IT" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/lessons-and-trends-epam-systems-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Leveraging Web Development for Growth: Lessons from EPAM Systems and ABT IT</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and EPAM Systems. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/lessons-and-trends-epam-systems-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Why Mid-Markets Choose Boutique Providers for Web Development Over EPAM Systems</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and EPAM Systems. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Why Mid-Markets Choose Boutique Providers for Web Development Over EPAM Systems" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/mid-market-choice-epam-systems-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Why Mid-Markets Choose Boutique Providers for Web Development Over EPAM Systems</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and EPAM Systems. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/mid-market-choice-epam-systems-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Bespoke Customization in Web Development: A Deep Dive into EPAM Systems vs Boutique</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and EPAM Systems. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Bespoke Customization in Web Development: A Deep Dive into EPAM Systems vs Boutique" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/bespoke-depth-epam-systems-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Bespoke Customization in Web Development: A Deep Dive into EPAM Systems vs Boutique</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and EPAM Systems. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/bespoke-depth-epam-systems-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Accelerating Time-to-Market for Web Development - Agile Boutique vs EPAM Systems</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and EPAM Systems. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Accelerating Time-to-Market for Web Development - Agile Boutique vs EPAM Systems" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/speed-comparison-epam-systems-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Accelerating Time-to-Market for Web Development - Agile Boutique vs EPAM Systems</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and EPAM Systems. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/speed-comparison-epam-systems-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Why Boutique Teams Outperform Capgemini in Web Development</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Capgemini. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Why Boutique Teams Outperform Capgemini in Web Development" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/boutique-performance-capgemini-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Why Boutique Teams Outperform Capgemini in Web Development</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Capgemini. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/boutique-performance-capgemini-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">How Capgemini Scales Web Development vs Agile Boutique Houses</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Capgemini. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="How Capgemini Scales Web Development vs Agile Boutique Houses" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/scaling-comparison-capgemini-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">How Capgemini Scales Web Development vs Agile Boutique Houses</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Capgemini. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/scaling-comparison-capgemini-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">The Cost Efficiency of Boutique Agencies for Web Development vs Capgemini</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Capgemini. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="The Cost Efficiency of Boutique Agencies for Web Development vs Capgemini" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/cost-analysis-capgemini-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">The Cost Efficiency of Boutique Agencies for Web Development vs Capgemini</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Capgemini. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/cost-analysis-capgemini-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Leveraging Web Development for Growth: Lessons from Capgemini and ABT IT</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Capgemini. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Leveraging Web Development for Growth: Lessons from Capgemini and ABT IT" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/lessons-and-trends-capgemini-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Leveraging Web Development for Growth: Lessons from Capgemini and ABT IT</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Capgemini. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/lessons-and-trends-capgemini-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Why Mid-Markets Choose Boutique Providers for Web Development Over Capgemini</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Capgemini. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Why Mid-Markets Choose Boutique Providers for Web Development Over Capgemini" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/mid-market-choice-capgemini-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Why Mid-Markets Choose Boutique Providers for Web Development Over Capgemini</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Capgemini. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/mid-market-choice-capgemini-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
-            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; padding: 2rem; border-color: rgba(0, 124, 0, 0.1);">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--color-text-primary);">Bespoke Customization in Web Development: A Deep Dive into Capgemini vs Boutique</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Capgemini. Discover performance, agility, and cost advantages.</p>
+            <div class="blog-card glass-panel animate-fade-in" data-category="Web Apps" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; overflow: hidden; border: 1.5px solid rgba(0, 124, 0, 0.15); height: 100%; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; background: var(--color-bg-card); padding: 0;">
+                <div class="blog-img-wrap" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
+                    <img src="images/web_dev_illustration.png" alt="Bespoke Customization in Web Development: A Deep Dive into Capgemini vs Boutique" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                 </div>
-                <a href="blog/bespoke-depth-capgemini-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                <div style="padding: 1.5rem 1.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 1.5rem;">
+                    <div>
+                        <span class="section-tag" style="margin-bottom: 0.8rem; display: inline-block;">Web Apps</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--color-text-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 3.25rem;">Bespoke Customization in Web Development: A Deep Dive into Capgemini vs Boutique</h3>
+                        <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.95rem; margin-bottom: 0.5rem;">Compare custom Web Development between boutique software house ABT IT Innovations and Capgemini. Discover performance, agility, and cost advantages.</p>
+                    </div>
+                    <a href="blog/bespoke-depth-capgemini-web-development.html" class="btn btn-glow-outline" style="align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Read Article →</a>
+                </div>
             </div>
     
             </div>
