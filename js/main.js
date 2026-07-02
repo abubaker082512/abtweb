@@ -19,11 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 0. THEME SWITCHER INJECTION & LOGO SWAP ---
     const logoImgs = document.querySelectorAll('.logo-img, .admin-login-logo, .sidebar-logo');
     function updateLogo(isDark) {
+        const isSubdir = window.location.pathname.includes('/blog/');
+        const prefix = isSubdir ? '../' : '';
         logoImgs.forEach(img => {
             if (isDark) {
-                img.src = 'Branding/ABT%20IT%20NEW%20LOGO%20White.png';
+                img.src = prefix + 'Branding/ABT%20IT%20NEW%20LOGO%20White.png';
             } else {
-                img.src = 'Branding/ABT%20IT%20NEW%20LOGO.png';
+                img.src = prefix + 'Branding/ABT%20IT%20NEW%20LOGO.png';
             }
         });
     }
