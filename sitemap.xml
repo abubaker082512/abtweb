@@ -98,337 +98,361 @@
     </url>
     <url>
         <loc>https://abtit.online/blog.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://abtit.online/blog/rise-of-agentic-ai-workflows.html</loc>
+        <lastmod>2026-07-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://abtit.online/blog/edge-ai-and-small-language-models.html</loc>
+        <lastmod>2026-07-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://abtit.online/blog/decentralized-web3-saas-architectures.html</loc>
+        <lastmod>2026-07-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://abtit.online/blog/green-software-engineering-devops.html</loc>
+        <lastmod>2026-07-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
         <loc>https://abtit.online/blog/boutique-performance-accenture-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/scaling-comparison-accenture-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/cost-analysis-accenture-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/lessons-and-trends-accenture-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/mid-market-choice-accenture-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/bespoke-depth-accenture-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/speed-comparison-accenture-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/boutique-performance-infosys-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/scaling-comparison-infosys-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/cost-analysis-infosys-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/lessons-and-trends-infosys-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/mid-market-choice-infosys-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/bespoke-depth-infosys-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/speed-comparison-infosys-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/boutique-performance-wipro-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/scaling-comparison-wipro-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/cost-analysis-wipro-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/lessons-and-trends-wipro-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/mid-market-choice-wipro-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/bespoke-depth-wipro-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/speed-comparison-wipro-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/boutique-performance-cognizant-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/scaling-comparison-cognizant-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/cost-analysis-cognizant-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/lessons-and-trends-cognizant-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/mid-market-choice-cognizant-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/bespoke-depth-cognizant-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/speed-comparison-cognizant-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/boutique-performance-globant-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/scaling-comparison-globant-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/cost-analysis-globant-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/lessons-and-trends-globant-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/mid-market-choice-globant-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/bespoke-depth-globant-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/speed-comparison-globant-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/boutique-performance-tcs-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/scaling-comparison-tcs-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/cost-analysis-tcs-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/lessons-and-trends-tcs-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/mid-market-choice-tcs-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/bespoke-depth-tcs-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/speed-comparison-tcs-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/boutique-performance-epam-systems-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/scaling-comparison-epam-systems-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/cost-analysis-epam-systems-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/lessons-and-trends-epam-systems-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/mid-market-choice-epam-systems-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/bespoke-depth-epam-systems-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/speed-comparison-epam-systems-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/boutique-performance-capgemini-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/scaling-comparison-capgemini-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/cost-analysis-capgemini-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/lessons-and-trends-capgemini-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/mid-market-choice-capgemini-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://abtit.online/blog/bespoke-depth-capgemini-web-development.html</loc>
-        <lastmod>2026-07-01</lastmod>
+        <lastmod>2026-07-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
