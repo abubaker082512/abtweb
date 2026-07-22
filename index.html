@@ -116,153 +116,126 @@
     </header>
 
     <!-- --- HERO SECTION --- -->
-    <section class="hero-section">
-        <div class="hero-grid-pattern"></div>
-        <div class="hero-bg-glow hero-bg-glow-1"></div>
-        <div class="hero-bg-glow hero-bg-glow-2"></div>
-        <div class="hero-bg-glow hero-bg-glow-3"></div>
+    <section class="hero-section" style="background: radial-gradient(circle at 10% 20%, rgba(0, 179, 0, 0.05) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.04) 0%, transparent 40%), var(--color-bg-dark); position: relative; overflow: hidden; padding-top: 130px; padding-bottom: 5rem;">
+        <div class="hero-grid-pattern" style="opacity: 0.02;"></div>
         
-        <!-- Interactive Background Floating Client Badges -->
-        <a href="portfolio.html" class="hero-floating-client-card card-float-sector-1" title="View Akhuwat case study">
-            <div class="floating-card-avatar" style="background-image: url('images/akhuwat_app_mockup.png');"></div>
-            <div class="floating-card-info">
-                <span class="floating-card-name">Akhuwat Foundation</span>
-                <span class="floating-card-desc">Microfinance Mobile App</span>
-                <span class="floating-card-tag">Fintech / Flutter</span>
-            </div>
-        </a>
-
-        <a href="portfolio.html" class="hero-floating-client-card card-float-sector-2" title="View BSSole case study">
-            <div class="floating-card-avatar" style="background-image: url('images/bssole_ecommerce_mockup.png');"></div>
-            <div class="floating-card-info">
-                <span class="floating-card-name">BSSole Footwear</span>
-                <span class="floating-card-desc">Shopify Store & ERP Sync</span>
-                <span class="floating-card-tag">Shopify / Liquid</span>
-            </div>
-        </a>
-
-        <a href="portfolio.html" class="hero-floating-client-card card-float-sector-3" title="View Ozo Trips case study">
-            <div class="floating-card-avatar" style="background-image: url('images/ozotrips_booking_mockup.png');"></div>
-            <div class="floating-card-info">
-                <span class="floating-card-name">Ozo Trips</span>
-                <span class="floating-card-desc">Rent-a-Car Dashboard</span>
-                <span class="floating-card-tag">Next.js / Maps API</span>
-            </div>
-        </a>
-
-        <a href="portfolio.html" class="hero-floating-client-card card-float-sector-4" title="View Habibulhujjaj case study">
-            <div class="floating-card-avatar" style="background-image: url('images/habibulhujjaj_portal_mockup.png');"></div>
-            <div class="floating-card-info">
-                <span class="floating-card-name">Habibulhujjaj Travels</span>
-                <span class="floating-card-desc">Umrah & Hajj ERP Portal</span>
-                <span class="floating-card-tag">C# .NET / Azure</span>
-            </div>
-        </a>
-
-        <div class="hero-constellation-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; opacity: 0.35;">
-            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                <!-- Orbit Circles -->
-                <circle cx="20%" cy="40%" r="150" fill="none" stroke="rgba(0, 124, 0, 0.08)" stroke-width="1.5" stroke-dasharray="10 15" style="animation: rotateOrbit 30s linear infinite; transform-origin: 20% 40%;" />
-                <circle cx="80%" cy="60%" r="220" fill="none" stroke="rgba(59, 130, 246, 0.08)" stroke-width="2" stroke-dasharray="5 10" style="animation: rotateOrbit 45s linear infinite reverse; transform-origin: 80% 60%;" />
+        <div class="container hero-grid" style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 4rem; align-items: center; position: relative; z-index: 10;">
+            
+            <!-- Left Info Column -->
+            <div class="hero-content" style="text-align: left;">
+                <span class="section-tag" style="background: rgba(0, 179, 0, 0.08); color: var(--color-neon-green); font-size: 0.75rem; font-weight: 700; padding: 6px 14px; border-radius: 30px; letter-spacing: 1.5px; border: 1px solid rgba(0, 179, 0, 0.15); display: inline-block; margin-bottom: 1.5rem;">ELITE CUSTOM SOFTWARE HOUSE</span>
+                <h1 class="hero-title" style="font-size: 3.5rem; font-weight: 900; line-height: 1.15; color: var(--color-text-primary); margin-bottom: 1.5rem;">
+                    Scale Your Vision<br>Globally with<br><span class="text-gradient-green" id="typedText">Custom Systems</span><span class="typed-cursor">|</span>
+                </h1>
+                <p class="hero-desc" style="font-size: 1.1rem; line-height: 1.65; color: var(--color-text-secondary); margin-bottom: 2.5rem; max-width: 600px;">
+                    We engineer high-performance web applications, native cross-platform mobile apps, custom AI solutions (including our flagship ERP platform, <strong>Beraxis</strong>), and automated API ledger syncs. Partner with Islamabad's premier technology team to future-proof your digital operations.
+                </p>
                 
-                <!-- Pulsing Network Nodes -->
-                <g style="animation: float 8s infinite ease-in-out; transform-origin: 25% 35%;">
-                    <line x1="15%" y1="35%" x2="25%" y2="25%" stroke="rgba(0, 124, 0, 0.12)" stroke-width="1.5" />
-                    <line x1="25%" y1="25%" x2="35%" y2="45%" stroke="rgba(0, 124, 0, 0.12)" stroke-width="1.5" />
-                    <line x1="35%" y1="45%" x2="15%" y2="35%" stroke="rgba(0, 124, 0, 0.12)" stroke-width="1.5" />
-                    
-                    <circle cx="15%" cy="35%" r="5" fill="var(--color-neon-green)" />
-                    <circle cx="25%" cy="25%" r="4" fill="#3b82f6" />
-                    <circle cx="35%" cy="45%" r="6" fill="var(--color-brand-green)" />
-                </g>
+                <!-- Action Buttons -->
+                <div class="hero-buttons" style="display: flex; gap: 1.2rem; margin-bottom: 3.5rem; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn btn-primary" style="padding: 0.9rem 2.2rem; font-size: 1rem; border: none; background: linear-gradient(135deg, var(--color-neon-green) 0%, var(--color-brand-green) 100%); box-shadow: 0 10px 20px rgba(0,179,0,0.15);">
+                        Start Your Project
+                    </a>
+                    <a href="#pricingCalculator" class="btn btn-glow-outline" style="padding: 0.9rem 2.2rem; font-size: 1rem;">
+                        Cost Calculator
+                    </a>
+                </div>
                 
-                <g style="animation: float 10s infinite ease-in-out 1.5s; transform-origin: 82% 45%;">
-                    <line x1="75%" y1="50%" x2="85%" y2="35%" stroke="rgba(59, 130, 246, 0.12)" stroke-width="1.5" />
-                    <line x1="85%" y1="35%" x2="90%" y2="55%" stroke="rgba(59, 130, 246, 0.12)" stroke-width="1.5" />
-                    <line x1="90%" y1="55%" x2="75%" y2="50%" stroke="rgba(59, 130, 246, 0.12)" stroke-width="1.5" />
-                    
-                    <circle cx="75%" cy="50%" r="5" fill="#3b82f6" />
-                    <circle cx="85%" cy="35%" r="4" fill="var(--color-neon-green)" />
-                    <circle cx="90%" cy="55%" r="6" fill="#a855f7" />
-                </g>
-            </svg>
-        </div>
-        <div class="container hero-grid">
-            <div class="hero-content animate-fade-in visible">
-                <span class="section-tag">TOP SOFTWARE HOUSE IN ISLAMABAD</span>
-                <h1 class="hero-title">Scale Your Vision <br>Globally with <br><span class="text-gradient-green" id="typedText">Elite Custom Software</span><span class="typed-cursor">|</span></h1>
-                <p class="hero-desc">Partner with Islamabad's leading custom software development company. We design and construct premium web systems, cross-platform Android & iOS mobile apps, custom AI-driven products, API integrations, high-converting Shopify & WooCommerce e-commerce engines, and result-oriented digital marketing campaigns to scale your brand globally.</p>
-                <div class="hero-buttons">
-                    <a href="contact.html" class="btn btn-primary" id="heroCtaPrimary">Start Your Project</a>
-                    <a href="#pricingCalculator" class="btn btn-secondary" id="heroCtaSecondary">Cost Calculator</a>
+                <!-- Trust Badges Row -->
+                <div style="display: flex; gap: 2rem; border-top: 1px solid var(--color-border); padding-top: 2rem; flex-wrap: wrap;">
+                    <div>
+                        <div style="font-size: 1.8rem; font-weight: 900; color: var(--color-text-primary); line-height: 1;">100+</div>
+                        <div style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 5px; text-transform: uppercase; letter-spacing: 0.05em;">Launch Success</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 1.8rem; font-weight: 900; color: var(--color-text-primary); line-height: 1; display: flex; align-items: center; gap: 5px;">
+                            PSEB <span style="font-size: 0.75rem; background: rgba(0,179,0,0.1); color: var(--color-neon-green); padding: 2px 6px; border-radius: 4px; font-weight: 700;">REG</span>
+                        </div>
+                        <div style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 5px; text-transform: uppercase; letter-spacing: 0.05em;">FBR Certified Hub</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 1.8rem; font-weight: 900; color: var(--color-text-primary); line-height: 1;">24/7</div>
+                        <div style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 5px; text-transform: uppercase; letter-spacing: 0.05em;">Zero Timezone Friction</div>
+                    </div>
                 </div>
             </div>
             
-            <div class="hero-visual animate-fade-in visible">
-                <div class="hero-visual-wrapper">
-                    <!-- Glassmorphic Dashboard Panel (IDE / Web Interface) -->
-                    <div class="mockup-window ide-panel">
-                        <div class="window-header">
-                            <span class="window-dot dot-close"></span>
-                            <span class="window-dot dot-minimize"></span>
-                            <span class="window-dot dot-expand"></span>
-                            <span class="window-title">abt-integration-sync.js</span>
-                        </div>
-                        <div class="window-body">
-                            <pre><code><span class="code-keyword">const</span> gateway = <span class="code-keyword">new</span> <span class="code-class">ABTGateway</span>();
-gateway.syncShopifyStore(<span class="code-string">"bssole.com"</span>);
-gateway.syncWooCommerce(<span class="code-string">"habibulhujjaj.com"</span>);
-gateway.integrateAPIs([<span class="code-string">"Maps"</span>, <span class="code-string">"UmrahAPI"</span>, <span class="code-string">"Stripe"</span>]);
-
-<span class="code-comment">// Realtime Microfinance Offline Sync...</span>
-gateway.syncAkhuwatDB() <span class="code-comment">// Sync completed: 0ms latency</span></code></pre>
-                        </div>
+            <!-- Right Mockup Visual Column -->
+            <div class="hero-visual" style="position: relative;">
+                <!-- Glowing background circles -->
+                <div style="position: absolute; top: 10%; right: 10%; width: 300px; height: 300px; background: rgba(0,179,0,0.06); filter: blur(60px); border-radius: 50%; z-index: -1;"></div>
+                <div style="position: absolute; bottom: 10%; left: 10%; width: 250px; height: 250px; background: rgba(59,130,246,0.04); filter: blur(50px); border-radius: 50%; z-index: -1;"></div>
+                
+                <!-- Main Glassmorphic Dashboard mockup representing ABT IT operations -->
+                <div class="mockup-window ide-panel" style="box-shadow: 0 30px 70px rgba(0,0,0,0.18); border: 1.5px solid rgba(0, 124, 0, 0.15); width: 100%; max-width: 480px; margin: 0 auto; background: var(--color-bg-card);">
+                    <div class="window-header" style="background: var(--color-brand-charcoal); padding: 0.8rem; display: flex; align-items: center; gap: 6px;">
+                        <span class="window-dot dot-close" style="width: 8px; height: 8px; border-radius: 50%; background: #ff5f56; display: inline-block;"></span>
+                        <span class="window-dot dot-minimize" style="width: 8px; height: 8px; border-radius: 50%; background: #ffbd2e; display: inline-block;"></span>
+                        <span class="window-dot dot-expand" style="width: 8px; height: 8px; border-radius: 50%; background: #27c93f; display: inline-block;"></span>
+                        <span class="window-title" style="color: rgba(255,255,255,0.8); font-size: 0.75rem; font-family: monospace;">abt-global-operations.go</span>
                     </div>
-
-                    <!-- Overlapping Mobile App Frame -->
-                    <div class="mockup-window mobile-panel">
-                        <div class="mobile-screen">
-                            <div class="mobile-header">
-                                <span class="mobile-time">12:45</span>
-                                <span class="mobile-battery">⚡</span>
-                            </div>
-                            <div class="mobile-content">
-                                <div class="mobile-avatar-wrap">
-                                    <div class="mobile-avatar" style="background-image: url('images/akhuwat_app_mockup.png'); background-size: cover; border-radius: 50%;"></div>
-                                    <div>
-                                        <div class="mobile-name">Akhuwat Tracker</div>
-                                        <div class="mobile-status">Offline Sync Active</div>
+                    <div class="window-body" style="padding: 1.8rem; background: var(--color-bg-dark); text-align: left; display: flex; flex-direction: column; gap: 1.5rem;">
+                        
+                        <!-- Client-Hub Network Node -->
+                        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--color-border); padding: 1.2rem; border-radius: 12px; position: relative;">
+                            <div style="font-size: 0.7rem; color: var(--color-text-muted); text-transform: uppercase; margin-bottom: 12px; letter-spacing: 0.05em; font-weight: 700;">Live Engineering Tunnel</div>
+                            
+                            <div style="display: flex; justify-content: space-between; align-items: center; position: relative;">
+                                <!-- Left Node: Global Clients (with US/UK flags) -->
+                                <div style="display: flex; flex-direction: column; align-items: center; z-index: 5; background: var(--color-bg-card); border: 1.5px solid var(--color-border); padding: 8px 12px; border-radius: 8px;">
+                                    <div style="display: flex; gap: 2px; align-items: center; margin-bottom: 4px;">
+                                        <img src="https://flagcdn.com/w40/us.png" alt="US Flag" style="width: 16px; height: 11px; object-fit: cover; border-radius: 1px; box-shadow: 0 1px 2px rgba(0,0,0,0.15);">
+                                        <img src="https://flagcdn.com/w40/gb.png" alt="UK Flag" style="width: 16px; height: 11px; object-fit: cover; border-radius: 1px; box-shadow: 0 1px 2px rgba(0,0,0,0.15);">
                                     </div>
+                                    <span style="font-size: 0.6rem; font-weight: 700; color: var(--color-text-secondary); text-transform: uppercase;">Clients</span>
                                 </div>
-                                <div class="mobile-chart">
-                                    <div class="chart-bar" style="height: 60%"></div>
-                                    <div class="chart-bar" style="height: 85%"></div>
-                                    <div class="chart-bar" style="height: 70%"></div>
-                                    <div class="chart-bar" style="height: 95%"></div>
+                                
+                                <!-- Connecting bridge line -->
+                                <div style="flex-grow: 1; height: 2px; background: repeating-linear-gradient(90deg, var(--color-border), var(--color-border) 4px, transparent 4px, transparent 8px); margin: 0 10px; position: relative;">
+                                    <div style="position: absolute; top: -3px; left: 50%; transform: translateX(-50%); background: var(--color-neon-green); width: 8px; height: 8px; border-radius: 50%; box-shadow: 0 0 10px var(--color-neon-green); animation: pulse 2s infinite;"></div>
                                 </div>
-                                <div class="mobile-label">Donations Synchronized</div>
+                                
+                                <!-- Right Node: Islamabad Hub -->
+                                <div style="display: flex; flex-direction: column; align-items: center; z-index: 5; background: var(--color-bg-card); border: 1.5px solid var(--color-border); padding: 8px 12px; border-radius: 8px;">
+                                    <img src="https://flagcdn.com/w40/pk.png" alt="Pakistan Flag" style="width: 18px; height: 12px; object-fit: cover; border-radius: 1px; box-shadow: 0 1px 2px rgba(0,0,0,0.15); margin-bottom: 4px;">
+                                    <span style="font-size: 0.6rem; font-weight: 700; color: var(--color-text-secondary); text-transform: uppercase;">Islamabad</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Floating Metric Cards -->
-                    <div class="floating-metric-card stat-bubble-1">
-                        <div class="pulse-dot"></div>
-                        <div>
-                            <h4>QA Automation</h4>
-                            <p>100% Tests Passing</p>
+                        
+                        <!-- Output details console -->
+                        <div style="background: rgba(0,0,0,0.15); border: 1px solid var(--color-border); padding: 1rem; border-radius: 8px; font-family: monospace; font-size: 0.75rem; line-height: 1.5; color: var(--color-text-secondary);">
+                            <div><span style="color: var(--color-neon-green); font-weight: 700;">&gt;</span> gateway.SyncActiveNodes()</div>
+                            <div style="color: rgba(255,255,255,0.45); margin-left: 10px;">Checking tunnel security... OK</div>
+                            <div style="color: rgba(255,255,255,0.45); margin-left: 10px;">Quantized brain state: Ready</div>
+                            <div><span style="color: var(--color-neon-green); font-weight: 700;">&gt;</span> status: <span style="color: var(--color-neon-green); font-weight: 700;">ACTIVE (0ms latency)</span></div>
                         </div>
-                    </div>
-
-                    <div class="floating-metric-card stat-bubble-2">
-                        <div class="pulse-dot green"></div>
-                        <div>
-                            <h4>Clutch Developer</h4>
-                            <p>5.0 Rating Verified</p>
+                        
+                        <!-- Core Performance metrics -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div style="background: rgba(255, 255, 255, 0.02); padding: 0.8rem; border-radius: 8px; border: 1px solid var(--color-border);">
+                                <div style="font-size: 0.6rem; color: var(--color-text-muted); text-transform: uppercase;">Active Engineers</div>
+                                <div style="font-size: 1.2rem; font-weight: 900; color: var(--color-text-primary);">25+ Specialists</div>
+                            </div>
+                            <div style="background: rgba(255, 255, 255, 0.02); padding: 0.8rem; border-radius: 8px; border: 1px solid var(--color-border);">
+                                <div style="font-size: 0.6rem; color: var(--color-text-muted); text-transform: uppercase;">Launch Success</div>
+                                <div style="font-size: 1.2rem; font-weight: 900; color: var(--color-neon-green);">100% On-Time</div>
+                            </div>
                         </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Floating Overlay Node Badge -->
+                <div class="floating-metric-card" style="position: absolute; bottom: 30px; right: 10px; z-index: 12; border-color: rgba(0, 179, 0, 0.2); animation: float 5s infinite ease-in-out;">
+                    <div class="pulse-dot green"></div>
+                    <div>
+                        <h4 style="font-size: 0.8rem; font-weight: 800; margin: 0; border: none; padding: 0;">PSEB Registered</h4>
+                        <p style="font-size: 0.7rem; color: var(--color-text-muted); margin: 0;">Govt. Accredited House</p>
                     </div>
                 </div>
             </div>
+            
         </div>
     </section>
 
@@ -376,7 +349,10 @@ gateway.syncAkhuwatDB() <span class="code-comment">// Sync completed: 0ms latenc
                         <div class="sync-node-container">
                            <!-- Left Node: Client -->
                            <div class="sync-node node-client" title="Global Client Office">
-                               <span class="sync-node-flag">🇺🇸 🇬🇧</span>
+                               <div class="sync-node-flag" style="display: flex; gap: 3px; justify-content: center; align-items: center; margin-top: 2px;">
+                                   <img src="https://flagcdn.com/w40/us.png" alt="US Flag" style="width: 20px; height: 13px; object-fit: cover; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
+                                   <img src="https://flagcdn.com/w40/gb.png" alt="UK Flag" style="width: 20px; height: 13px; object-fit: cover; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
+                               </div>
                                <span class="sync-node-label">Clients</span>
                            </div>
                            
@@ -386,7 +362,9 @@ gateway.syncAkhuwatDB() <span class="code-comment">// Sync completed: 0ms latenc
                            
                            <!-- Right Node: Hub -->
                            <div class="sync-node node-hub" title="ABT IT Pakistan Engineering Hub">
-                               <span class="sync-node-flag">🇵🇰</span>
+                               <div class="sync-node-flag" style="display: flex; justify-content: center; align-items: center; margin-top: 2px;">
+                                   <img src="https://flagcdn.com/w40/pk.png" alt="Pakistan Flag" style="width: 22px; height: 14px; object-fit: cover; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
+                               </div>
                                <span class="sync-node-label">Islamabad</span>
                            </div>
                         </div>
@@ -694,7 +672,10 @@ gateway.syncAkhuwatDB() <span class="code-comment">// Sync completed: 0ms latenc
                 
                 <!-- Info Column -->
                 <div>
-                    <span class="section-tag" style="background: rgba(0, 179, 0, 0.08); color: var(--color-neon-green); font-size: 0.75rem; font-weight: 700; padding: 6px 14px; border-radius: 30px; letter-spacing: 1.5px; border: 1px solid rgba(0, 179, 0, 0.15); display: inline-block; margin-bottom: 1.2rem;">PROPRIETARY SAAS PRODUCT</span>
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1.2rem;">
+                        <img src="images/beraxis_logo_cropped.png" alt="Beraxis Logo" style="height: 38px; width: auto; object-fit: contain;">
+                        <span class="section-tag" style="background: rgba(0, 179, 0, 0.08); color: var(--color-neon-green); font-size: 0.75rem; font-weight: 700; padding: 6px 14px; border-radius: 30px; letter-spacing: 1.5px; border: 1px solid rgba(0, 179, 0, 0.15); display: inline-block; margin-bottom: 0;">PROPRIETARY SAAS PRODUCT</span>
+                    </div>
                     <h2 style="font-size: 2.8rem; font-weight: 900; line-height: 1.2; color: var(--color-text-primary); margin-bottom: 1.5rem;">
                         Meet Beraxis: The Next-Gen AI-Powered ERP Command Center
                     </h2>
