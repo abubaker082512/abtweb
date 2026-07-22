@@ -116,7 +116,7 @@
     </header>
 
     <!-- --- HERO SECTION --- -->
-    <section class="hero-section" style="background: radial-gradient(circle at 10% 20%, rgba(0, 179, 0, 0.05) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.04) 0%, transparent 40%), var(--color-bg-dark); position: relative; overflow: hidden; padding-top: 130px; padding-bottom: 5rem;">
+    <section class="hero-section" style="background: radial-gradient(circle at 10% 20%, rgba(0, 179, 0, 0.05) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.04) 0%, transparent 40%), transparent; position: relative; overflow: hidden; padding-top: 130px; padding-bottom: 5rem;">
         <div class="hero-grid-pattern" style="opacity: 0.02;"></div>
         
         <div class="container hero-grid" style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 4rem; align-items: center; position: relative; z-index: 10;">
@@ -1464,10 +1464,10 @@
     </div>
     
 
-    <div class="ambient-glow-wrap" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2; pointer-events: none; overflow: hidden; opacity: 0.45;">
-        <div class="glow-orb" style="position: absolute; width: 450px; height: 450px; background: radial-gradient(circle, rgba(0, 179, 0, 0.16) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); top: 10%; left: 5%; animation: drift1 22s infinite alternate ease-in-out;"></div>
-        <div class="glow-orb" style="position: absolute; width: 550px; height: 550px; background: radial-gradient(circle, rgba(59, 130, 246, 0.14) 0%, transparent 70%); border-radius: 50%; filter: blur(50px); bottom: 15%; right: 5%; animation: drift2 28s infinite alternate ease-in-out;"></div>
-        <div class="glow-orb" style="position: absolute; width: 380px; height: 380px; background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, transparent 70%); border-radius: 50%; filter: blur(35px); top: 50%; left: 40%; animation: drift3 32s infinite alternate ease-in-out;"></div>
+    <div class="ambient-glow-wrap" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; overflow: hidden; opacity: 0.65;">
+        <div class="glow-orb" style="position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(0, 179, 0, 0.22) 0%, transparent 70%); border-radius: 50%; filter: blur(50px); top: 10%; left: 5%; animation: drift1 22s infinite alternate ease-in-out;"></div>
+        <div class="glow-orb" style="position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(59, 130, 246, 0.18) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); bottom: 15%; right: 5%; animation: drift2 28s infinite alternate ease-in-out;"></div>
+        <div class="glow-orb" style="position: absolute; width: 420px; height: 420px; background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); top: 50%; left: 40%; animation: drift3 32s infinite alternate ease-in-out;"></div>
     </div>
     <style>
         @keyframes drift1 {
