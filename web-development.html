@@ -515,6 +515,390 @@
         </div>
     </section>
 
+
+    <!-- --- PRICING & PACKAGES SECTION --- -->
+    <section class="section animate-fade-in" id="servicePackages" style="background: linear-gradient(180deg, transparent 0%, rgba(0, 124, 0, 0.02) 100%); padding: 6rem 0; border-top: 1px solid var(--color-border);">
+        <div class="container" style="max-width: 1200px;">
+            <div class="section-title-wrap">
+                <span class="section-tag">CHOOSE YOUR PACKAGE</span>
+                <h2 style="font-size: 2.5rem; font-weight: 900; color: var(--color-text-primary); margin-top: 0.5rem; margin-bottom: 0.5rem;">Web Development Packages</h2>
+                <p style="color: var(--color-text-secondary); max-width: 800px; margin: 1rem auto 0 auto; line-height: 1.6;">
+                    Transparent, value-driven plans customized for scaling businesses. Work with our Islamabad team to deploy enterprise solutions, custom web apps, or digital marketing pipelines.
+                </p>
+            </div>
+            
+            <style>
+                .pricing-table-wrapper {
+                    width: 100%;
+                    overflow-x: auto;
+                    background: var(--color-bg-card);
+                    border: 1px solid var(--color-border);
+                    border-radius: 20px;
+                    box-shadow: var(--shadow-glass);
+                    margin-top: 3rem;
+                }
+                .pricing-table-wrapper::-webkit-scrollbar {
+                    height: 6px;
+                }
+                .pricing-table-wrapper::-webkit-scrollbar-thumb {
+                    background: rgba(0, 179, 0, 0.2);
+                    border-radius: 3px;
+                }
+                .pricing-tbl {
+                    width: 100%;
+                    border-collapse: collapse;
+                    text-align: left;
+                    min-width: 900px;
+                    font-size: 0.92rem;
+                }
+                .pricing-tbl th, .pricing-tbl td {
+                    padding: 1.2rem 1.5rem;
+                    border-bottom: 1px solid var(--color-border);
+                    vertical-align: middle;
+                }
+                .pricing-tbl th {
+                    background: rgba(255, 255, 255, 0.01);
+                    font-weight: 800;
+                    color: var(--color-text-primary);
+                }
+                .pricing-tbl tr:last-child td {
+                    border-bottom: none;
+                }
+                .tbl-cat-header {
+                    background: rgba(0, 124, 0, 0.04) !important;
+                    font-weight: 900;
+                    text-transform: uppercase;
+                    letter-spacing: 0.1em;
+                    color: var(--color-neon-green);
+                    font-size: 0.82rem;
+                }
+                .col-feat { width: 28%; font-weight: 700; color: var(--color-text-primary); }
+                .col-pkg { width: 24%; color: var(--color-text-secondary); }
+                .col-pkg-premium { 
+                    width: 24%; 
+                    color: var(--color-text-primary);
+                    background: rgba(0, 179, 0, 0.015); 
+                    border-left: 1px dashed rgba(0, 179, 0, 0.15); 
+                    border-right: 1px dashed rgba(0, 179, 0, 0.15);
+                }
+                .pricing-tbl tr:hover td {
+                    background: rgba(0, 179, 0, 0.01);
+                }
+                .pricing-tbl tr:hover td.col-pkg-premium {
+                    background: rgba(0, 179, 0, 0.03);
+                }
+                
+                /* Mobile pricing cards */
+                .pricing-mobile-container {
+                    display: none;
+                    grid-template-columns: 1fr;
+                    gap: 2rem;
+                    margin-top: 2rem;
+                }
+                .pkg-card {
+                    background: var(--color-bg-card);
+                    border: 1.5px solid var(--color-border);
+                    border-radius: 20px;
+                    padding: 2rem;
+                    box-shadow: var(--shadow-glass);
+                    position: relative;
+                }
+                .pkg-card.premium-highlight {
+                    border-color: var(--color-brand-green);
+                    box-shadow: 0 10px 30px rgba(0, 124, 0, 0.05);
+                }
+                .pkg-badge {
+                    position: absolute;
+                    top: 1.5rem;
+                    right: 1.5rem;
+                    background: var(--color-neon-green);
+                    color: #fff;
+                    font-size: 0.65rem;
+                    font-weight: 800;
+                    padding: 4px 10px;
+                    border-radius: 12px;
+                    text-transform: uppercase;
+                }
+                .pkg-card-title {
+                    font-size: 1.6rem;
+                    font-weight: 900;
+                    color: var(--color-text-primary);
+                    margin-bottom: 0.4rem;
+                }
+                .pkg-card-price {
+                    font-size: 1.3rem;
+                    font-weight: 800;
+                    color: var(--color-neon-green);
+                    margin-bottom: 1.5rem;
+                }
+                .pkg-features-group {
+                    margin-bottom: 1.5rem;
+                    border-top: 1px solid var(--color-border);
+                    padding-top: 1rem;
+                }
+                .pkg-features-title {
+                    font-size: 0.75rem;
+                    font-weight: 900;
+                    text-transform: uppercase;
+                    color: var(--color-neon-green);
+                    letter-spacing: 0.05em;
+                    margin-bottom: 0.8rem;
+                }
+                .pkg-features-list {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                }
+                .pkg-feature-item {
+                    font-size: 0.88rem;
+                    display: flex;
+                    justify-content: space-between;
+                    color: var(--color-text-secondary);
+                }
+                .pkg-feature-label {
+                    font-weight: 600;
+                    color: var(--color-text-primary);
+                }
+                
+                @media (max-width: 992px) {
+                    .pricing-table-wrapper {
+                        display: none;
+                    }
+                    .pricing-mobile-container {
+                        display: grid;
+                    }
+                }
+            </style>
+            
+            <!-- DESKTOP COMPARISON TABLE -->
+            <div class="pricing-table-wrapper">
+                <table class="pricing-tbl">
+                    <thead>
+                        <tr>
+                            <th class="col-feat" style="font-size: 1.1rem;">Package Features</th>
+                            <th class="col-pkg">
+                                <div style="font-size: 1.3rem; font-weight: 900;">CMS Starter (WP & Shopify)</div>
+                                <div style="color: var(--color-neon-green); font-weight: 800; margin-top: 0.2rem;">PKR 45,000</div>
+                            </th>
+                            <th class="col-pkg">
+                                <div style="font-size: 1.3rem; font-weight: 900;">Startup / Business Site</div>
+                                <div style="color: var(--color-neon-green); font-weight: 800; margin-top: 0.2rem;">PKR 250,000</div>
+                            </th>
+                            <th class="col-pkg-premium">
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <span style="font-size: 1.3rem; font-weight: 900;">Custom App & Enterprise</span>
+                                    <span style="background: rgba(0, 179, 0, 0.15); color: var(--color-neon-green); font-size: 0.65rem; padding: 2px 8px; border-radius: 10px; font-weight: 800;">FLAGSHIP</span>
+                                </div>
+                                <div style="color: var(--color-neon-green); font-weight: 800; margin-top: 0.2rem;">PKR 750,000+</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- CATEGORY 1 -->
+                        <tr>
+                            <td colspan="4" class="tbl-cat-header">Frontend & UI/UX</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Visual Layout & Core UI</td>
+                            <td class="col-pkg">WordPress / Shopify setup</td>
+                            <td class="col-pkg">Custom static design layout</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Full-Stack React/Next.js dashboard</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">UI Screens / Project Size</td>
+                            <td class="col-pkg">Theme customization & widgets</td>
+                            <td class="col-pkg">10 Optimized custom pages</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Interactive data visualizations</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Interface Optimization</td>
+                            <td class="col-pkg">Responsive design layout</td>
+                            <td class="col-pkg">Speed & asset optimization</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">High accessibility layout</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Customer Features</td>
+                            <td class="col-pkg">Basic SEO & metadata tags</td>
+                            <td class="col-pkg">Premium custom icons</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Multiple custom user portals</td>
+                        </tr>
+                        
+                        <!-- CATEGORY 2 -->
+                        <tr>
+                            <td colspan="4" class="tbl-cat-header">Backend & Integrations</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Platform Core Stack</td>
+                            <td class="col-pkg">Contact form & newsletters</td>
+                            <td class="col-pkg">Custom contact widgets</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Node.js/Python server framework</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Database Operations</td>
+                            <td class="col-pkg">WooCommerce / Shopify cart setup</td>
+                            <td class="col-pkg">API email sync setup</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">SQL/NoSQL database warehousing</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">User Authentication & Roles</td>
+                            <td class="col-pkg">Basic social feeds widgets</td>
+                            <td class="col-pkg">Basic dashboard portal</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Enterprise OAuth/SSO login</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Third-party Integrations</td>
+                            <td class="col-pkg">Basic payment settings sync</td>
+                            <td class="col-pkg">Role-based user auth</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Custom Stripe/QuickBooks ledger syncs</td>
+                        </tr>
+                        
+                        <!-- CATEGORY 3 -->
+                        <tr>
+                            <td colspan="4" class="tbl-cat-header">Deployment & Support</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Hosting & Environment</td>
+                            <td class="col-pkg">Shared web hosting deploy</td>
+                            <td class="col-pkg">VPS deployment hosting</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">AWS/GCP Docker Auto-scale deploy</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Domain & Monitoring</td>
+                            <td class="col-pkg">Domain name connectivity</td>
+                            <td class="col-pkg">DNS setup & diagnostics</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Daily automated cloud backups</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Revisions & Quality Assurance</td>
+                            <td class="col-pkg">2 Revision Rounds</td>
+                            <td class="col-pkg">5 Revision Rounds</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Unlimited Revision Rounds</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Standard SLA / Delivery Timeline</td>
+                            <td class="col-pkg">7 Business Days</td>
+                            <td class="col-pkg">14 Business Days</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Priority agile sprints timeline</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- MOBILE CARDS PREVIEW -->
+            <div class="pricing-mobile-container">
+                <!-- Basic Card -->
+                <div class="pkg-card">
+                    <div class="pkg-card-title">CMS Starter (WP & Shopify)</div>
+                    <div class="pkg-card-price">PKR 45,000</div>
+                    
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Frontend & UI/UX</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">UI Layout:</span> WordPress / Shopify setup</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Scale:</span> Theme customization & widgets</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Speed:</span> Responsive design layout</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Customer Features:</span> Basic SEO & metadata tags</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Backend & Integrations</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Core Stack:</span> Contact form & newsletters</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Database:</span> WooCommerce / Shopify cart setup</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Auth:</span> Basic social feeds widgets</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">APIs:</span> Basic payment settings sync</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Deployment & Support</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Deploy Environment:</span> Shared web hosting deploy</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Domain/DNS:</span> Domain name connectivity</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Revisions:</span> 2 Revision Rounds</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Timeline:</span> 7 Business Days</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html?package=CMS%20Starter%20(WP%20&%20Shopify)" class="btn btn-glow-outline" style="width: 100%; text-align: center; margin-top: 1rem;">Select CMS Starter (WP & Shopify)</a>
+                </div>
+                
+                <!-- Standard Card -->
+                <div class="pkg-card">
+                    <div class="pkg-badge">Popular</div>
+                    <div class="pkg-card-title">Startup / Business Site</div>
+                    <div class="pkg-card-price">PKR 250,000</div>
+                    
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Frontend & UI/UX</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">UI Layout:</span> Custom static design layout</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Scale:</span> 10 Optimized custom pages</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Speed:</span> Speed & asset optimization</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Customer Features:</span> Premium custom icons</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Backend & Integrations</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Core Stack:</span> Custom contact widgets</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Database:</span> API email sync setup</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Auth:</span> Basic dashboard portal</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">APIs:</span> Role-based user auth</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Deployment & Support</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Deploy Environment:</span> VPS deployment hosting</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Domain/DNS:</span> DNS setup & diagnostics</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Revisions:</span> 5 Revision Rounds</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Timeline:</span> 14 Business Days</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html?package=Startup%20/%20Business%20Site" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 1rem; border: none; background: linear-gradient(135deg, var(--color-brand-green) 0%, var(--color-neon-green) 100%);">Select Startup / Business Site</a>
+                </div>
+                
+                <!-- Premium Card -->
+                <div class="pkg-card premium-highlight">
+                    <div class="pkg-badge" style="background: var(--color-brand-green);">Flagship</div>
+                    <div class="pkg-card-title">Custom App & Enterprise</div>
+                    <div class="pkg-card-price">PKR 750,000+</div>
+                    
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Frontend & UI/UX</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">UI Layout:</span> Full-Stack React/Next.js dashboard</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Scale:</span> Interactive data visualizations</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Speed:</span> High accessibility layout</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Customer Features:</span> Multiple custom user portals</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Backend & Integrations</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Core Stack:</span> Node.js/Python server framework</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Database:</span> SQL/NoSQL database warehousing</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Auth:</span> Enterprise OAuth/SSO login</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">APIs:</span> Custom Stripe/QuickBooks ledger syncs</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Deployment & Support</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Deploy Environment:</span> AWS/GCP Docker Auto-scale deploy</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Domain/DNS:</span> Daily automated cloud backups</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Revisions:</span> Unlimited Revision Rounds</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Timeline:</span> Priority agile sprints timeline</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html?package=Custom%20App%20&%20Enterprise" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 1rem; border: none; background: linear-gradient(135deg, var(--color-neon-green) 0%, var(--color-brand-green) 100%);">Request Custom Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- --- CALL TO ACTION --- -->
     <section class="section" style="background: linear-gradient(180deg, transparent 0%, rgba(0, 124, 0, 0.03) 100%); padding: 5rem 0; text-align: center;">
         <div class="container" style="max-width: 800px;">

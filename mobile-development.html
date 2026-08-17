@@ -515,6 +515,390 @@
         </div>
     </section>
 
+
+    <!-- --- PRICING & PACKAGES SECTION --- -->
+    <section class="section animate-fade-in" id="servicePackages" style="background: linear-gradient(180deg, transparent 0%, rgba(0, 124, 0, 0.02) 100%); padding: 6rem 0; border-top: 1px solid var(--color-border);">
+        <div class="container" style="max-width: 1200px;">
+            <div class="section-title-wrap">
+                <span class="section-tag">CHOOSE YOUR PACKAGE</span>
+                <h2 style="font-size: 2.5rem; font-weight: 900; color: var(--color-text-primary); margin-top: 0.5rem; margin-bottom: 0.5rem;">Mobile App Packages</h2>
+                <p style="color: var(--color-text-secondary); max-width: 800px; margin: 1rem auto 0 auto; line-height: 1.6;">
+                    Transparent, value-driven plans customized for scaling businesses. Work with our Islamabad team to deploy enterprise solutions, custom web apps, or digital marketing pipelines.
+                </p>
+            </div>
+            
+            <style>
+                .pricing-table-wrapper {
+                    width: 100%;
+                    overflow-x: auto;
+                    background: var(--color-bg-card);
+                    border: 1px solid var(--color-border);
+                    border-radius: 20px;
+                    box-shadow: var(--shadow-glass);
+                    margin-top: 3rem;
+                }
+                .pricing-table-wrapper::-webkit-scrollbar {
+                    height: 6px;
+                }
+                .pricing-table-wrapper::-webkit-scrollbar-thumb {
+                    background: rgba(0, 179, 0, 0.2);
+                    border-radius: 3px;
+                }
+                .pricing-tbl {
+                    width: 100%;
+                    border-collapse: collapse;
+                    text-align: left;
+                    min-width: 900px;
+                    font-size: 0.92rem;
+                }
+                .pricing-tbl th, .pricing-tbl td {
+                    padding: 1.2rem 1.5rem;
+                    border-bottom: 1px solid var(--color-border);
+                    vertical-align: middle;
+                }
+                .pricing-tbl th {
+                    background: rgba(255, 255, 255, 0.01);
+                    font-weight: 800;
+                    color: var(--color-text-primary);
+                }
+                .pricing-tbl tr:last-child td {
+                    border-bottom: none;
+                }
+                .tbl-cat-header {
+                    background: rgba(0, 124, 0, 0.04) !important;
+                    font-weight: 900;
+                    text-transform: uppercase;
+                    letter-spacing: 0.1em;
+                    color: var(--color-neon-green);
+                    font-size: 0.82rem;
+                }
+                .col-feat { width: 28%; font-weight: 700; color: var(--color-text-primary); }
+                .col-pkg { width: 24%; color: var(--color-text-secondary); }
+                .col-pkg-premium { 
+                    width: 24%; 
+                    color: var(--color-text-primary);
+                    background: rgba(0, 179, 0, 0.015); 
+                    border-left: 1px dashed rgba(0, 179, 0, 0.15); 
+                    border-right: 1px dashed rgba(0, 179, 0, 0.15);
+                }
+                .pricing-tbl tr:hover td {
+                    background: rgba(0, 179, 0, 0.01);
+                }
+                .pricing-tbl tr:hover td.col-pkg-premium {
+                    background: rgba(0, 179, 0, 0.03);
+                }
+                
+                /* Mobile pricing cards */
+                .pricing-mobile-container {
+                    display: none;
+                    grid-template-columns: 1fr;
+                    gap: 2rem;
+                    margin-top: 2rem;
+                }
+                .pkg-card {
+                    background: var(--color-bg-card);
+                    border: 1.5px solid var(--color-border);
+                    border-radius: 20px;
+                    padding: 2rem;
+                    box-shadow: var(--shadow-glass);
+                    position: relative;
+                }
+                .pkg-card.premium-highlight {
+                    border-color: var(--color-brand-green);
+                    box-shadow: 0 10px 30px rgba(0, 124, 0, 0.05);
+                }
+                .pkg-badge {
+                    position: absolute;
+                    top: 1.5rem;
+                    right: 1.5rem;
+                    background: var(--color-neon-green);
+                    color: #fff;
+                    font-size: 0.65rem;
+                    font-weight: 800;
+                    padding: 4px 10px;
+                    border-radius: 12px;
+                    text-transform: uppercase;
+                }
+                .pkg-card-title {
+                    font-size: 1.6rem;
+                    font-weight: 900;
+                    color: var(--color-text-primary);
+                    margin-bottom: 0.4rem;
+                }
+                .pkg-card-price {
+                    font-size: 1.3rem;
+                    font-weight: 800;
+                    color: var(--color-neon-green);
+                    margin-bottom: 1.5rem;
+                }
+                .pkg-features-group {
+                    margin-bottom: 1.5rem;
+                    border-top: 1px solid var(--color-border);
+                    padding-top: 1rem;
+                }
+                .pkg-features-title {
+                    font-size: 0.75rem;
+                    font-weight: 900;
+                    text-transform: uppercase;
+                    color: var(--color-neon-green);
+                    letter-spacing: 0.05em;
+                    margin-bottom: 0.8rem;
+                }
+                .pkg-features-list {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                }
+                .pkg-feature-item {
+                    font-size: 0.88rem;
+                    display: flex;
+                    justify-content: space-between;
+                    color: var(--color-text-secondary);
+                }
+                .pkg-feature-label {
+                    font-weight: 600;
+                    color: var(--color-text-primary);
+                }
+                
+                @media (max-width: 992px) {
+                    .pricing-table-wrapper {
+                        display: none;
+                    }
+                    .pricing-mobile-container {
+                        display: grid;
+                    }
+                }
+            </style>
+            
+            <!-- DESKTOP COMPARISON TABLE -->
+            <div class="pricing-table-wrapper">
+                <table class="pricing-tbl">
+                    <thead>
+                        <tr>
+                            <th class="col-feat" style="font-size: 1.1rem;">Package Features</th>
+                            <th class="col-pkg">
+                                <div style="font-size: 1.3rem; font-weight: 900;">Single Platform App</div>
+                                <div style="color: var(--color-neon-green); font-weight: 800; margin-top: 0.2rem;">PKR 550,000</div>
+                            </th>
+                            <th class="col-pkg">
+                                <div style="font-size: 1.3rem; font-weight: 900;">Cross-Platform Suite</div>
+                                <div style="color: var(--color-neon-green); font-weight: 800; margin-top: 0.2rem;">PKR 1,100,000</div>
+                            </th>
+                            <th class="col-pkg-premium">
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <span style="font-size: 1.3rem; font-weight: 900;">Enterprise Mobile System</span>
+                                    <span style="background: rgba(0, 179, 0, 0.15); color: var(--color-neon-green); font-size: 0.65rem; padding: 2px 8px; border-radius: 10px; font-weight: 800;">FLAGSHIP</span>
+                                </div>
+                                <div style="color: var(--color-neon-green); font-weight: 800; margin-top: 0.2rem;">PKR 2,400,000+</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- CATEGORY 1 -->
+                        <tr>
+                            <td colspan="4" class="tbl-cat-header">App Interface & UX</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Visual Layout & Core UI</td>
+                            <td class="col-pkg">iOS or Android native UI</td>
+                            <td class="col-pkg">iOS & Android Flutter UI</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Custom React Native system</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">UI Screens / Project Size</td>
+                            <td class="col-pkg">8 App Screens</td>
+                            <td class="col-pkg">16 App Screens</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Unlimited screens</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Interface Optimization</td>
+                            <td class="col-pkg">Responsive mobile layouts</td>
+                            <td class="col-pkg">Interactive micro-animations</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Tailored vector illustrations</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Customer Features</td>
+                            <td class="col-pkg">Basic profile views</td>
+                            <td class="col-pkg">Dynamic search screens</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Complex interaction graphs</td>
+                        </tr>
+                        
+                        <!-- CATEGORY 2 -->
+                        <tr>
+                            <td colspan="4" class="tbl-cat-header">Core Logic & Synchronization</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Platform Core Stack</td>
+                            <td class="col-pkg">SQLite local database</td>
+                            <td class="col-pkg">Cloud sync database</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Real-time sockets, GPS tracking</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Database Operations</td>
+                            <td class="col-pkg">Push Notification setup</td>
+                            <td class="col-pkg">Push notifications + triggers</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Multi-tenant sync, Offline data write</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">User Authentication & Roles</td>
+                            <td class="col-pkg">Basic email auth</td>
+                            <td class="col-pkg">OAuth / Google / Apple login</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Biometric face/touch ID</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Third-party Integrations</td>
+                            <td class="col-pkg">Offline-first read state</td>
+                            <td class="col-pkg">Stripe Mobile payment sdk</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Multi-currency checkout engines</td>
+                        </tr>
+                        
+                        <!-- CATEGORY 3 -->
+                        <tr>
+                            <td colspan="4" class="tbl-cat-header">Play/App Store & QA</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Hosting & Environment</td>
+                            <td class="col-pkg">App Store OR Play Store deploy</td>
+                            <td class="col-pkg">App Store AND Play Store deploy</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">App & Play Store deployment</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Domain & Monitoring</td>
+                            <td class="col-pkg">1 Round Revisions</td>
+                            <td class="col-pkg">5 Round Revisions</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Unlimited Revisions</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Revisions & Quality Assurance</td>
+                            <td class="col-pkg">30 Business Days</td>
+                            <td class="col-pkg">45 Business Days</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Agile timeline sprints</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Standard SLA / Delivery Timeline</td>
+                            <td class="col-pkg">3-month support</td>
+                            <td class="col-pkg">6-month support</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">12-month SLA maintenance</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- MOBILE CARDS PREVIEW -->
+            <div class="pricing-mobile-container">
+                <!-- Basic Card -->
+                <div class="pkg-card">
+                    <div class="pkg-card-title">Single Platform App</div>
+                    <div class="pkg-card-price">PKR 550,000</div>
+                    
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">App Interface & UX</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">UI Layout:</span> iOS or Android native UI</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Scale:</span> 8 App Screens</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Speed:</span> Responsive mobile layouts</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Customer Features:</span> Basic profile views</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Core Logic & Synchronization</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Core Stack:</span> SQLite local database</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Database:</span> Push Notification setup</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Auth:</span> Basic email auth</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">APIs:</span> Offline-first read state</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Play/App Store & QA</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Deploy Environment:</span> App Store OR Play Store deploy</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Domain/DNS:</span> 1 Round Revisions</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Revisions:</span> 30 Business Days</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Timeline:</span> 3-month support</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html?package=Single%20Platform%20App" class="btn btn-glow-outline" style="width: 100%; text-align: center; margin-top: 1rem;">Select Single Platform App</a>
+                </div>
+                
+                <!-- Standard Card -->
+                <div class="pkg-card">
+                    <div class="pkg-badge">Popular</div>
+                    <div class="pkg-card-title">Cross-Platform Suite</div>
+                    <div class="pkg-card-price">PKR 1,100,000</div>
+                    
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">App Interface & UX</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">UI Layout:</span> iOS & Android Flutter UI</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Scale:</span> 16 App Screens</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Speed:</span> Interactive micro-animations</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Customer Features:</span> Dynamic search screens</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Core Logic & Synchronization</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Core Stack:</span> Cloud sync database</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Database:</span> Push notifications + triggers</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Auth:</span> OAuth / Google / Apple login</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">APIs:</span> Stripe Mobile payment sdk</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Play/App Store & QA</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Deploy Environment:</span> App Store AND Play Store deploy</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Domain/DNS:</span> 5 Round Revisions</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Revisions:</span> 45 Business Days</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Timeline:</span> 6-month support</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html?package=Cross-Platform%20Suite" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 1rem; border: none; background: linear-gradient(135deg, var(--color-brand-green) 0%, var(--color-neon-green) 100%);">Select Cross-Platform Suite</a>
+                </div>
+                
+                <!-- Premium Card -->
+                <div class="pkg-card premium-highlight">
+                    <div class="pkg-badge" style="background: var(--color-brand-green);">Flagship</div>
+                    <div class="pkg-card-title">Enterprise Mobile System</div>
+                    <div class="pkg-card-price">PKR 2,400,000+</div>
+                    
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">App Interface & UX</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">UI Layout:</span> Custom React Native system</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Scale:</span> Unlimited screens</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Speed:</span> Tailored vector illustrations</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Customer Features:</span> Complex interaction graphs</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Core Logic & Synchronization</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Core Stack:</span> Real-time sockets, GPS tracking</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Database:</span> Multi-tenant sync, Offline data write</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Auth:</span> Biometric face/touch ID</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">APIs:</span> Multi-currency checkout engines</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Play/App Store & QA</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Deploy Environment:</span> App & Play Store deployment</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Domain/DNS:</span> Unlimited Revisions</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Revisions:</span> Agile timeline sprints</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Timeline:</span> 12-month SLA maintenance</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html?package=Enterprise%20Mobile%20System" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 1rem; border: none; background: linear-gradient(135deg, var(--color-neon-green) 0%, var(--color-brand-green) 100%);">Request Custom Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- --- CALL TO ACTION --- -->
     <section class="section" style="background: linear-gradient(180deg, transparent 0%, rgba(0, 124, 0, 0.03) 100%); padding: 5rem 0; text-align: center;">
         <div class="container" style="max-width: 800px;">
