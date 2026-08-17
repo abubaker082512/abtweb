@@ -122,10 +122,394 @@
                     </div>
                     
                     <div style="border-top: 1px solid var(--color-border); padding-top: 1.5rem; margin-top: 1.5rem;">
-                        <h4 style="color: var(--color-brand-green); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.2rem;">Starting Budget Scale</h4>
-                        <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-brand-charcoal); margin: 0 0 1.5rem 0;">From $500 USD</p>
-                        <a href="services.html#pricingCalculator" class="btn btn-primary" style="width: 100%; text-align: center; background: linear-gradient(135deg, var(--color-brand-green) 0%, var(--color-neon-green) 100%); border: none;">Calculate Custom Cost</a>
+                        <h4 style="color: var(--color-brand-green); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.2rem;">Starting Pricing Scale</h4>
+                        <p style="font-size: 1.6rem; font-weight: 800; color: var(--color-brand-charcoal); margin: 0 0 1.5rem 0;">From PKR 220,000</p>
+                        <a href="#servicePackages" class="btn btn-primary" style="width: 100%; text-align: center; background: linear-gradient(135deg, var(--color-brand-green) 0%, var(--color-neon-green) 100%); border: none;">View Pricing Packages</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- --- PRICING & PACKAGES SECTION --- -->
+    <section class="section animate-fade-in" id="servicePackages" style="background: linear-gradient(180deg, transparent 0%, rgba(0, 124, 0, 0.02) 100%); padding: 6rem 0; border-top: 1px solid var(--color-border);">
+        <div class="container" style="max-width: 1200px;">
+            <div class="section-title-wrap">
+                <span class="section-tag">CHOOSE YOUR PACKAGE</span>
+                <h2 style="font-size: 2.5rem; font-weight: 900; color: var(--color-text-primary); margin-top: 0.5rem; margin-bottom: 0.5rem;">DevOps & Cloud Packages</h2>
+                <p style="color: var(--color-text-secondary); max-width: 800px; margin: 1rem auto 0 auto; line-height: 1.6;">
+                    Transparent, value-driven plans customized for scaling businesses. Work with our Islamabad team to deploy enterprise solutions, custom web apps, or digital marketing pipelines.
+                </p>
+            </div>
+            
+            <style>
+                .pricing-table-wrapper {
+                    width: 100%;
+                    overflow-x: auto;
+                    background: var(--color-bg-card);
+                    border: 1px solid var(--color-border);
+                    border-radius: 20px;
+                    box-shadow: var(--shadow-glass);
+                    margin-top: 3rem;
+                }
+                .pricing-table-wrapper::-webkit-scrollbar {
+                    height: 6px;
+                }
+                .pricing-table-wrapper::-webkit-scrollbar-thumb {
+                    background: rgba(0, 179, 0, 0.2);
+                    border-radius: 3px;
+                }
+                .pricing-tbl {
+                    width: 100%;
+                    border-collapse: collapse;
+                    text-align: left;
+                    min-width: 900px;
+                    font-size: 0.92rem;
+                }
+                .pricing-tbl th, .pricing-tbl td {
+                    padding: 1.2rem 1.5rem;
+                    border-bottom: 1px solid var(--color-border);
+                    vertical-align: middle;
+                }
+                .pricing-tbl th {
+                    background: rgba(255, 255, 255, 0.01);
+                    font-weight: 800;
+                    color: var(--color-text-primary);
+                }
+                .pricing-tbl tr:last-child td {
+                    border-bottom: none;
+                }
+                .tbl-cat-header {
+                    background: rgba(0, 124, 0, 0.04) !important;
+                    font-weight: 900;
+                    text-transform: uppercase;
+                    letter-spacing: 0.1em;
+                    color: var(--color-neon-green);
+                    font-size: 0.82rem;
+                }
+                .col-feat { width: 28%; font-weight: 700; color: var(--color-text-primary); }
+                .col-pkg { width: 24%; color: var(--color-text-secondary); }
+                .col-pkg-premium { 
+                    width: 24%; 
+                    color: var(--color-text-primary);
+                    background: rgba(0, 179, 0, 0.015); 
+                    border-left: 1px dashed rgba(0, 179, 0, 0.15); 
+                    border-right: 1px dashed rgba(0, 179, 0, 0.15);
+                }
+                .pricing-tbl tr:hover td {
+                    background: rgba(0, 179, 0, 0.01);
+                }
+                .pricing-tbl tr:hover td.col-pkg-premium {
+                    background: rgba(0, 179, 0, 0.03);
+                }
+                
+                /* Mobile pricing cards */
+                .pricing-mobile-container {
+                    display: none;
+                    grid-template-columns: 1fr;
+                    gap: 2rem;
+                    margin-top: 2rem;
+                }
+                .pkg-card {
+                    background: var(--color-bg-card);
+                    border: 1.5px solid var(--color-border);
+                    border-radius: 20px;
+                    padding: 2rem;
+                    box-shadow: var(--shadow-glass);
+                    position: relative;
+                }
+                .pkg-card.premium-highlight {
+                    border-color: var(--color-brand-green);
+                    box-shadow: 0 10px 30px rgba(0, 124, 0, 0.05);
+                }
+                .pkg-badge {
+                    position: absolute;
+                    top: 1.5rem;
+                    right: 1.5rem;
+                    background: var(--color-neon-green);
+                    color: #fff;
+                    font-size: 0.65rem;
+                    font-weight: 800;
+                    padding: 4px 10px;
+                    border-radius: 12px;
+                    text-transform: uppercase;
+                }
+                .pkg-card-title {
+                    font-size: 1.6rem;
+                    font-weight: 900;
+                    color: var(--color-text-primary);
+                    margin-bottom: 0.4rem;
+                }
+                .pkg-card-price {
+                    font-size: 1.3rem;
+                    font-weight: 800;
+                    color: var(--color-neon-green);
+                    margin-bottom: 1.5rem;
+                }
+                .pkg-features-group {
+                    margin-bottom: 1.5rem;
+                    border-top: 1px solid var(--color-border);
+                    padding-top: 1rem;
+                }
+                .pkg-features-title {
+                    font-size: 0.75rem;
+                    font-weight: 900;
+                    text-transform: uppercase;
+                    color: var(--color-neon-green);
+                    letter-spacing: 0.05em;
+                    margin-bottom: 0.8rem;
+                }
+                .pkg-features-list {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                }
+                .pkg-feature-item {
+                    font-size: 0.88rem;
+                    display: flex;
+                    justify-content: space-between;
+                    color: var(--color-text-secondary);
+                }
+                .pkg-feature-label {
+                    font-weight: 600;
+                    color: var(--color-text-primary);
+                }
+                
+                @media (max-width: 992px) {
+                    .pricing-table-wrapper {
+                        display: none;
+                    }
+                    .pricing-mobile-container {
+                        display: grid;
+                    }
+                }
+            </style>
+            
+            <!-- DESKTOP COMPARISON TABLE -->
+            <div class="pricing-table-wrapper">
+                <table class="pricing-tbl">
+                    <thead>
+                        <tr>
+                            <th class="col-feat" style="font-size: 1.1rem;">Package Features</th>
+                            <th class="col-pkg">
+                                <div style="font-size: 1.3rem; font-weight: 900;">Cloud Infrastructure</div>
+                                <div style="color: var(--color-neon-green); font-weight: 800; margin-top: 0.2rem;">PKR 220,000</div>
+                            </th>
+                            <th class="col-pkg">
+                                <div style="font-size: 1.3rem; font-weight: 900;">CI/CD Automation</div>
+                                <div style="color: var(--color-neon-green); font-weight: 800; margin-top: 0.2rem;">PKR 550,000</div>
+                            </th>
+                            <th class="col-pkg-premium">
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <span style="font-size: 1.3rem; font-weight: 900;">High-Availability Cloud</span>
+                                    <span style="background: rgba(0, 179, 0, 0.15); color: var(--color-neon-green); font-size: 0.65rem; padding: 2px 8px; border-radius: 10px; font-weight: 800;">FLAGSHIP</span>
+                                </div>
+                                <div style="color: var(--color-neon-green); font-weight: 800; margin-top: 0.2rem;">PKR 1,200,000+</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- CATEGORY 1 -->
+                        <tr>
+                            <td colspan="4" class="tbl-cat-header">Cloud Infra Setup</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Visual Layout & Core UI</td>
+                            <td class="col-pkg">AWS/GCP VPC networks setup</td>
+                            <td class="col-pkg">Multi-region VPC setup</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Multi-cloud hybrid configuration</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">UI Screens / Project Size</td>
+                            <td class="col-pkg">Static site hosting (S3/CDN)</td>
+                            <td class="col-pkg">ECS Container setup</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">ECS Auto-scale rules</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Interface Optimization</td>
+                            <td class="col-pkg">IAM access security layout</td>
+                            <td class="col-pkg">Auto backups configurations</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Zero downtime rolling deploy</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Customer Features</td>
+                            <td class="col-pkg">RDS basic DB configuration</td>
+                            <td class="col-pkg">Custom DNS routing rules</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Active database cluster failovers</td>
+                        </tr>
+                        
+                        <!-- CATEGORY 2 -->
+                        <tr>
+                            <td colspan="4" class="tbl-cat-header">CI/CD & Pipelines</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Platform Core Stack</td>
+                            <td class="col-pkg">Not Included</td>
+                            <td class="col-pkg">Docker image setups</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Terraform IaC setup</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Database Operations</td>
+                            <td class="col-pkg">Not Included</td>
+                            <td class="col-pkg">GitHub/GitLab pipelines</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Multi-stage CI/CD deployments</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">User Authentication & Roles</td>
+                            <td class="col-pkg">Not Included</td>
+                            <td class="col-pkg">Kubernetes cluster setups</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Dev/Stage/Prod environments</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Third-party Integrations</td>
+                            <td class="col-pkg">Not Included</td>
+                            <td class="col-pkg">Slack pipeline alerts</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Container log monitoring dashboards</td>
+                        </tr>
+                        
+                        <!-- CATEGORY 3 -->
+                        <tr>
+                            <td colspan="4" class="tbl-cat-header">Security & Monitoring</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Hosting & Environment</td>
+                            <td class="col-pkg">Manual migration support</td>
+                            <td class="col-pkg">Automated script setups</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">SOC2 compliance checks</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Domain & Monitoring</td>
+                            <td class="col-pkg">1 Round Revisions</td>
+                            <td class="col-pkg">3 Round Revisions</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Unlimited Revisions</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Revisions & Quality Assurance</td>
+                            <td class="col-pkg">10 Business Days</td>
+                            <td class="col-pkg">20 Business Days</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Priority Sprint setup</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Standard SLA / Delivery Timeline</td>
+                            <td class="col-pkg">1-month checkups</td>
+                            <td class="col-pkg">3-month uptime SLA</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">24/7 Cloud Support SLA</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- MOBILE CARDS PREVIEW -->
+            <div class="pricing-mobile-container">
+                <!-- Basic Card -->
+                <div class="pkg-card">
+                    <div class="pkg-card-title">Cloud Infrastructure</div>
+                    <div class="pkg-card-price">PKR 220,000</div>
+                    
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Cloud Infra Setup</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">UI Layout:</span> AWS/GCP VPC networks setup</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Scale:</span> Static site hosting (S3/CDN)</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Speed:</span> IAM access security layout</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Customer Features:</span> RDS basic DB configuration</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">CI/CD & Pipelines</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Core Stack:</span> Not Included</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Database:</span> Not Included</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Auth:</span> Not Included</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">APIs:</span> Not Included</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Security & Monitoring</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Deploy Environment:</span> Manual migration support</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Domain/DNS:</span> 1 Round Revisions</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Revisions:</span> 10 Business Days</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Timeline:</span> 1-month checkups</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html?package=Cloud%20Infrastructure" class="btn btn-glow-outline" style="width: 100%; text-align: center; margin-top: 1rem;">Select Cloud Infrastructure</a>
+                </div>
+                
+                <!-- Standard Card -->
+                <div class="pkg-card">
+                    <div class="pkg-badge">Popular</div>
+                    <div class="pkg-card-title">CI/CD Automation</div>
+                    <div class="pkg-card-price">PKR 550,000</div>
+                    
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Cloud Infra Setup</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">UI Layout:</span> Multi-region VPC setup</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Scale:</span> ECS Container setup</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Speed:</span> Auto backups configurations</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Customer Features:</span> Custom DNS routing rules</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">CI/CD & Pipelines</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Core Stack:</span> Docker image setups</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Database:</span> GitHub/GitLab pipelines</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Auth:</span> Kubernetes cluster setups</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">APIs:</span> Slack pipeline alerts</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Security & Monitoring</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Deploy Environment:</span> Automated script setups</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Domain/DNS:</span> 3 Round Revisions</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Revisions:</span> 20 Business Days</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Timeline:</span> 3-month uptime SLA</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html?package=CI/CD%20Automation" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 1rem; border: none; background: linear-gradient(135deg, var(--color-brand-green) 0%, var(--color-neon-green) 100%);">Select CI/CD Automation</a>
+                </div>
+                
+                <!-- Premium Card -->
+                <div class="pkg-card premium-highlight">
+                    <div class="pkg-badge" style="background: var(--color-brand-green);">Flagship</div>
+                    <div class="pkg-card-title">High-Availability Cloud</div>
+                    <div class="pkg-card-price">PKR 1,200,000+</div>
+                    
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Cloud Infra Setup</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">UI Layout:</span> Multi-cloud hybrid configuration</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Scale:</span> ECS Auto-scale rules</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Speed:</span> Zero downtime rolling deploy</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Customer Features:</span> Active database cluster failovers</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">CI/CD & Pipelines</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Core Stack:</span> Terraform IaC setup</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Database:</span> Multi-stage CI/CD deployments</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Auth:</span> Dev/Stage/Prod environments</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">APIs:</span> Container log monitoring dashboards</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Security & Monitoring</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Deploy Environment:</span> SOC2 compliance checks</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Domain/DNS:</span> Unlimited Revisions</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Revisions:</span> Priority Sprint setup</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Timeline:</span> 24/7 Cloud Support SLA</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html?package=High-Availability%20Cloud" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 1rem; border: none; background: linear-gradient(135deg, var(--color-neon-green) 0%, var(--color-brand-green) 100%);">Request Custom Quote</a>
                 </div>
             </div>
         </div>
