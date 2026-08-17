@@ -122,10 +122,437 @@
                     </div>
                     
                     <div style="border-top: 1px solid var(--color-border); padding-top: 1.5rem; margin-top: 1.5rem;">
-                        <h4 style="color: var(--color-brand-green); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.2rem;">Starting Budget Scale</h4>
-                        <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-brand-charcoal); margin: 0 0 1.5rem 0;">From $500 USD (or $500/mo retainer)</p>
-                        <a href="services.html#pricingCalculator" class="btn btn-primary" style="width: 100%; text-align: center; background: linear-gradient(135deg, var(--color-brand-green) 0%, var(--color-neon-green) 100%); border: none;">Calculate Custom Cost</a>
+                        <h4 style="color: var(--color-brand-green); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.2rem;">Starting Retainer Scale</h4>
+                        <p style="font-size: 1.6rem; font-weight: 800; color: var(--color-brand-charcoal); margin: 0 0 1.5rem 0;">From PKR 120,000 / mo</p>
+                        <a href="#marketingPackages" class="btn btn-primary" style="width: 100%; text-align: center; background: linear-gradient(135deg, var(--color-brand-green) 0%, var(--color-neon-green) 100%); border: none;">View Pricing Packages</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- PRICING & PACKAGES SECTION --- -->
+    <section class="section animate-fade-in" id="marketingPackages" style="background: linear-gradient(180deg, transparent 0%, rgba(0, 124, 0, 0.02) 100%); padding: 6rem 0; border-top: 1px solid var(--color-border);">
+        <div class="container" style="max-width: 1200px;">
+            <div class="section-title-wrap">
+                <span class="section-tag">CHOOSE YOUR PACKAGE</span>
+                <h2 style="font-size: 2.5rem; font-weight: 900; color: var(--color-text-primary); margin-top: 0.5rem; margin-bottom: 0.5rem;">Digital Marketing & Production Retainers</h2>
+                <p style="color: var(--color-text-secondary); max-width: 800px; margin: 1rem auto 0 auto; line-height: 1.6;">
+                    Every package is a monthly retainer covering strategy, in-house shooting and editing, and campaign management — end to end, nothing outsourced. Volumes below are monthly minimums; premium clients often run heavier, custom-quoted on brief.
+                </p>
+            </div>
+            
+            <style>
+                .pricing-table-wrapper {
+                    width: 100%;
+                    overflow-x: auto;
+                    background: var(--color-bg-card);
+                    border: 1px solid var(--color-border);
+                    border-radius: 20px;
+                    box-shadow: var(--shadow-glass);
+                    margin-top: 3rem;
+                }
+                .pricing-table-wrapper::-webkit-scrollbar {
+                    height: 6px;
+                }
+                .pricing-table-wrapper::-webkit-scrollbar-thumb {
+                    background: rgba(0, 179, 0, 0.2);
+                    border-radius: 3px;
+                }
+                .pricing-tbl {
+                    width: 100%;
+                    border-collapse: collapse;
+                    text-align: left;
+                    min-width: 900px;
+                    font-size: 0.92rem;
+                }
+                .pricing-tbl th, .pricing-tbl td {
+                    padding: 1.2rem 1.5rem;
+                    border-bottom: 1px solid var(--color-border);
+                    vertical-align: middle;
+                }
+                .pricing-tbl th {
+                    background: rgba(255, 255, 255, 0.01);
+                    font-weight: 800;
+                    color: var(--color-text-primary);
+                }
+                .pricing-tbl tr:last-child td {
+                    border-bottom: none;
+                }
+                .tbl-cat-header {
+                    background: rgba(0, 124, 0, 0.04) !important;
+                    font-weight: 900;
+                    text-transform: uppercase;
+                    letter-spacing: 0.1em;
+                    color: var(--color-neon-green);
+                    font-size: 0.82rem;
+                }
+                .col-feat { width: 28%; font-weight: 700; color: var(--color-text-primary); }
+                .col-pkg { width: 24%; color: var(--color-text-secondary); }
+                .col-pkg-premium { 
+                    width: 24%; 
+                    color: var(--color-text-primary);
+                    background: rgba(0, 179, 0, 0.015); 
+                    border-left: 1px dashed rgba(0, 179, 0, 0.15); 
+                    border-right: 1px dashed rgba(0, 179, 0, 0.15);
+                }
+                .pricing-tbl tr:hover td {
+                    background: rgba(0, 179, 0, 0.01);
+                }
+                .pricing-tbl tr:hover td.col-pkg-premium {
+                    background: rgba(0, 179, 0, 0.03);
+                }
+                
+                /* Mobile pricing cards */
+                .pricing-mobile-container {
+                    display: none;
+                    grid-template-columns: 1fr;
+                    gap: 2rem;
+                    margin-top: 2rem;
+                }
+                .pkg-card {
+                    background: var(--color-bg-card);
+                    border: 1.5px solid var(--color-border);
+                    border-radius: 20px;
+                    padding: 2rem;
+                    box-shadow: var(--shadow-glass);
+                    position: relative;
+                }
+                .pkg-card.premium-highlight {
+                    border-color: var(--color-brand-green);
+                    box-shadow: 0 10px 30px rgba(0, 124, 0, 0.05);
+                }
+                .pkg-badge {
+                    position: absolute;
+                    top: 1.5rem;
+                    right: 1.5rem;
+                    background: var(--color-neon-green);
+                    color: #fff;
+                    font-size: 0.65rem;
+                    font-weight: 800;
+                    padding: 4px 10px;
+                    border-radius: 12px;
+                    text-transform: uppercase;
+                }
+                .pkg-card-title {
+                    font-size: 1.6rem;
+                    font-weight: 900;
+                    color: var(--color-text-primary);
+                    margin-bottom: 0.4rem;
+                }
+                .pkg-card-price {
+                    font-size: 1.3rem;
+                    font-weight: 800;
+                    color: var(--color-neon-green);
+                    margin-bottom: 1.5rem;
+                }
+                .pkg-features-group {
+                    margin-bottom: 1.5rem;
+                    border-top: 1px solid var(--color-border);
+                    padding-top: 1rem;
+                }
+                .pkg-features-title {
+                    font-size: 0.75rem;
+                    font-weight: 900;
+                    text-transform: uppercase;
+                    color: var(--color-neon-green);
+                    letter-spacing: 0.05em;
+                    margin-bottom: 0.8rem;
+                }
+                .pkg-features-list {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                }
+                .pkg-feature-item {
+                    font-size: 0.88rem;
+                    display: flex;
+                    justify-content: space-between;
+                    color: var(--color-text-secondary);
+                }
+                .pkg-feature-label {
+                    font-weight: 600;
+                    color: var(--color-text-primary);
+                }
+                
+                @media (max-width: 992px) {
+                    .pricing-table-wrapper {
+                        display: none;
+                    }
+                    .pricing-mobile-container {
+                        display: grid;
+                    }
+                }
+            </style>
+            
+            <!-- DESKTOP COMPARISON TABLE -->
+            <div class="pricing-table-wrapper">
+                <table class="pricing-tbl">
+                    <thead>
+                        <tr>
+                            <th class="col-feat" style="font-size: 1.1rem;">Package Deliverables</th>
+                            <th class="col-pkg">
+                                <div style="font-size: 1.3rem; font-weight: 900;">Basic</div>
+                                <div style="color: var(--color-neon-green); font-weight: 800; margin-top: 0.2rem;">PKR 120,000 / mo</div>
+                            </th>
+                            <th class="col-pkg">
+                                <div style="font-size: 1.3rem; font-weight: 900;">Standard</div>
+                                <div style="color: var(--color-neon-green); font-weight: 800; margin-top: 0.2rem;">PKR 250,000 / mo</div>
+                            </th>
+                            <th class="col-pkg-premium">
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <span style="font-size: 1.3rem; font-weight: 900;">Premium</span>
+                                    <span style="background: rgba(0, 179, 0, 0.15); color: var(--color-neon-green); font-size: 0.65rem; padding: 2px 8px; border-radius: 10px; font-weight: 800;">FLAGSHIP</span>
+                                </div>
+                                <div style="color: var(--color-neon-green); font-weight: 800; margin-top: 0.2rem;">PKR 450,000+ / mo</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- CONTENT & SOCIAL -->
+                        <tr>
+                            <td colspan="4" class="tbl-cat-header">Content & Social</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Feed Posts</td>
+                            <td class="col-pkg">8 / month</td>
+                            <td class="col-pkg">14 / month</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">24+ / month</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Reels / Short-Form Video</td>
+                            <td class="col-pkg">4 / month</td>
+                            <td class="col-pkg">10 / month</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">18+ / month</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Platforms Managed</td>
+                            <td class="col-pkg">1 platform</td>
+                            <td class="col-pkg">2 platforms</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">3+ platforms</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Captioning & Community Replies</td>
+                            <td class="col-pkg">Captions only</td>
+                            <td class="col-pkg">Captions + light community management</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Full community management, daily</td>
+                        </tr>
+                        
+                        <!-- PRODUCTION - SHOOT & EDIT -->
+                        <tr>
+                            <td colspan="4" class="tbl-cat-header">Production - Shoot & Edit</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">On-Location Shoot Days</td>
+                            <td class="col-pkg">Half-day / month</td>
+                            <td class="col-pkg">1 full day / month</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">2+ days / month, dedicated crew</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Crew</td>
+                            <td class="col-pkg">1 shooter/editor</td>
+                            <td class="col-pkg">Shooter + assistant + lighting</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">DOP, gaffer, styling, on-site director</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Editing & Post-Production</td>
+                            <td class="col-pkg">Standard cut, colour pass</td>
+                            <td class="col-pkg">Motion graphics, on-screen text, sound design</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Full-grade colour, sound design, custom motion</td>
+                        </tr>
+                        
+                        <!-- ADVERTISING -->
+                        <tr>
+                            <td colspan="4" class="tbl-cat-header">Advertising</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Ad Creative Production</td>
+                            <td class="col-pkg">Static + basic video ads</td>
+                            <td class="col-pkg">Static, video & carousel ad sets</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Full-funnel creative, multiple concepts A/B tested</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Campaign Management</td>
+                            <td class="col-pkg">Setup only, 1 platform</td>
+                            <td class="col-pkg">Full management, 2 platforms, monthly optimisation</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Full-funnel management, 3+ platforms, weekly optimisation & retargeting</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Ad Spend</td>
+                            <td class="col-pkg">Billed separately, paid direct to platform</td>
+                            <td class="col-pkg">Billed separately, paid direct to platform</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Billed separately, paid direct to platform</td>
+                        </tr>
+                        
+                        <!-- STRATEGY & ACCOUNT -->
+                        <tr>
+                            <td colspan="4" class="tbl-cat-header">Strategy & Account</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Strategy & Planning</td>
+                            <td class="col-pkg">Monthly content calendar</td>
+                            <td class="col-pkg">Calendar + quarterly strategy session</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Calendar + weekly sync + quarterly brand audit</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Reporting</td>
+                            <td class="col-pkg">Monthly summary</td>
+                            <td class="col-pkg">Monthly performance report</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Executive reporting deck, monthly</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Account Team</td>
+                            <td class="col-pkg">Shared coordinator</td>
+                            <td class="col-pkg">Dedicated account manager</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Dedicated Creative Director + account team</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Revisions per Asset</td>
+                            <td class="col-pkg">1 round</td>
+                            <td class="col-pkg">2 rounds</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="col-feat">Turnaround</td>
+                            <td class="col-pkg">7 business days</td>
+                            <td class="col-pkg">5 business days</td>
+                            <td class="col-pkg-premium" style="font-weight: 700;">72 hrs, priority queue</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- MOBILE CARDS PREVIEW -->
+            <div class="pricing-mobile-container">
+                <!-- Basic Card -->
+                <div class="pkg-card">
+                    <div class="pkg-card-title">Basic</div>
+                    <div class="pkg-card-price">PKR 120,000 <span style="font-size: 0.8rem; color: var(--color-text-secondary);">/ mo</span></div>
+                    
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Content & Social</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Feed Posts:</span> 8 / month</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Reels/Video:</span> 4 / month</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Platforms:</span> 1 platform</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Community:</span> Captions only</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Production</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Shoot Days:</span> Half-day / month</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Crew:</span> 1 shooter/editor</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Editing:</span> Standard cut & color</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Advertising</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Creative:</span> Static + basic video</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Campaigns:</span> Setup only, 1 platform</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Ad Spend:</span> Billed separately</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Strategy & Support</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Planning:</span> Monthly calendar</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Reporting:</span> Monthly summary</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Revisions:</span> 1 round</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Turnaround:</span> 7 business days</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html?package=Basic%20Marketing" class="btn btn-glow-outline" style="width: 100%; text-align: center; margin-top: 1rem;">Select Basic Retainer</a>
+                </div>
+                
+                <!-- Standard Card -->
+                <div class="pkg-card">
+                    <div class="pkg-badge">Popular</div>
+                    <div class="pkg-card-title">Standard</div>
+                    <div class="pkg-card-price">PKR 250,000 <span style="font-size: 0.8rem; color: var(--color-text-secondary);">/ mo</span></div>
+                    
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Content & Social</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Feed Posts:</span> 14 / month</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Reels/Video:</span> 10 / month</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Platforms:</span> 2 platforms</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Community:</span> Captions + Light management</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Production</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Shoot Days:</span> 1 full day / month</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Crew:</span> Shooter + assistant + light</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Editing:</span> Motion graphics & sound</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Advertising</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Creative:</span> Static, video & carousel</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Campaigns:</span> Full management, monthly opt</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Ad Spend:</span> Billed separately</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Strategy & Support</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Planning:</span> Calendar + quarterly session</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Reporting:</span> Performance reports</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Revisions:</span> 2 rounds</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Turnaround:</span> 5 business days</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html?package=Standard%20Marketing" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 1rem; border: none; background: linear-gradient(135deg, var(--color-brand-green) 0%, var(--color-neon-green) 100%);">Select Standard Retainer</a>
+                </div>
+                
+                <!-- Premium Card -->
+                <div class="pkg-card premium-highlight">
+                    <div class="pkg-badge" style="background: var(--color-brand-green);">Flagship</div>
+                    <div class="pkg-card-title">Premium</div>
+                    <div class="pkg-card-price">PKR 450,000+ <span style="font-size: 0.8rem; color: var(--color-text-secondary);">/ mo</span></div>
+                    
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Content & Social</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Feed Posts:</span> 24+ / month</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Reels/Video:</span> 18+ / month</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Platforms:</span> 3+ platforms</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Community:</span> Full daily community mgmt</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Production</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Shoot Days:</span> 2+ days (dedicated crew)</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Crew:</span> DOP, gaffer, styling, director</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Editing:</span> Full grade color, custom motion</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Advertising</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Creative:</span> Full funnel, A/B tested concepts</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Campaigns:</span> Weekly optimization & retargeting</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Ad Spend:</span> Billed separately</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-features-group">
+                        <div class="pkg-features-title">Strategy & Support</div>
+                        <ul class="pkg-features-list">
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Planning:</span> Weekly sync + quarterly brand audit</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Reporting:</span> Executive monthly deck</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Revisions:</span> Unlimited</li>
+                            <li class="pkg-feature-item"><span class="pkg-feature-label">Turnaround:</span> 72 hrs, priority queue</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html?package=Premium%20Marketing" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 1rem; border: none; background: linear-gradient(135deg, var(--color-neon-green) 0%, var(--color-brand-green) 100%);">Request Custom Quote</a>
                 </div>
             </div>
         </div>
