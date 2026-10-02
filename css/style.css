@@ -2434,14 +2434,15 @@ h1, h2, h3, h4, h5, h6 {
         left: 0;
         width: 100%;
         height: calc(100vh - 70px);
-        background: var(--color-bg-dark);
+        background: var(--color-bg-card);
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
-        gap: 2.5rem;
-        padding-bottom: 100px;
+        gap: 1.25rem;
+        padding: 2.5rem 1.5rem 6rem;
         border-top: 1px solid var(--color-border);
-        z-index: 999;
+        z-index: 9999;
+        overflow-y: auto;
     }
     
     .nav-links.mobile-active {
@@ -2450,10 +2451,6 @@ h1, h2, h3, h4, h5, h6 {
     
     .mobile-nav-toggle {
         display: block;
-    }
-    
-    .dropdown-menu.active-dropdown {
-        display: block !important;
     }
 }
 
@@ -4554,37 +4551,55 @@ h1, h2, h3, h4, h5, h6 {
         width: 26px;
         height: 26px;
     }
-    .nav-links li.dropdown:hover .dropdown-menu,
-    .nav-links li.dropdown:focus-within .dropdown-menu {
-        display: block;
-    }
+    /* --- MOBILE DROPDOWN STYLING & HIGH CONTRAST FIX --- */
     .dropdown-menu {
-        position: static;
-        transform: none;
-        opacity: 1;
-        visibility: visible;
-        box-shadow: none;
-        background: rgba(255, 255, 255, 0.03);
-        border-left: 2px solid var(--color-brand-green);
-        border-radius: 0;
-        padding: 5px 0 5px 15px;
-        margin-top: 5px;
-        min-width: unset;
-        display: none;
+        position: static !important;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        box-shadow: none !important;
+        background: rgba(0, 179, 0, 0.05) !important;
+        border: 1px solid rgba(0, 179, 0, 0.2) !important;
+        border-radius: 12px !important;
+        padding: 8px 12px !important;
+        margin: 10px auto 5px !important;
+        width: 100% !important;
+        max-width: 320px !important;
+        display: none !important;
+        flex-direction: column !important;
+        gap: 2px !important;
     }
+    
+    .dropdown-menu.active-dropdown {
+        display: flex !important;
+    }
+
+    .dropdown-menu li {
+        width: 100% !important;
+        text-align: left !important;
+    }
+
     .dropdown-menu li a {
-        padding: 8px 0;
-        color: var(--color-brand-charcoal) !important;
-        font-size: 0.8rem;
+        display: block !important;
+        padding: 9px 14px !important;
+        color: var(--color-text-primary) !important;
+        font-size: 0.88rem !important;
+        font-weight: 600 !important;
+        border-radius: 6px !important;
+        transition: all 0.2s ease !important;
     }
-    /* In mobile sidebar when text links are white */
+
+    .dropdown-menu li a:hover,
+    .dropdown-menu li a:focus {
+        background: rgba(0, 179, 0, 0.12) !important;
+        color: var(--color-neon-green) !important;
+        padding-left: 18px !important;
+    }
+
     .nav-links.mobile-active .dropdown-menu li a {
-        color: rgba(255,255,255,0.8) !important;
+        color: var(--color-text-primary) !important;
     }
-    .dropdown-menu li a:hover {
-        padding-left: 5px;
-        color: var(--color-brand-green) !important;
-    }
+
     .nav-links.mobile-active .dropdown-menu li a:hover {
         color: var(--color-neon-green) !important;
     }
@@ -4815,18 +4830,20 @@ body.dark-theme .status-select.status-archived {
     border-color: rgba(108, 117, 125, 0.4) !important;
 }
 
-/* --- DARK THEME DROPDOWN MENU OVERRIDES --- */
-body.dark-theme .dropdown-menu {
-    background: rgba(17, 24, 39, 0.98) !important;
-    border-color: rgba(255, 255, 255, 0.1) !important;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5) !important;
-}
-body.dark-theme .dropdown-menu li a {
-    color: var(--color-text-secondary) !important;
-}
-body.dark-theme .dropdown-menu li a:hover {
-    background: rgba(255, 255, 255, 0.05) !important;
-    color: var(--color-neon-green) !important;
+/* --- DARK THEME DESKTOP DROPDOWN MENU OVERRIDES --- */
+@media (min-width: 993px) {
+    body.dark-theme .dropdown-menu {
+        background: rgba(17, 24, 39, 0.98) !important;
+        border-color: rgba(255, 255, 255, 0.1) !important;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5) !important;
+    }
+    body.dark-theme .dropdown-menu li a {
+        color: var(--color-text-secondary) !important;
+    }
+    body.dark-theme .dropdown-menu li a:hover {
+        background: rgba(255, 255, 255, 0.05) !important;
+        color: var(--color-neon-green) !important;
+    }
 }
 
 
