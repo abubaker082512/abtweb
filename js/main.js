@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 0. THEME SWITCHER INJECTION & LOGO SWAP ---
     const logoImgs = document.querySelectorAll('.logo-img, .admin-login-logo, .sidebar-logo');
     function updateLogo(isDark) {
-        const isSubdir = window.location.pathname.includes('/blog/');
+        const isSubdir = window.location.pathname.includes('/blog/') || window.location.pathname.includes('/tools/');
         const prefix = isSubdir ? '../' : '';
         logoImgs.forEach(img => {
             if (isDark) {
@@ -327,7 +327,8 @@ document.addEventListener('DOMContentLoaded', () => {
         faqItems.forEach(item => {
             const trigger = item.querySelector('.faq-trigger');
             const content = item.querySelector('.faq-content');
-            
+            if (!trigger || !content) return;
+
             trigger.addEventListener('click', () => {
                 const isActive = item.classList.contains('active');
                 
