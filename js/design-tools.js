@@ -446,12 +446,35 @@
         let lastSvgString = '';
 
         const VECTOR_PRESETS = {
-            logo:      { numberofcolors: 8,  ltres: 1,   qtres: 1,   pathomit: 8,  blurradius: 0 },
-            detailed:  { numberofcolors: 16, ltres: 0.5, qtres: 0.5, pathomit: 4,  blurradius: 0 },
-            lineart:   { numberofcolors: 2,  ltres: 1,   qtres: 1,   pathomit: 8,  blurradius: 0 },
-            poster:    { numberofcolors: 12, ltres: 1.5, qtres: 1.5, pathomit: 12, blurradius: 1 },
-            pixel:     { numberofcolors: 16, ltres: 0.01, qtres: 0.01, pathomit: 0, rightangleenhance: true }
+            logo:      { numberofcolors: 8,  ltres: 0.8, qtres: 0.8, pathomit: 6,  blurradius: 0, strokewidth: 0, roundcoords: 1, colorsampling: 2, colorquantcycles: 3 },
+            detailed:  { numberofcolors: 16, ltres: 0.5, qtres: 0.5, pathomit: 4,  blurradius: 0, strokewidth: 0, roundcoords: 1, colorsampling: 2, colorquantcycles: 3 },
+            lineart:   { numberofcolors: 2,  ltres: 0.8, qtres: 0.8, pathomit: 6,  blurradius: 0, strokewidth: 0, roundcoords: 1, colorsampling: 2, colorquantcycles: 3 },
+            poster:    { numberofcolors: 12, ltres: 1.4, qtres: 1.4, pathomit: 10, blurradius: 1, strokewidth: 0, roundcoords: 1, colorsampling: 2, colorquantcycles: 3 },
+            pixel:     { numberofcolors: 16, ltres: 0.01, qtres: 0.01, pathomit: 0, blurradius: 0, strokewidth: 0, roundcoords: 0, rightangleenhance: true, colorsampling: 2, colorquantcycles: 3 }
         };
+
+        function sanitizeTracedSvg(rawSvg, cw, ch) {
+            // 1. Remove fully transparent paths (opacity="0") that ImageTracer emits for transparent PNG backgrounds
+            let svg = rawSvg.replace(/<path[^>]*\bopacity="0(?:\.0+)?"[^>]*\/?>/gi, '');
+            // 2. Ensure opening <svg> always has xmlns, width, height, and viewBox for 100% compatibility in browsers, Figma & Illustrator
+            svg = svg.replace(/<svg\b[^>]*>/i, (tag) => {
+                let out = tag;
+                if (!/\bxmlns=/.test(out)) {
+                    out = out.replace('<svg', '<svg xmlns="http://www.w3.org/2000/svg"');
+                }
+                if (!/\bviewBox=/i.test(out)) {
+                    out = out.replace('<svg', `<svg viewBox="0 0 ${cw} ${ch}"`);
+                }
+                if (!/\bwidth=/i.test(out)) {
+                    out = out.replace('<svg', `<svg width="${cw}"`);
+                }
+                if (!/\bheight=/i.test(out)) {
+                    out = out.replace('<svg', `<svg height="${ch}"`);
+                }
+                return out;
+            });
+            return svg;
+        }
 
         async function runVectorTrace() {
             if (!vectorSource) return;
@@ -465,8 +488,8 @@
                 base.numberofcolors = colorsVal;
                 base.viewbox = true;
 
-                // Cap tracing resolution at 900px max side so browser stays responsive
-                const maxSide = 900;
+                // Cap tracing resolution at 800px max side so browser stays snappy
+                const maxSide = 800;
                 const scale = Math.min(1, maxSide / Math.max(vectorSource.w, vectorSource.h));
                 const cw = Math.max(1, Math.round(vectorSource.w * scale));
                 const ch = Math.max(1, Math.round(vectorSource.h * scale));
@@ -478,8 +501,22 @@
                 ctx.drawImage(vectorSource.img, 0, 0, cw, ch);
                 const imgData = ctx.getImageData(0, 0, cw, ch);
 
+                // Clean semi-transparent anti-aliased fringe pixels to avoid black halo artifacts
+                const data = imgData.data;
+                for (let i = 0; i < data.length; i += 4) {
+                    if (data[i + 3] < 90) {
+                        data[i] = 0;
+                        data[i + 1] = 0;
+                        data[i + 2] = 0;
+                        data[i + 3] = 0;
+                    } else if (data[i + 3] < 255) {
+                        data[i + 3] = 255;
+                    }
+                }
+
                 setProgress(65);
-                lastSvgString = ImageTracer.imagedataToSVG(imgData, base);
+                const rawSvg = ImageTracer.imagedataToSVG(imgData, base);
+                lastSvgString = sanitizeTracedSvg(rawSvg, cw, ch);
 
                 const previewPanel = root.querySelector('#vectorPreviewPanel');
                 const stage = root.querySelector('#vectorPreviewStage');
@@ -542,6 +579,50 @@
            ============================================================== */
         let svgItems = []; // { name, svgText, outBlob, outUrl, outName, outW, outH }
 
+        function normalizeSvgForRaster(svgText) {
+            const parser = new DOMParser();
+            let doc = parser.parseFromString(svgText, 'image/svg+xml');
+            let svgEl = doc.querySelector('svg');
+            if (!svgEl || doc.querySelector('parsererror')) {
+                // Fallback HTML parser for pasted inline SVG snippets missing xmlns
+                doc = parser.parseFromString(svgText, 'text/html');
+                svgEl = doc.querySelector('svg');
+            }
+            if (!svgEl) {
+                throw new Error('No valid <svg> element found.');
+            }
+            if (!svgEl.getAttribute('xmlns')) {
+                svgEl.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+            }
+
+            let baseW = parseFloat(svgEl.getAttribute('width'));
+            let baseH = parseFloat(svgEl.getAttribute('height'));
+            const widthAttr = svgEl.getAttribute('width') || '';
+            const heightAttr = svgEl.getAttribute('height') || '';
+            if (widthAttr.includes('%')) baseW = NaN;
+            if (heightAttr.includes('%')) baseH = NaN;
+
+            const vb = svgEl.getAttribute('viewBox') || svgEl.getAttribute('viewbox');
+            if (vb) {
+                const parts = vb.trim().split(/[\s,]+/).map(Number);
+                if (parts.length === 4 && parts[2] > 0 && parts[3] > 0) {
+                    if (!baseW || isNaN(baseW)) baseW = parts[2];
+                    if (!baseH || isNaN(baseH)) baseH = parts[3];
+                }
+            }
+            if (!baseW || isNaN(baseW)) baseW = 512;
+            if (!baseH || isNaN(baseH)) baseH = 512;
+
+            svgEl.setAttribute('width', String(Math.round(baseW)));
+            svgEl.setAttribute('height', String(Math.round(baseH)));
+            if (!vb) {
+                svgEl.setAttribute('viewBox', `0 0 ${Math.round(baseW)} ${Math.round(baseH)}`);
+            }
+
+            const serialized = new XMLSerializer().serializeToString(svgEl);
+            return { serialized, baseW: Math.round(baseW), baseH: Math.round(baseH) };
+        }
+
         function renderSvgTextToRaster(svgText, baseName) {
             return new Promise((resolve, reject) => {
                 const scaleMult = parseFloat(root.querySelector('#optSvgScale')?.value || '2');
@@ -550,19 +631,26 @@
                 const bgColor = root.querySelector('#optBgColor')?.value || '#ffffff';
                 const mime = fmt === 'jpg' ? 'image/jpeg' : (fmt === 'webp' ? 'image/webp' : 'image/png');
 
-                const blob = new Blob([svgText], { type: 'image/svg+xml;charset=utf-8' });
+                let norm;
+                try {
+                    norm = normalizeSvgForRaster(svgText);
+                } catch (e) {
+                    return reject(e);
+                }
+
+                const blob = new Blob([norm.serialized], { type: 'image/svg+xml;charset=utf-8' });
                 const url = URL.createObjectURL(blob);
                 const img = new Image();
                 img.onload = () => {
-                    const baseW = img.naturalWidth || 800;
-                    const baseH = img.naturalHeight || 800;
-                    const w = Math.max(1, Math.round(baseW * scaleMult));
-                    const h = Math.max(1, Math.round(baseH * scaleMult));
+                    const w = Math.max(1, Math.round(norm.baseW * scaleMult));
+                    const h = Math.max(1, Math.round(norm.baseH * scaleMult));
 
                     const canvas = document.createElement('canvas');
                     canvas.width = w;
                     canvas.height = h;
                     const ctx = canvas.getContext('2d');
+                    ctx.imageSmoothingEnabled = true;
+                    ctx.imageSmoothingQuality = 'high';
                     if (mime === 'image/jpeg' || bgMode === 'solid') {
                         ctx.fillStyle = bgColor;
                         ctx.fillRect(0, 0, w, h);
@@ -582,7 +670,7 @@
                 };
                 img.onerror = () => {
                     URL.revokeObjectURL(url);
-                    reject(new Error('Invalid SVG markup in ' + baseName));
+                    reject(new Error('Could not render SVG: ' + baseName));
                 };
                 img.src = url;
             });
@@ -591,15 +679,20 @@
         async function processAllSvgs() {
             if (!svgItems.length) return;
             setProgress(25);
-            for (let i = 0; i < svgItems.length; i++) {
-                const item = svgItems[i];
-                if (item.outUrl) URL.revokeObjectURL(item.outUrl);
-                const res = await renderSvgTextToRaster(item.svgText, item.name);
-                Object.assign(item, res);
-                setProgress(25 + Math.round(((i + 1) / svgItems.length) * 75));
+            try {
+                for (let i = 0; i < svgItems.length; i++) {
+                    const item = svgItems[i];
+                    if (item.outUrl) URL.revokeObjectURL(item.outUrl);
+                    const res = await renderSvgTextToRaster(item.svgText, item.name);
+                    Object.assign(item, res);
+                    setProgress(25 + Math.round(((i + 1) / svgItems.length) * 75));
+                }
+                renderSvgQueue();
+            } catch (err) {
+                showToast(err.message);
+            } finally {
+                setTimeout(() => setProgress(0), 500);
             }
-            renderSvgQueue();
-            setTimeout(() => setProgress(0), 500);
         }
 
         function renderSvgQueue() {

@@ -1440,10 +1440,11 @@ body.dark-theme .vector-preview-panel {
 }
 
 .vector-preview-stage svg {
-    max-width: 100%;
-    max-height: 380px;
-    width: auto;
+    width: 100%;
     height: auto;
+    max-width: 100%;
+    max-height: 360px;
+    display: block;
 }
 
 .svg-stats-bar {
