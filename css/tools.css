@@ -1341,3 +1341,255 @@ body.dark-theme .tool-cta-banner {
         padding: 1.5rem;
     }
 }
+
+/* ==========================================================================
+   PHASE 2: DESIGN, PSD, VECTOR (SVG) & FAVICON (ICO) EXTENSIONS
+   ========================================================================== */
+
+.tool-icon-box.design {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.16), rgba(59, 130, 246, 0.08));
+    border-color: rgba(139, 92, 246, 0.3);
+    color: #7c3aed;
+}
+
+body.dark-theme .tool-icon-box.design {
+    color: #a78bfa;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.25), rgba(59, 130, 246, 0.12));
+}
+
+/* Vector Preview Stage */
+.vector-preview-panel {
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+    border-radius: 18px;
+    background: rgba(15, 23, 42, 0.03);
+    border: 1px solid var(--color-border);
+    display: none;
+}
+
+body.dark-theme .vector-preview-panel {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.vector-preview-panel.active {
+    display: block;
+}
+
+.vector-stage-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.backdrop-switcher {
+    display: inline-flex;
+    padding: 0.25rem;
+    border-radius: 10px;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    gap: 0.2rem;
+}
+
+.backdrop-btn {
+    padding: 0.32rem 0.7rem;
+    border-radius: 7px;
+    border: none;
+    background: transparent;
+    color: var(--color-text-secondary);
+    font-size: 0.76rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition-quick);
+}
+
+.backdrop-btn.active,
+.backdrop-btn:hover {
+    background: var(--color-brand-green);
+    color: #fff;
+}
+
+.vector-preview-stage {
+    width: 100%;
+    min-height: 320px;
+    max-height: 440px;
+    border-radius: 14px;
+    border: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    overflow: hidden;
+    background-image:
+        linear-gradient(45deg, rgba(148, 163, 184, 0.18) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(148, 163, 184, 0.18) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(148, 163, 184, 0.18) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(148, 163, 184, 0.18) 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+.vector-preview-stage.bg-light {
+    background: #ffffff;
+}
+
+.vector-preview-stage.bg-dark {
+    background: #0f172a;
+}
+
+.vector-preview-stage svg {
+    max-width: 100%;
+    max-height: 380px;
+    width: auto;
+    height: auto;
+}
+
+.svg-stats-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    font-size: 0.84rem;
+    color: var(--color-text-secondary);
+}
+
+/* SVG Paste Area */
+.svg-paste-wrap {
+    margin-top: 1.1rem;
+}
+
+.svg-paste-textarea {
+    width: 100%;
+    min-height: 92px;
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg-card);
+    color: var(--color-text-primary);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.82rem;
+    resize: vertical;
+    outline: none;
+}
+
+.svg-paste-textarea:focus {
+    border-color: var(--color-neon-green);
+    box-shadow: 0 0 0 3px rgba(0, 179, 0, 0.14);
+}
+
+/* ICO Multi-Size Preview Grid */
+.ico-sizes-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.35rem;
+}
+
+.ico-size-check {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg-card);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    cursor: pointer;
+}
+
+.ico-size-check input {
+    accent-color: var(--color-brand-green);
+}
+
+.ico-preview-grid {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: rgba(15, 23, 42, 0.03);
+    border: 1px solid var(--color-border);
+}
+
+body.dark-theme .ico-preview-grid {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.ico-preview-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ico-preview-box {
+    padding: 0.6rem;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg-card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ico-preview-label {
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+}
+
+.code-snippet-box {
+    margin-top: 1.25rem;
+    padding: 1rem 1.15rem;
+    border-radius: 14px;
+    background: #0f172a;
+    color: #e2e8f0;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.78rem;
+    line-height: 1.6;
+    overflow-x: auto;
+    position: relative;
+}
+
+.code-snippet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.6rem;
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* PSD Layer List Pills */
+.psd-layer-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: 0.6rem;
+}
+
+.psd-layer-pill {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.22rem 0.6rem;
+    border-radius: 999px;
+    background: rgba(139, 92, 246, 0.12);
+    color: #7c3aed;
+    border: 1px solid rgba(139, 92, 246, 0.25);
+}
+
+body.dark-theme .psd-layer-pill {
+    color: #c4b5fd;
+}
